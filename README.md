@@ -1,2 +1,74 @@
 # geospatial-multimodal-analysis
 Diseño y evaluación de una arquitectura multimodal basada en modelos fundacionales especializados para la detección y descripción de cambios en imágenes satelitales multiespectrales
+
+# Pipeline de extracción y comparación de embeddings — Clay v1.5 / SatMAE / Prithvi EO 2.0
+
+Implementa las secciones D, E y F del protocolo de tu asesora sobre OSCD, más la
+métrica de separabilidad zero-shot que definimos en la discusión conceptual.
+
+## Estructura
+
+```
+config.py              Ficha técnica de los 3 modelos (bandas, GSD, patch size, etc.)
+preprocessing.py        Selección de bandas, remuestreo de GSD, recorte en chips, normalización
+metrics.py               Distancia coseno, remuestreo de máscara, AUPRC, tamaño de efecto
+models/
+  clay_extractor.py      Carga y forward pass de Clay v1.5
+  satmae_extractor.py    Carga y forward pass de SatMAE (fMoW-Sentinel, group_c)
+  prithvi_extractor.py   Carga y forward pass de Prithvi EO 2.0 (300M)
+run_pipeline.py          Orquestador end-to-end para un par OSCD
+```
+
+## Qué falta que TÚ conectes (marcado como `TODO` en el código)
+
+Este pipeline define correctamente la interfaz, los tamaños esperados y el
+manejo de metadatos/GSD según la documentación oficial de cada modelo, pero
+**no puede instalar ni ejecutar los tres repositorios de terceros desde este
+entorno** (sin acceso de red a GitHub/HuggingFace de terceros). Antes de correr
+`run_pipeline.py` necesitas:
+
+1. **Clay**: `pip install git+https://github.com/Clay-foundation/model.git`,
+   descargar `clay-v1.5.ckpt`, y confirmar en `models/clay_extractor.py` el
+   nombre exacto de la clase (`ClayMAEModule` en la doc actual) y el formato
+   del "datacube" de entrada contra el notebook oficial
+   `docs/tutorials/embeddings.ipynb`.
+2. **SatMAE**: `git clone https://github.com/sustainlab-group/SatMAE`, descargar
+   el checkpoint ViT-Large `group_c` de fMoW-Sentinel, y completar
+   `load_satmae_model()` en `models/satmae_extractor.py` con la clase real del
+   repo (`models_vit_group_channels.py` o equivalente en tu commit).
+3. **Prithvi**: `pip install terratorch`, y confirmar en
+   `models/prithvi_extractor.py` la firma exacta de `forward_features()` y si
+   el backbone incluye o no un token CLS en tu versión instalada.
+4. **Lector de OSCD**: implementar `load_oscd_pair()` en `run_pipeline.py` con
+   `rasterio` o `tifffile`, devolviendo las 13 bandas alineadas a 10 m y la
+   máscara binaria.
+5. **Normalización de Clay/SatMAE**: completar los `TODO` de
+   `preprocessing.py` (`prepare_for_clay`, `prepare_for_satmae`) con las
+   estadísticas oficiales de cada uno (`configs/metadata.yaml` de Clay;
+   estadísticas de fMoW-Sentinel del repo de SatMAE). Los de Prithvi ya están
+   cargados en `config.py` (vienen del `config.json` oficial).
+
+## Decisiones metodológicas ya incorporadas (de nuestra discusión)
+
+- **Prithvi se remuestrea de 10 m a 30 m** por average pooling 3×3 y se recorta
+  a 192×192 px (múltiplo de 16), en vez de forzar 224×224 con padding.
+- **La máscara de cambio se remuestrea a la grilla nativa de cada modelo**
+  (no al revés) — se evita interpolar vectores de 1024 dimensiones.
+- **Distancia coseno** como métrica principal (invariante a norma).
+- **AUPRC + tamaño de efecto (AUC de Mann-Whitney)** en vez de exactitud con
+  umbral, apropiado para el desbalance fuerte de OSCD y para un escenario
+  zero-shot sin entrenamiento.
+- SatMAE devuelve 3 mapas (uno por grupo espectral); se combinan con
+  `combine_satmae_groups()` (media por defecto, máximo como alternativa).
+- Prithvi funde t1/t2 dentro del encoder (atención cruzada) — la distancia
+  que se calcula sobre sus dos bloques temporales no es directamente
+  comparable en interpretación a la de Clay/SatMAE, aunque el cálculo
+  numérico es el mismo. Documentar esto en la sección de resultados.
+
+## Próximo paso sugerido
+
+Una vez conectes los tres extractores contra un solo par de imágenes de
+prueba, corre `run_pipeline.py` sobre los 14 pares de OSCD y agrega los
+resultados (media y dispersión de AUPRC / tamaño de efecto por modelo) — ese
+agregado es el que te da la base para "tomar una decisión" según el objetivo
+del protocolo.

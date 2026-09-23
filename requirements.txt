@@ -1,0 +1,8 @@
+# Dependencias base de este pipeline. Los tres modelos requieren, ADEMAS,
+# sus propios repos/paquetes de terceros -- ver README.md.
+
+numpy
+scipy
+scikit-learn
+torch
+rasterio      # o tifffile, segun como implementes load_oscd_pair()

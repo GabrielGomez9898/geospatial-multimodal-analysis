@@ -1,13 +1,26 @@
 """
 satmae_extractor.py
 
-Requiere: git clone https://github.com/sustainlab-group/SatMAE
-Checkpoint: pesos de fMoW-Sentinel, ViT-Large, variante "group_c" (grouped channels),
-publicados por los autores (ver README del repo, seccion "Pretrained Models").
+Usa la libreria `rshf` (Remote Sensing HuggingFace-style loading), que publica
+el checkpoint multiespectral de SatMAE ("SatMAE+Group", ViT-Large, fMoW-Sentinel)
+en un formato mucho mas simple de cargar que el repo de investigacion original.
 
-IMPORTANTE: el repo original define la arquitectura "group_c" en models_mae_group_channels.py
-/ models_vit_group_channels.py (el nombre exacto de archivo/clase puede variar segun el
-commit). Verifica contra tu clon del repo antes de correr esto.
+Requiere: pip install rshf
+Checkpoint: se descarga automaticamente desde HuggingFace la primera vez que
+corras esto: "MVRL/satmae-vitlarge-multispec-pretrain"
+
+IMPORTANTE -- a diferencia de Clay, no pude confirmar el nombre exacto de la
+clase para la variante MULTIESPECTRAL desde afuera (el unico ejemplo publico
+que encontre es para la variante RGB simple, con otra clase/config). Antes de
+correr nada mas, ejecuta esto para descubrir que expone el paquete:
+
+    python -c "import rshf.satmae as m; print([x for x in dir(m) if not x.startswith('_')])"
+
+y ajusta el import de abajo con el nombre real que aparezca (probablemente
+algo como SatMAE o SatMAEGroupChannels). Este archivo asume, como primera
+hipotesis, que es la misma clase `SatMAE` que la variante RGB, solo que el
+checkpoint trae su propio config.json con channel_groups -- si el forward
+falla, dime el error y lo ajustamos, igual que con Clay.
 """
 
 from __future__ import annotations
@@ -18,21 +31,16 @@ import torch
 from preprocessing import Chip
 from config import SATMAE_FMOW_SENTINEL
 
+SATMAE_CHECKPOINT_ID = "MVRL/satmae-vitlarge-multispec-pretrain"
 
-def load_satmae_model(checkpoint_path: str, device: str = "cuda"):
-    # TODO: import exacto segun el repo clonado, p.ej.:
-    #   from models_vit_group_channels import vit_large_patch8_group_c
-    #   model = vit_large_patch8_group_c(
-    #       img_size=SATMAE_FMOW_SENTINEL.chip_size,
-    #       patch_size=SATMAE_FMOW_SENTINEL.patch_size,
-    #       channel_groups=((0, 1, 2, 6), (3, 4, 5, 7), (8, 9)),  # indices dentro de spec.bands
-    #   )
-    #   checkpoint = torch.load(checkpoint_path, map_location="cpu")
-    #   model.load_state_dict(checkpoint["model"], strict=False)
-    raise NotImplementedError(
-        "Conecta aqui la clase real del repo clonado de SatMAE "
-        "(ver comentario TODO arriba)."
-    )
+
+def load_satmae_model(device: str = "cuda"):
+    from rshf.satmae import SatMAE_Pre_MS
+
+    model = SatMAE_Pre_MS.from_pretrained(SATMAE_CHECKPOINT_ID)
+    model.eval()
+    model.to(device)
+    return model
 
 
 @torch.no_grad()
@@ -53,11 +61,18 @@ def extract_satmae_patch_tokens(
     for chip in chips:
         pixels = torch.from_numpy(chip.array).unsqueeze(0).float().to(device)  # (1, 10, 96, 96)
 
-        # TODO: la firma exacta de forward() depende de la implementacion "group_c".
-        # Normalmente devuelve la secuencia completa de tokens: [CLS, g1_p1...g1_p144,
-        # g2_p1...g2_p144, g3_p1...g3_p26] -- confirma el orden contra el codigo fuente.
-        tokens = model.forward_encoder_no_mask(pixels)  # (1, 1 + 3*144, 1024), por ejemplo
-        patch_tokens = tokens[:, 1:, :]  # descartar CLS
+        # Confirmado por el ejemplo publico de rshf (variante RGB):
+        # model.forward_encoder(input, mask_ratio=0.0) -> (tokens, mask, ids_restore)
+        # IMPORTANTE (ver discusion): incluso con mask_ratio=0.0, el modelo
+        # devuelve los patch tokens en un orden ALEATORIO distinto en cada
+        # llamada (comportamiento estandar de la implementacion MAE). Hay que
+        # usar ids_restore para revertir esa permutacion ANTES de reorganizar
+        # en el grid espacial -- si no, se compara ruido, no posiciones reales.
+        tokens, mask, ids_restore = model.forward_encoder(pixels, mask_ratio=0.0)
+        patch_tokens = tokens[:, 1:, :]  # descartar CLS -> (1, 432, 1024)
+
+        idx = ids_restore.unsqueeze(-1).expand(-1, -1, patch_tokens.shape[-1])
+        patch_tokens = torch.gather(patch_tokens, dim=1, index=idx)  # orden real restaurado
 
         n_groups = len(SATMAE_FMOW_SENTINEL.band_groups)
         grid = SATMAE_FMOW_SENTINEL.chip_size // SATMAE_FMOW_SENTINEL.patch_size  # 12

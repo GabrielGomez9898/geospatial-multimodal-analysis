@@ -1,0 +1,2299 @@
+region,chip_idx,auprc,effect_size_auc,n_change_tokens,n_total_tokens,note
+paris,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,3,0.038461538461538464,0.8251748085021973,1,144,
+paris,4,0.2698879551820728,0.925000011920929,4,144,
+paris,5,0.1338235294117647,0.9125295281410217,3,144,
+paris,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,10,0.1111111111111111,0.9440559148788452,1,144,
+paris,11,0.5142496392496393,0.9420289993286133,6,144,
+paris,12,0.25508403361344534,0.8992805480957031,5,144,
+paris,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,16,0.5,0.9930070042610168,1,144,
+paris,17,0.24358974358974358,0.9542253613471985,2,144,
+paris,18,0.3715277777777778,0.9285714030265808,4,144,
+paris,19,0.696969696969697,0.9290780425071716,3,144,
+paris,20,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,21,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,23,0.0625,0.8951048851013184,1,144,
+paris,24,0.173109243697479,0.9338061213493347,3,144,
+paris,25,1.0,1.0,2,144,
+paris,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,29,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,30,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,31,0.17142857142857143,0.9507042169570923,2,144,
+paris,32,1.0,1.0,2,144,
+paris,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,34,0.2,0.9720279574394226,1,144,
+paris,35,1.0,1.0,1,144,
+paris,36,0.8333333333333333,0.9929078221321106,3,144,
+paris,37,0.7,0.9894366264343262,2,144,
+paris,38,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,39,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,40,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,41,0.5,0.9930070042610168,1,144,
+paris,42,0.5893939393939394,0.9741007089614868,5,144,
+paris,43,0.6832810047095761,0.9760167002677917,7,144,
+paris,44,0.07738095238095238,0.8697183132171631,2,144,
+paris,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+paris,48,0.16666666666666666,0.9650349617004395,1,144,
+mumbai,0,0.03571428571428571,0.811188817024231,1,144,
+mumbai,1,0.030303030303030304,0.7762237787246704,1,144,
+mumbai,2,0.5454545454545454,0.9295774698257446,2,144,
+mumbai,3,0.6162736348319873,0.9119201302528381,13,144,
+mumbai,4,0.5831645817183221,0.90087890625,16,144,
+mumbai,5,0.34699275362318843,0.800000011920929,5,144,
+mumbai,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,10,0.07692307692307693,0.9160839319229126,1,144,
+mumbai,11,0.5277777777777778,0.8802816867828369,2,144,
+mumbai,12,0.7587066803465572,0.9255514740943909,8,144,
+mumbai,13,0.8055832874299652,0.9450334906578064,32,144,
+mumbai,14,0.7554600829843067,0.936549723148346,30,144,
+mumbai,15,0.09553056964821671,0.7582733631134033,5,144,
+mumbai,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,17,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,18,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,20,0.34904761904761905,0.8992805480957031,5,144,
+mumbai,21,0.5207936507936508,0.9338235259056091,8,144,
+mumbai,22,0.7771367521367522,0.9558081030845642,12,144,
+mumbai,23,0.8906319525030348,0.9259980320930481,65,144,
+mumbai,24,0.90994574181846,0.9560546875,64,144,
+mumbai,25,0.14722959417880865,0.8300312757492065,7,144,
+mumbai,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,29,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,30,0.33988095238095234,0.9179856181144714,5,144,
+mumbai,31,0.34090671233528375,0.9207507967948914,7,144,
+mumbai,32,0.6907004830917874,0.9649758338928223,6,144,
+mumbai,33,0.8603683920849218,0.9307897090911865,46,144,
+mumbai,34,0.9148821497690369,0.9749945402145386,47,144,
+mumbai,35,0.40476190476190477,0.9660714268684387,4,144,
+mumbai,36,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,37,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,38,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,39,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,40,0.042715617715617715,0.6926714181900024,3,144,
+mumbai,41,0.2641233766233766,0.9535714387893677,4,144,
+mumbai,42,0.22622863247863248,0.9428571462631226,4,144,
+mumbai,43,0.7273637561384597,0.9617224931716919,11,144,
+mumbai,44,0.984159779614325,0.9986329674720764,11,144,
+mumbai,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,48,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,49,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,50,0.29286916151009224,0.7223021388053894,5,144,
+mumbai,51,0.6378306878306879,0.9818840622901917,6,144,
+mumbai,52,0.6791666666666667,0.9928571581840515,4,144,
+mumbai,53,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,55,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,56,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,57,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,58,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,59,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,60,0.2765145390357614,0.9227052927017212,6,144,
+mumbai,61,0.3432643745143745,0.9444444179534912,6,144,
+mumbai,62,0.6666666666666666,0.98591548204422,2,144,
+mumbai,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,64,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,65,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,66,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,67,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,68,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,69,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,70,0.31431159420289856,0.9428571462631226,4,144,
+mumbai,71,0.2758872508872509,0.8435870409011841,7,144,
+mumbai,72,0.3092063492063492,0.8431654572486877,5,144,
+mumbai,73,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,74,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,75,0.11916263556495794,0.6319444179534912,12,144,
+mumbai,76,0.21671619446133783,0.8087121248245239,12,144,
+mumbai,77,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,78,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,79,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,80,1.0,1.0,1,144,
+mumbai,81,0.20837775408670928,0.8321428298950195,4,144,
+mumbai,82,0.1029265873015873,0.7990543842315674,3,144,
+mumbai,83,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,84,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,85,0.5274897149244872,0.89208984375,16,144,
+mumbai,86,0.6511283656087297,0.8985890746116638,18,144,
+mumbai,87,0.12237762237762238,0.9260563254356384,2,144,
+mumbai,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,89,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,90,0.5219780219780219,0.949999988079071,4,144,
+mumbai,91,0.530668636918637,0.8630514740943909,8,144,
+mumbai,92,0.3921969696969697,0.7510791420936584,5,144,
+mumbai,93,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,94,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,95,0.3770833333333333,0.9714285731315613,4,144,
+mumbai,96,0.3259680134680135,0.9094650149345398,9,144,
+mumbai,97,0.3786670613961469,0.8296703100204468,14,144,
+mumbai,98,0.46850482800415977,0.8999999761581421,10,144,
+mumbai,99,0.05,0.867132842540741,1,144,
+mumbai,100,0.6907395566922421,0.9494485259056091,8,144,
+mumbai,101,0.47527702221146767,0.8839505910873413,9,144,
+mumbai,102,0.34271339350535446,0.8263888955116272,12,144,
+mumbai,103,0.3186910676032523,0.8602465987205505,13,144,
+mumbai,104,0.3331180515391042,0.8978102207183838,7,144,
+mumbai,105,0.2696078431372549,0.8821428418159485,4,144,
+mumbai,106,0.22478047404155777,0.865484893321991,7,144,
+mumbai,107,0.4049055360075018,0.8304770588874817,17,144,
+mumbai,108,0.40459867602544186,0.83056640625,16,144,
+mumbai,109,0.7058558558558559,0.8961352705955505,6,144,
+mumbai,110,0.7185741652983032,0.9231343269348145,10,144,
+mumbai,111,0.3338961038961039,0.8992805480957031,5,144,
+mumbai,112,0.44262152777777775,0.9034926295280457,8,144,
+mumbai,113,0.5201281544163909,0.8846153616905212,14,144,
+mumbai,114,0.4468118686868687,0.892463207244873,8,144,
+mumbai,115,0.4822222222222222,0.8733813166618347,5,144,
+mumbai,116,0.8200190770428866,0.9669250845909119,15,144,
+mumbai,117,0.7206618981096534,0.92529296875,16,144,
+mumbai,118,0.1872751067244959,0.7430555820465088,12,144,
+mumbai,119,0.524452998402398,0.8304852843284607,11,144,
+mumbai,120,0.24573934837092729,0.8575539588928223,5,144,
+mumbai,121,0.10160523719845754,0.8156028389930725,3,144,
+mumbai,122,1.0,1.0,1,144,
+mumbai,123,0.7589346100759145,0.9776119589805603,10,144,
+mumbai,124,0.5485820835469735,0.9008838534355164,12,144,
+mumbai,125,0.6384056258766555,0.9101585149765015,13,144,
+mumbai,126,0.8428341359050444,0.9684033393859863,25,144,
+mumbai,127,0.6699970882068649,0.9395349025726318,15,144,
+mumbai,128,0.4068374374171371,0.830959141254425,27,144,
+mumbai,129,0.4388843956520386,0.8002673983573914,34,144,
+mumbai,130,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,131,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,132,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,133,0.7325176366843034,0.981893002986908,9,144,
+mumbai,134,0.6219727640780272,0.9227614402770996,11,144,
+mumbai,135,0.6638568076340813,0.9044354557991028,20,144,
+mumbai,136,0.7966677421485896,0.9312499761581421,24,144,
+mumbai,137,0.31003401360544214,0.9051094651222229,7,144,
+mumbai,138,0.6772469088831712,0.9210134148597717,22,144,
+mumbai,139,0.8941079493918392,0.9710590839385986,28,144,
+mumbai,140,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,141,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,142,0.1,0.9370629191398621,1,144,
+mumbai,143,0.1764069264069264,0.9196217656135559,3,144,
+mumbai,144,0.5515873015873016,0.9767857193946838,4,144,
+mumbai,145,0.47913423595814414,0.9074627161026001,10,144,
+mumbai,146,0.25981279965614645,0.7917910218238831,10,144,
+mumbai,147,0.4416854545573081,0.9083969593048096,13,144,
+mumbai,148,0.3860138428333865,0.8762816190719604,11,144,
+mumbai,149,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,150,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,151,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,152,0.022222222222222223,0.692307710647583,1,144,
+mumbai,153,0.06524024024024024,0.7966902852058411,3,144,
+mumbai,154,0.4640151515151515,0.9607142806053162,4,144,
+mumbai,155,0.11309523809523808,0.9190140962600708,2,144,
+mumbai,156,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+mumbai,157,0.49299808925477373,0.9193438291549683,11,144,
+mumbai,158,0.34862139818754967,0.802734375,16,144,
+mumbai,159,0.1283637346602172,0.8154327273368835,7,144,
+aguasclaras,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,2,0.022222222222222223,0.692307710647583,1,144,
+aguasclaras,3,0.1714798107720068,0.7299270033836365,7,144,
+aguasclaras,4,0.27302924519089933,0.805494487285614,14,144,
+aguasclaras,5,0.516597124654258,0.8831473588943481,13,144,
+aguasclaras,6,0.38653846153846155,0.9539568424224854,5,144,
+aguasclaras,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,8,0.02067901234567901,0.51408451795578,2,144,
+aguasclaras,9,0.11398681273038783,0.6535714268684387,4,144,
+aguasclaras,10,0.039773285134109874,0.49172577261924744,3,144,
+aguasclaras,11,0.20673076923076922,0.8803571462631226,4,144,
+aguasclaras,12,0.3677476011089319,0.8653846383094788,14,144,
+aguasclaras,13,0.4906570734230309,0.8883742690086365,17,144,
+aguasclaras,14,0.6004653166461975,0.87841796875,16,144,
+aguasclaras,15,0.3124431364292216,0.7656716704368591,10,144,
+aguasclaras,16,0.07426470588235294,0.6830986142158508,2,144,
+aguasclaras,17,0.125,0.9510489702224731,1,144,
+aguasclaras,18,0.15058664256004395,0.7068014740943909,8,144,
+aguasclaras,19,0.11093995942474469,0.5470149517059326,10,144,
+aguasclaras,20,0.2391746962248266,0.7142118811607361,15,144,
+aguasclaras,21,0.5779428644560223,0.90283203125,16,144,
+aguasclaras,22,0.7331871345029239,0.9734299778938293,6,144,
+aguasclaras,23,0.10605158730158729,0.75,4,144,
+aguasclaras,24,0.058795825865497996,0.6014492511749268,6,144,
+aguasclaras,25,0.08410955189545388,0.5223880410194397,10,144,
+aguasclaras,26,0.10321024303888433,0.6691176295280457,8,144,
+aguasclaras,27,0.04954060948263166,0.675000011920929,4,144,
+aguasclaras,28,0.07119792409970982,0.5776851177215576,7,144,
+aguasclaras,29,0.2251816705188619,0.7058081030845642,12,144,
+aguasclaras,30,0.1901939039413159,0.790123462677002,9,144,
+aguasclaras,31,0.1631248019390694,0.7067164182662964,10,144,
+aguasclaras,32,0.0990339849808674,0.6691176295280457,8,144,
+aguasclaras,33,0.03285752095856228,0.4571428596973419,4,144,
+aguasclaras,34,0.10887739775456608,0.45437702536582947,17,144,
+aguasclaras,35,0.13517022200554926,0.6456043720245361,14,144,
+aguasclaras,36,0.125,0.9510489702224731,1,144,
+aguasclaras,37,0.125,0.9510489702224731,1,144,
+aguasclaras,38,0.018867924528301886,0.6363636255264282,1,144,
+aguasclaras,39,0.11045258620689655,0.716312050819397,3,144,
+aguasclaras,40,0.22537989285557353,0.5601878762245178,13,144,
+aguasclaras,41,0.20792751283418753,0.4848484992980957,12,144,
+aguasclaras,42,0.027104304599028746,0.35178571939468384,4,144,
+aguasclaras,43,0.110456766261963,0.5269230604171753,14,144,
+aguasclaras,44,0.15525562738474583,0.7089646458625793,12,144,
+aguasclaras,45,0.3333333333333333,0.9860140085220337,1,144,
+aguasclaras,46,0.577536231884058,0.8589928150177002,5,144,
+aguasclaras,47,0.43966954482464554,0.6231883764266968,6,144,
+aguasclaras,48,0.33861667344216295,0.7473251223564148,9,144,
+aguasclaras,49,0.3885647986745596,0.8211886286735535,15,144,
+aguasclaras,50,0.24646647734146937,0.7440329194068909,9,144,
+aguasclaras,51,0.012345679012345678,0.440559446811676,1,144,
+aguasclaras,52,0.05398570421826236,0.5309352278709412,5,144,
+aguasclaras,53,0.09411361893808703,0.7035971283912659,5,144,
+aguasclaras,54,0.25,0.9790209531784058,1,144,
+aguasclaras,55,0.6075230016896683,0.9231343269348145,10,144,
+aguasclaras,56,0.4999445828474825,0.7809747457504272,13,144,
+aguasclaras,57,0.4573898371617381,0.7270833253860474,24,144,
+aguasclaras,58,0.4948196483550538,0.7786831855773926,26,144,
+aguasclaras,59,0.32666666666666666,0.9482014179229736,5,144,
+aguasclaras,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,63,0.5,0.9930070042610168,1,144,
+aguasclaras,64,0.8734126984126984,0.9951691031455994,6,144,
+aguasclaras,65,0.7137938553983331,0.875,8,144,
+aguasclaras,66,0.35154734160029333,0.72509765625,16,144,
+aguasclaras,67,0.3704097564770117,0.7633163332939148,17,144,
+aguasclaras,68,0.30103359173126615,0.8959810733795166,3,144,
+aguasclaras,69,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,70,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+aguasclaras,71,0.017543859649122806,0.6083915829658508,1,144,
+abudhabi,0,0.11078431372549019,0.8017857074737549,4,144,
+abudhabi,1,0.21895853000264973,0.7580246925354004,9,144,
+abudhabi,2,0.15389027951606174,0.759661853313446,6,144,
+abudhabi,3,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,4,0.5148034398034398,0.8733813166618347,5,144,
+abudhabi,5,0.5334415584415584,0.89784175157547,5,144,
+abudhabi,6,0.0306851484306708,0.5650117993354797,3,144,
+abudhabi,7,0.17810760372389248,0.7969924807548523,11,144,
+abudhabi,8,0.08093477876315586,0.606584370136261,9,144,
+abudhabi,9,0.02702702702702703,0.748251736164093,1,144,
+abudhabi,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,11,0.6,0.9718309640884399,2,144,
+abudhabi,12,0.6428571428571428,0.9823943376541138,2,144,
+abudhabi,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,17,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,18,0.03123486682808717,0.6795774698257446,2,144,
+abudhabi,19,0.0503496375910169,0.6172661781311035,5,144,
+abudhabi,20,0.039272030651340994,0.6643025875091553,3,144,
+abudhabi,21,0.35394642916089,0.743686854839325,12,144,
+abudhabi,22,0.5051836709276218,0.7353324890136719,26,144,
+abudhabi,23,0.35761718848490426,0.7158203125,16,144,
+abudhabi,24,0.05334281650071124,0.8133803009986877,2,144,
+abudhabi,25,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,26,0.31666666666666665,0.9507042169570923,2,144,
+abudhabi,27,0.6111111111111112,0.9753521084785461,2,144,
+abudhabi,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,29,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,30,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,31,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,32,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,33,0.07996048589214973,0.6482142806053162,4,144,
+abudhabi,34,0.11284248111108279,0.723670482635498,7,144,
+abudhabi,35,0.05427881297446514,0.758865237236023,3,144,
+abudhabi,36,0.2121766381766382,0.829104483127594,10,144,
+abudhabi,37,0.3661830118113447,0.84912109375,16,144,
+abudhabi,38,0.29333544738650175,0.8172839283943176,9,144,
+abudhabi,39,0.058931959880726484,0.7777777910232544,3,144,
+abudhabi,40,0.14251747755420704,0.695035457611084,3,144,
+abudhabi,41,0.20881006864988558,0.7754136919975281,3,144,
+abudhabi,42,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,44,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,48,0.5140845070422535,0.7570422291755676,2,144,
+abudhabi,49,0.14792014441966655,0.6748201251029968,5,144,
+abudhabi,50,0.0955223308568917,0.6507353186607361,8,144,
+abudhabi,51,0.10461940944408048,0.6432836055755615,10,144,
+abudhabi,52,0.1579948404482566,0.8258602619171143,7,144,
+abudhabi,53,0.3559678743905856,0.816417932510376,10,144,
+abudhabi,54,0.16832728746240494,0.7402985095977783,10,144,
+abudhabi,55,0.3002901600280559,0.6992805600166321,5,144,
+abudhabi,56,0.37481884057971016,0.7683215141296387,3,144,
+abudhabi,57,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,58,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,59,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,64,0.053861788617886174,0.6482142806053162,4,144,
+abudhabi,65,0.35194561533342733,0.758420467376709,21,144,
+abudhabi,66,0.22717308430740413,0.6111453175544739,28,144,
+abudhabi,67,0.1284268106586378,0.6212565898895264,13,144,
+abudhabi,68,0.24809751651856915,0.8556985259056091,8,144,
+abudhabi,69,0.20860562684389097,0.7962686419487,10,144,
+abudhabi,70,0.3298315669005324,0.8756038546562195,6,144,
+abudhabi,71,0.45,0.98591548204422,2,144,
+abudhabi,72,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,73,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,74,0.0905503499165471,0.7223021388053894,5,144,
+abudhabi,75,0.39285714285714285,0.9788732528686523,2,144,
+abudhabi,76,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,77,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,78,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,79,0.012048192771084338,0.42657342553138733,1,144,
+abudhabi,80,0.2877642763777555,0.7767441868782043,15,144,
+abudhabi,81,0.22116132660870272,0.6334890127182007,23,144,
+abudhabi,82,0.06335013412329443,0.4707818925380707,9,144,
+abudhabi,83,0.1603592514358917,0.6025263071060181,19,144,
+abudhabi,84,0.36551054783191994,0.7948122620582581,21,144,
+abudhabi,85,0.11795234549516008,0.7827337980270386,5,144,
+abudhabi,86,0.0780831681298971,0.6014388203620911,5,144,
+abudhabi,87,0.018721699756182514,0.4577464759349823,2,144,
+abudhabi,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,89,0.0712762564050358,0.7021582722663879,5,144,
+abudhabi,90,0.20833333333333331,0.9542253613471985,2,144,
+abudhabi,91,0.067816091954023,0.8556337952613831,2,144,
+abudhabi,92,0.10427807486631016,0.9119718074798584,2,144,
+abudhabi,93,0.39285714285714285,0.9788732528686523,2,144,
+abudhabi,94,0.7,0.9894366264343262,2,144,
+abudhabi,95,0.1875,0.8309859037399292,2,144,
+abudhabi,96,0.09091834784582124,0.6446428298950195,4,144,
+abudhabi,97,0.11795267194682076,0.6283581852912903,10,144,
+abudhabi,98,0.2554814601845248,0.6299260854721069,28,144,
+abudhabi,99,0.27787010305569415,0.737500011920929,20,144,
+abudhabi,100,0.011904761904761904,0.4195804297924042,1,144,
+abudhabi,101,0.5015601750303236,0.7608047723770142,22,144,
+abudhabi,102,0.6249947233807547,0.7985596656799316,54,144,
+abudhabi,103,0.5327352445457572,0.7974221110343933,49,144,
+abudhabi,104,0.20575870941942753,0.6989346742630005,17,144,
+abudhabi,105,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,106,0.061148999220925634,0.6002415418624878,6,144,
+abudhabi,107,0.14112187145701782,0.6652763485908508,7,144,
+abudhabi,108,0.337037037037037,0.9338061213493347,3,144,
+abudhabi,109,0.11011904761904762,0.908450722694397,2,144,
+abudhabi,110,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,111,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,112,0.1206119509149812,0.6267942786216736,11,144,
+abudhabi,113,0.15435315184879644,0.6616161465644836,12,144,
+abudhabi,114,0.012987012987012988,0.46853145956993103,1,144,
+abudhabi,115,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,116,0.7400106483954716,0.8796572089195251,22,144,
+abudhabi,117,0.922536365749826,0.9171814918518066,70,144,
+abudhabi,118,0.9450514326357685,0.9230920672416687,82,144,
+abudhabi,119,0.5988769773018451,0.731249988079071,40,144,
+abudhabi,120,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,121,0.0280600118835413,0.4000000059604645,4,144,
+abudhabi,122,0.06795676764948055,0.5237410068511963,5,144,
+abudhabi,123,0.25,0.9790209531784058,1,144,
+abudhabi,124,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,125,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,126,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,127,0.023870917330832943,0.4444444477558136,3,144,
+abudhabi,128,0.10516146339105654,0.38947367668151855,19,144,
+abudhabi,129,0.15840322393917936,0.5048611164093018,24,144,
+abudhabi,130,0.052034637838016415,0.4273897111415863,8,144,
+abudhabi,131,0.15745290745290744,0.8037825226783752,3,144,
+abudhabi,132,0.8519012910698648,0.9365079402923584,18,144,
+abudhabi,133,0.8191342160477756,0.9009009003639221,33,144,
+abudhabi,134,0.7190490819065964,0.8200534582138062,34,144,
+abudhabi,135,0.625,0.9788732528686523,2,144,
+abudhabi,136,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,137,0.5888888888888888,0.8660714030265808,4,144,
+abudhabi,138,0.43766788766788767,0.7971014380455017,6,144,
+abudhabi,139,0.17676767676767677,0.6514084339141846,2,144,
+abudhabi,140,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,141,0.037037037037037035,0.8181818127632141,1,144,
+abudhabi,142,0.05263157894736842,0.8741258978843689,1,144,
+abudhabi,143,0.2964710705306125,0.6410083770751953,25,144,
+abudhabi,144,0.5578711299937409,0.6953014731407166,57,144,
+abudhabi,145,0.19662808801148157,0.4709821343421936,32,144,
+abudhabi,146,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,147,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,148,0.5833333333333334,0.9647887349128723,2,144,
+abudhabi,149,0.6766133739852762,0.8860833644866943,13,144,
+abudhabi,150,0.44172932330827064,0.8156028389930725,3,144,
+abudhabi,151,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,152,0.5517857142857142,0.8517857193946838,4,144,
+abudhabi,153,0.38067332309267793,0.7657004594802856,6,144,
+abudhabi,154,0.17719298245614035,0.6654929518699646,2,144,
+abudhabi,155,0.02694958959102622,0.38749998807907104,4,144,
+abudhabi,156,0.038183275495981626,0.46043166518211365,5,144,
+abudhabi,157,0.058823529411764705,0.8881118893623352,1,144,
+abudhabi,158,0.33674136321195147,0.8740741014480591,9,144,
+abudhabi,159,0.640836300094533,0.8296108841896057,43,144,
+abudhabi,160,0.3656715108153095,0.6153504848480225,46,144,
+abudhabi,161,0.06093786069670637,0.30618685483932495,12,144,
+abudhabi,162,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,163,0.367816091954023,0.9314420819282532,3,144,
+abudhabi,164,0.5329710144927536,0.8232142925262451,4,144,
+abudhabi,165,0.06557620370718817,0.4425373077392578,10,144,
+abudhabi,166,0.0401489572785943,0.42446044087409973,5,144,
+abudhabi,167,0.01694915254237288,0.5944055914878845,1,144,
+abudhabi,168,0.017543859649122806,0.6083915829658508,1,144,
+abudhabi,169,0.029491068419278732,0.43026003241539,3,144,
+abudhabi,170,0.0428114215335985,0.3806048035621643,7,144,
+abudhabi,171,0.10200213812983028,0.5553956627845764,5,144,
+abudhabi,172,1.0,1.0,1,144,
+abudhabi,173,0.06271585557299843,0.7895981073379517,3,144,
+abudhabi,174,0.2262608981695579,0.8261891007423401,13,144,
+abudhabi,175,0.49792286190959667,0.7536740303039551,47,144,
+abudhabi,176,0.36344411114356145,0.605681836605072,44,144,
+abudhabi,177,0.03647255015471088,0.2752867639064789,7,144,
+abudhabi,178,0.5,0.9930070042610168,1,144,
+abudhabi,179,0.28466690374585113,0.6428571343421936,4,144,
+abudhabi,180,0.22575227935035044,0.5737814903259277,25,144,
+abudhabi,181,0.16172389191482422,0.6098191142082214,15,144,
+abudhabi,182,0.023512652924417628,0.4349881708621979,3,144,
+abudhabi,183,0.01882002801120448,0.4225352108478546,2,144,
+abudhabi,184,0.04146841308028156,0.5366430282592773,3,144,
+abudhabi,185,0.045561150324446645,0.5697399377822876,3,144,
+abudhabi,186,0.5,0.9930070042610168,1,144,
+abudhabi,187,1.0,1.0,1,144,
+abudhabi,188,0.040418679549114336,0.6713948249816895,3,144,
+abudhabi,189,0.05432320971168089,0.6857143044471741,4,144,
+abudhabi,190,0.5163676683758586,0.7580246925354004,45,144,
+abudhabi,191,0.5631082159671108,0.7126436829566956,57,144,
+abudhabi,192,0.07983734128184689,0.4398120939731598,13,144,
+abudhabi,193,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,194,0.02175925925925926,0.48943662643432617,2,144,
+abudhabi,195,0.5816557733818893,0.8595380187034607,22,144,
+abudhabi,196,0.2332886002886003,0.8664178848266602,10,144,
+abudhabi,197,0.02728937728937729,0.6338028311729431,2,144,
+abudhabi,198,0.009900990099009901,0.30069929361343384,1,144,
+abudhabi,199,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,200,0.0240662286895479,0.44680851697921753,3,144,
+abudhabi,201,0.028006671768018524,0.40714284777641296,4,144,
+abudhabi,202,0.009259259259259259,0.251748263835907,1,144,
+abudhabi,203,0.416993006993007,0.9438849091529846,5,144,
+abudhabi,204,0.5316429454243692,0.9116278886795044,15,144,
+abudhabi,205,0.4786260363767266,0.7659149169921875,31,144,
+abudhabi,206,0.2227584400926004,0.6039885878562927,27,144,
+abudhabi,207,0.047014718338247746,0.5072463750839233,6,144,
+abudhabi,208,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,209,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,210,0.6657973771149458,0.8930555582046509,24,144,
+abudhabi,211,0.03888888888888889,0.7429577708244324,2,144,
+abudhabi,212,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,213,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,214,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,215,0.2855244348153307,0.5839415788650513,7,144,
+abudhabi,216,0.6267929639592511,0.7896825671195984,18,144,
+abudhabi,217,0.7452184015728094,0.9245063662528992,21,144,
+abudhabi,218,0.6498475100639229,0.8990298509597778,23,144,
+abudhabi,219,0.6359288224005372,0.9080129265785217,23,144,
+abudhabi,220,0.3729095505040012,0.8800504803657532,12,144,
+abudhabi,221,0.028629032258064516,0.6514084339141846,2,144,
+abudhabi,222,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,223,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+abudhabi,224,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,1,0.25,0.9790209531784058,1,144,
+nantes,2,0.1671952078928823,0.8770685791969299,3,144,
+nantes,3,0.09698275862068965,0.8802816867828369,2,144,
+nantes,4,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,5,1.0,1.0,1,144,
+nantes,6,0.7161542297571709,0.96728515625,16,144,
+nantes,7,0.6448720062187555,0.950904369354248,15,144,
+nantes,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,11,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,12,0.2,0.9720279574394226,1,144,
+nantes,13,0.12811420258228767,0.8581560254096985,3,144,
+nantes,14,0.19166666666666665,0.9267139434814453,3,144,
+nantes,15,0.2,0.9720279574394226,1,144,
+nantes,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,17,0.8889584774200159,0.9829712510108948,13,144,
+nantes,18,0.7945402861678659,0.9677040576934814,13,144,
+nantes,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,20,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,21,0.28013333860189843,0.8805146813392639,8,144,
+nantes,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,23,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,24,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,25,0.2,0.9720279574394226,1,144,
+nantes,26,0.25,0.9790209531784058,1,144,
+nantes,27,1.0,1.0,1,144,
+nantes,28,0.6978335991493886,0.9734299778938293,6,144,
+nantes,29,0.43212121212121213,0.9568345546722412,5,144,
+nantes,30,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,31,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,32,0.4593299229506126,0.8988970518112183,8,144,
+nantes,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,34,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,35,0.9166666666666666,0.9976359605789185,3,144,
+nantes,36,0.9166666666666666,0.9976359605789185,3,144,
+nantes,37,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,38,0.5833333333333333,0.9929577708244324,2,144,
+nantes,39,0.6218563182848897,0.956204354763031,7,144,
+nantes,40,0.42083333333333334,0.9223021864891052,5,144,
+nantes,41,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,42,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,44,0.44967320261437904,0.9446428418159485,4,144,
+nantes,45,0.5998418972332016,0.9453237652778625,5,144,
+nantes,46,0.6729723707664884,0.9487354755401611,11,144,
+nantes,47,0.6838380443086325,0.9604477882385254,10,144,
+nantes,48,0.3269230769230769,0.9577465057373047,2,144,
+nantes,49,0.24317523056653495,0.9179856181144714,5,144,
+nantes,50,0.13037037037037036,0.8794326186180115,3,144,
+nantes,51,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,52,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,53,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,55,0.45358309990662926,0.945652186870575,6,144,
+nantes,56,0.6987806637806637,0.9425837397575378,11,144,
+nantes,57,0.8450389279336648,0.9669312238693237,18,144,
+nantes,58,0.8413167509588837,0.9769230484962463,14,144,
+nantes,59,0.3888888888888889,0.9739952683448792,3,144,
+nantes,60,0.20049019607843138,0.9303571581840515,4,144,
+nantes,61,0.09109311740890688,0.8978873491287231,2,144,
+nantes,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,64,0.08333333333333333,0.9230769276618958,1,144,
+nantes,65,0.06666666666666667,0.9020978808403015,1,144,
+nantes,66,0.39868131868131873,0.9625899195671082,5,144,
+nantes,67,0.6158113061443863,0.9153684377670288,19,144,
+nantes,68,0.8322872350350798,0.9564515948295593,20,144,
+nantes,69,0.6679138321995465,0.9874869585037231,7,144,
+nantes,70,0.550952380952381,0.9798561334609985,5,144,
+nantes,71,0.7784090909090909,0.9857142567634583,4,144,
+nantes,72,0.17692307692307693,0.9471830725669861,2,144,
+nantes,73,0.25,0.9577465057373047,2,144,
+nantes,74,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,75,0.16666666666666666,0.9650349617004395,1,144,
+nantes,76,0.2,0.9720279574394226,1,144,
+nantes,77,0.625,0.9834515452384949,3,144,
+nantes,78,0.5107351618113224,0.9069013595581055,17,144,
+nantes,79,0.413651469172452,0.8934065699577332,14,144,
+nantes,80,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,81,0.3619047619047619,0.9660714268684387,4,144,
+nantes,82,0.5102564102564102,0.9755395650863647,5,144,
+nantes,83,0.3333333333333333,0.9527186751365662,3,144,
+nantes,84,0.25,0.9577465057373047,2,144,
+nantes,85,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,86,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,87,0.03746498599439776,0.7323943376541138,2,144,
+nantes,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,89,0.59375,0.9750000238418579,4,144,
+nantes,90,0.2839285714285714,0.9553571343421936,4,144,
+nantes,91,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,92,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,93,0.3333333333333333,0.9860140085220337,1,144,
+nantes,94,1.0,1.0,1,144,
+nantes,95,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,96,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+nantes,97,1.0,1.0,1,144,
+nantes,98,0.5346027846027845,0.9093525409698486,5,144,
+rennes,0,0.42806683986873545,0.8846568465232849,23,144,
+rennes,1,0.7561308049719069,0.9554437398910522,23,144,
+rennes,2,0.4629629629629629,0.8699763417243958,3,144,
+rennes,3,0.2326998491704374,0.9093525409698486,5,144,
+rennes,4,0.8686698502533505,0.9527559280395508,17,144,
+rennes,5,0.7860957911666169,0.9248935580253601,21,144,
+rennes,6,0.34784800741290145,0.8749266266822815,13,144,
+rennes,7,0.31232753116918704,0.9059701561927795,10,144,
+rennes,8,0.5425503663003663,0.9529850482940674,10,144,
+rennes,9,0.7526117982760985,0.9254284501075745,17,144,
+rennes,10,0.4127622832446932,0.9074074029922485,18,144,
+rennes,11,0.6837890451300912,0.9616842269897461,19,144,
+rennes,12,0.18992248062015504,0.8485915660858154,2,144,
+rennes,13,0.3155448717948718,0.9428571462631226,4,144,
+rennes,14,0.3519887955182073,0.9136690497398376,5,144,
+rennes,15,0.33325443054276005,0.8858209252357483,10,144,
+rennes,16,0.39557312901850716,0.8890109658241272,14,144,
+rennes,17,0.3946938826069261,0.9313432574272156,10,144,
+rennes,18,0.676969696969697,0.9588477611541748,9,144,
+rennes,19,0.6178423737916219,0.9231343269348145,10,144,
+rennes,20,0.7928571428571428,0.9910714030265808,4,144,
+rennes,21,0.5178571428571428,0.9839285612106323,4,144,
+rennes,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+rennes,23,0.5,0.9930070042610168,1,144,
+rennes,24,0.24285714285714285,0.9683098793029785,2,144,
+rennes,25,0.27557530189109136,0.9464285969734192,4,144,
+rennes,26,0.59270925761609,0.9374348521232605,7,144,
+rennes,27,0.6499999999999999,0.9696428775787354,4,144,
+rennes,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+rennes,29,0.11688311688311688,0.922535240650177,2,144,
+rennes,30,1.0,1.0,1,144,
+rennes,31,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+rennes,32,1.0,1.0,1,144,
+rennes,33,0.3333333333333333,0.9860140085220337,1,144,
+rennes,34,0.09090909090909091,0.9300699234008789,1,144,
+rennes,35,0.5610217395914137,0.9175484776496887,18,144,
+rennes,36,0.8374378033709446,0.9383370280265808,32,144,
+rennes,37,0.76329270567407,0.944418728351593,17,144,
+rennes,38,0.049516908212560384,0.8028169274330139,2,144,
+rennes,39,0.5795187165775402,0.9316473007202148,11,144,
+rennes,40,0.46249999999999997,0.9503546357154846,3,144,
+rennes,41,0.6760149572649572,0.9544776082038879,10,144,
+rennes,42,0.7096991419572065,0.9514403343200684,9,144,
+rennes,43,0.3333333333333333,0.9860140085220337,1,144,
+rennes,44,0.08333333333333333,0.9230769276618958,1,144,
+rennes,45,0.5405944448697083,0.9038800597190857,18,144,
+rennes,46,0.8550152855549602,0.9487256407737732,29,144,
+rennes,47,0.7955569278423504,0.9602067470550537,15,144,
+rennes,48,0.08933080808080808,0.8581560254096985,3,144,
+rennes,49,0.7057095481008524,0.9736625552177429,9,144,
+rennes,50,0.4923011628893982,0.9697601795196533,7,144,
+rennes,51,0.777276371287454,0.9581395387649536,15,144,
+rennes,52,0.6304684597853478,0.9465020298957825,9,144,
+rennes,53,0.06666666666666667,0.9020978808403015,1,144,
+rennes,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+rennes,55,0.2627450980392157,0.9054373502731323,3,144,
+rennes,56,0.3924603174603175,0.9214285612106323,4,144,
+rennes,57,0.7291666666666666,0.9692671298980713,3,144,
+rennes,58,0.6787301587301587,0.9856114983558655,5,144,
+rennes,59,0.12836850649350648,0.8785714507102966,4,144,
+bercy,0,1.0,1.0,1,144,
+bercy,1,1.0,1.0,1,144,
+bercy,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,3,0.3333333333333333,0.9860140085220337,1,144,
+bercy,4,1.0,1.0,1,144,
+bercy,5,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,6,0.1466861598440546,0.8723404407501221,3,144,
+bercy,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,11,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,12,0.19687592101385204,0.9078013896942139,3,144,
+bercy,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,17,0.058849557522123896,0.577464759349823,2,144,
+bercy,18,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,20,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,21,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,23,0.058751208730487635,0.6004728078842163,3,144,
+bercy,24,0.09142857142857143,0.8098591566085815,2,144,
+bercy,25,0.052477874997603195,0.5046923756599426,7,144,
+bercy,26,0.053523093316729435,0.5664251446723938,6,144,
+bercy,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,29,0.039351851851851846,0.73591548204422,2,144,
+bercy,30,0.14224137931034483,0.7922534942626953,2,144,
+bercy,31,0.17997636900909053,0.5263736248016357,14,144,
+bercy,32,0.242689631268171,0.6605989336967468,13,144,
+bercy,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,34,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,35,0.041666666666666664,0.8391608595848083,1,144,
+bercy,36,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,37,0.20038999586037912,0.78206467628479,7,144,
+bercy,38,0.43074795574795577,0.8748696446418762,7,144,
+bercy,39,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bercy,40,0.41666666666666663,0.9823943376541138,2,144,
+bercy,41,0.41666666666666663,0.98591548204422,2,144,
+bordeaux,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,3,0.09761904761904762,0.9014084339141846,2,144,
+bordeaux,4,0.11371610845295055,0.8392857313156128,4,144,
+bordeaux,5,0.14814814814814814,0.9078013896942139,3,144,
+bordeaux,6,0.12698412698412698,0.9295774698257446,2,144,
+bordeaux,7,0.06631578947368422,0.8556337952613831,2,144,
+bordeaux,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,10,0.3333333333333333,0.9860140085220337,1,144,
+bordeaux,11,0.16666666666666666,0.9650349617004395,1,144,
+bordeaux,12,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,14,0.08333333333333333,0.9230769276618958,1,144,
+bordeaux,15,0.04070426941479573,0.5021582841873169,5,144,
+bordeaux,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,17,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,18,0.25,0.9790209531784058,1,144,
+bordeaux,19,0.3333333333333333,0.9860140085220337,1,144,
+bordeaux,20,0.03329617242660721,0.5106382966041565,3,144,
+bordeaux,21,0.027672691607117834,0.4893617033958435,3,144,
+bordeaux,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,23,0.037148659600857586,0.29822731018066406,7,144,
+bordeaux,24,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,25,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,27,0.041666666666666664,0.8391608595848083,1,144,
+bordeaux,28,0.31421073136243416,0.7694029808044434,10,144,
+bordeaux,29,0.24917361101133784,0.6584362387657166,9,144,
+bordeaux,30,0.013525780682643427,0.246478870511055,2,144,
+bordeaux,31,0.06854062233100072,0.5683003067970276,7,144,
+bordeaux,32,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,34,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,35,0.03571428571428571,0.811188817024231,1,144,
+bordeaux,36,0.4132751751172804,0.9353493452072144,7,144,
+bordeaux,37,0.290525282554268,0.8514492511749268,6,144,
+bordeaux,38,0.013574660633484163,0.2535211145877838,2,144,
+bordeaux,39,0.03859009642465726,0.5428571701049805,4,144,
+bordeaux,40,0.01937062937062937,0.3120567500591278,3,144,
+bordeaux,41,0.16666666666666666,0.9650349617004395,1,144,
+bordeaux,42,0.125,0.9510489702224731,1,144,
+bordeaux,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,44,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,48,0.02401337247227658,0.43026003241539,3,144,
+bordeaux,49,0.07142857142857142,0.9090909361839294,1,144,
+bordeaux,50,0.0696078431372549,0.7957746386528015,2,144,
+bordeaux,51,0.022727272727272728,0.6993007063865662,1,144,
+bordeaux,52,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,53,0.3333333333333333,0.9860140085220337,1,144,
+bordeaux,54,0.6746031746031746,0.9798561334609985,5,144,
+bordeaux,55,0.1411064425770308,0.8642857074737549,4,144,
+bordeaux,56,0.18253968253968253,0.9542253613471985,2,144,
+bordeaux,57,0.09583333333333333,0.9014084339141846,2,144,
+bordeaux,58,0.01818181818181818,0.6223776340484619,1,144,
+bordeaux,59,0.02040816326530612,0.6643356680870056,1,144,
+bordeaux,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,61,0.125,0.9510489702224731,1,144,
+bordeaux,62,0.4857142857142857,0.9769784212112427,5,144,
+bordeaux,63,0.572206770502225,0.8786764740943909,8,144,
+bordeaux,64,0.8333333333333333,0.9964788556098938,2,144,
+bordeaux,65,1.0,1.0,2,144,
+bordeaux,66,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,67,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,68,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,69,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+bordeaux,70,0.2,0.9577465057373047,2,144,
+bordeaux,71,0.45034172177029325,0.8727841377258301,7,144,
+hongkong,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,3,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,4,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,5,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,7,0.7198412698412698,0.9755395650863647,5,144,
+hongkong,8,0.6805555555555555,0.9190821051597595,6,144,
+hongkong,9,0.058823529411764705,0.8881118893623352,1,144,
+hongkong,10,0.7819940476190477,0.9779411554336548,8,144,
+hongkong,11,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,12,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,17,0.9166666666666666,0.9976359605789185,3,144,
+hongkong,18,1.0,1.0,3,144,
+hongkong,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,20,0.7109532528184481,0.8771929740905762,30,144,
+hongkong,21,0.3274580915313181,0.8696559071540833,7,144,
+hongkong,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,23,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,24,0.09434597660404112,0.8374999761581421,4,144,
+hongkong,25,0.07491702228544334,0.7839285731315613,4,144,
+hongkong,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,29,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,30,0.7628730419312839,0.8769006133079529,30,144,
+hongkong,31,0.6839466245959982,0.9069767594337463,15,144,
+hongkong,32,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,34,0.057757956065392246,0.7232142686843872,4,144,
+hongkong,35,0.041745950470306645,0.6071428656578064,4,144,
+hongkong,36,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,37,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,38,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,39,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,40,0.8544337606837606,0.9797794222831726,8,144,
+hongkong,41,0.7015381083562902,0.924128532409668,11,144,
+hongkong,42,0.14876847290640394,0.9054373502731323,3,144,
+hongkong,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,44,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,45,0.038461538461538464,0.8251748085021973,1,144,
+hongkong,46,0.02857142857142857,0.7622377872467041,1,144,
+hongkong,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,48,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,49,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,50,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,51,0.05375136165577342,0.7399527430534363,3,144,
+hongkong,52,0.12948028673835127,0.8936170339584351,3,144,
+hongkong,53,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,55,0.07767232767232768,0.7839285731315613,4,144,
+hongkong,56,0.034174314689020574,0.5142857432365417,4,144,
+hongkong,57,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,58,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,59,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,64,0.03225806451612903,0.7902097702026367,1,144,
+hongkong,65,0.03429576727955523,0.5232142806053162,4,144,
+hongkong,66,0.01990951747556699,0.32151299715042114,3,144,
+hongkong,67,0.3169624060150375,0.7942445874214172,5,144,
+hongkong,68,0.5312850729517395,0.8538647294044495,6,144,
+hongkong,69,0.2004517011436057,0.7729779481887817,8,144,
+hongkong,70,0.8116931168930716,0.9146445989608765,31,144,
+hongkong,71,0.5504056661843547,0.8400546908378601,11,144,
+hongkong,72,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,73,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,74,0.09207596648634384,0.8035714030265808,4,144,
+hongkong,75,0.4363892862964845,0.770860493183136,26,144,
+hongkong,76,0.4530900341818014,0.7030144333839417,35,144,
+hongkong,77,0.4425338967020622,0.7335379719734192,32,144,
+hongkong,78,0.6062595617678079,0.8392361402511597,24,144,
+hongkong,79,0.19979554257967486,0.7140151262283325,12,144,
+hongkong,80,0.7502257351646022,0.8252360224723816,43,144,
+hongkong,81,0.3911569932571732,0.6533203125,16,144,
+hongkong,82,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,83,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,84,0.5857015832602455,0.8401098847389221,14,144,
+hongkong,85,0.6315726157552108,0.6904264092445374,52,144,
+hongkong,86,0.7071071334388672,0.8058190941810608,51,144,
+hongkong,87,0.8613123447390943,0.9147153496742249,49,144,
+hongkong,88,0.6383928506568601,0.8297872543334961,50,144,
+hongkong,89,0.2460170236681945,0.8137362599372864,14,144,
+hongkong,90,0.24732993482860838,0.6152777671813965,24,144,
+hongkong,91,0.03741153562944348,0.29927006363868713,7,144,
+hongkong,92,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,93,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,94,0.6032809497944939,0.8379330635070801,13,144,
+hongkong,95,0.5470002143807184,0.7983956933021545,34,144,
+hongkong,96,0.6651974408781959,0.9458823800086975,25,144,
+hongkong,97,0.8687184325132125,0.9438787698745728,41,144,
+hongkong,98,0.5732145328675513,0.6611841917037964,68,144,
+hongkong,99,0.3029452881961604,0.6925492286682129,31,144,
+hongkong,100,0.22744948257744677,0.7827697992324829,17,144,
+hongkong,101,0.06556064912571377,0.5881125926971436,7,144,
+hongkong,102,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,103,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,104,0.052179745137491615,0.7257683277130127,3,144,
+hongkong,105,0.3321962104919734,0.9227941036224365,8,144,
+hongkong,106,0.7838945005611673,0.988477349281311,9,144,
+hongkong,107,0.8635520190164153,0.980210542678833,19,144,
+hongkong,108,0.5476078054070893,0.8413604497909546,38,144,
+hongkong,109,0.3603478950340344,0.7754622101783752,25,144,
+hongkong,110,0.145923607186161,0.8185610175132751,7,144,
+hongkong,111,0.14077235060690943,0.7729779481887817,8,144,
+hongkong,112,0.022727272727272728,0.6993007063865662,1,144,
+hongkong,113,0.02564102564102564,0.7342657446861267,1,144,
+hongkong,114,0.5653634085213033,0.930935263633728,5,144,
+hongkong,115,0.632326751838947,0.9492753744125366,6,144,
+hongkong,116,0.5,0.9894366264343262,2,144,
+hongkong,117,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+hongkong,118,0.8346438245269786,0.9703566431999207,17,144,
+hongkong,119,0.7897111854040287,0.9396423101425171,22,144,
+hongkong,120,0.09798227371756783,0.7125604152679443,6,144,
+hongkong,121,0.032579765913099246,0.5910165309906006,3,144,
+hongkong,122,0.03225806451612903,0.7902097702026367,1,144,
+hongkong,123,0.125,0.9510489702224731,1,144,
+hongkong,124,0.7783333333333333,0.9899280667304993,5,144,
+hongkong,125,0.6897731353613706,0.9712918400764465,11,144,
+hongkong,126,0.6126394665610352,0.970370352268219,9,144,
+hongkong,127,0.11781609195402298,0.8873239159584045,2,144,
+hongkong,128,0.8723608368447435,0.9610931277275085,17,144,
+hongkong,129,0.7973877907259397,0.9191505312919617,22,144,
+pisa,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,3,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,4,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,5,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,11,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,12,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,17,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,18,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,20,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,21,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,23,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,24,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,25,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,28,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,29,0.018533666744282577,0.2813238799571991,3,144,
+pisa,30,0.023029715762273903,0.4066193997859955,3,144,
+pisa,31,0.03351351351351352,0.6619718074798584,2,144,
+pisa,32,0.030365296803652967,0.6478873491287231,2,144,
+pisa,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,34,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,35,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,36,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,37,0.11507936507936509,0.8888888955116272,3,144,
+pisa,38,0.03709273182957394,0.6477541327476501,3,144,
+pisa,39,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,40,0.04356530419578297,0.05399863421916962,11,144,
+pisa,41,0.05838751609422696,0.045478034764528275,15,144,
+pisa,42,0.04340181192384131,0.2867647111415863,8,144,
+pisa,43,0.04544641170278805,0.533812940120697,5,144,
+pisa,44,0.03228628800917957,0.5910165309906006,3,144,
+pisa,45,0.02454819277108434,0.577464759349823,2,144,
+pisa,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,48,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,49,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,50,0.1273015873015873,0.8912529349327087,3,144,
+pisa,51,0.042007080610021785,0.6903073191642761,3,144,
+pisa,52,0.010526315789473684,0.3426573574542999,1,144,
+pisa,53,0.048531444752972094,0.09974747151136398,12,144,
+pisa,54,0.11503915242948914,0.06806596368551254,29,144,
+pisa,55,0.08554752893222321,0.11614401638507843,21,144,
+pisa,56,0.07963314872438335,0.29248046875,16,144,
+pisa,57,0.06344367898469591,0.2701115608215332,13,144,
+pisa,58,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,59,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,64,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,65,0.013395012067578439,0.22535210847854614,2,144,
+pisa,66,0.020007209805335255,0.48591548204421997,2,144,
+pisa,67,0.07262493990505635,0.17183881998062134,17,144,
+pisa,68,0.08662353764240868,0.2269473671913147,19,144,
+pisa,69,0.07229365648775504,0.3142857253551483,14,144,
+pisa,70,0.061715363466230536,0.28093433380126953,12,144,
+pisa,71,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,72,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,73,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,74,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,75,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,76,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,77,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,78,0.014084507042253521,0.5104895234107971,1,144,
+pisa,79,0.027777777777777776,0.7552447319030762,1,144,
+pisa,80,0.053841991341991344,0.7399527430534363,3,144,
+pisa,81,0.06513098464317976,0.7966902852058411,3,144,
+pisa,82,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,83,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,84,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,85,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,86,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,87,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,89,0.17669398405194553,0.6359712481498718,5,144,
+pisa,90,0.12360369719582402,0.5827338099479675,5,144,
+pisa,91,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,92,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,93,0.1103641456582633,0.862500011920929,4,144,
+pisa,94,0.18970675263506384,0.7629629373550415,9,144,
+pisa,95,0.3702564102564102,0.7410072088241577,5,144,
+pisa,96,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,97,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,98,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,99,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,100,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,101,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,102,0.38543450812472546,0.7454044222831726,8,144,
+pisa,103,0.26151131849232323,0.7662947773933411,13,144,
+pisa,104,0.08507843057779217,0.6489208340644836,5,144,
+pisa,105,0.1006441834028041,0.7186761498451233,3,144,
+pisa,106,0.20180223285486446,0.9165467619895935,5,144,
+pisa,107,0.48940950117420706,0.8395061492919922,9,144,
+pisa,108,0.4181316483296681,0.7016907930374146,6,144,
+pisa,109,0.008849557522123894,0.21678321063518524,1,144,
+pisa,110,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,111,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,112,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,113,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,114,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,115,0.21766381766381768,0.9503546357154846,3,144,
+pisa,116,0.29135217889914405,0.8555490374565125,13,144,
+pisa,117,0.08269431717707582,0.730935275554657,5,144,
+pisa,118,0.0971960661226198,0.7966902852058411,3,144,
+pisa,119,0.05263157894736842,0.8741258978843689,1,144,
+pisa,120,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,121,0.03566644750171307,0.2419186681509018,7,144,
+pisa,122,0.031001668471784073,0.11053180694580078,7,144,
+pisa,123,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,124,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,125,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,126,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,127,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,128,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,129,0.20846053489889105,0.8489208817481995,5,144,
+pisa,130,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,131,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,132,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,133,0.25926705327710853,0.82080078125,16,144,
+pisa,134,0.4909201624731369,0.7242690324783325,30,144,
+pisa,135,0.15182010945547905,0.4368131756782532,14,144,
+pisa,136,0.10441729323308271,0.8482142686843872,4,144,
+pisa,137,0.20999604571036082,0.6944444179534912,12,144,
+pisa,138,0.22745845267931736,0.6875,8,144,
+pisa,139,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,140,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,141,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,142,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,143,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,144,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,145,0.010869565217391304,0.3636363744735718,1,144,
+pisa,146,0.34514654606601197,0.8166666626930237,24,144,
+pisa,147,0.5919696198100873,0.8261489868164062,31,144,
+pisa,148,0.28590627467396335,0.7849264740943909,8,144,
+pisa,149,0.32291666666666663,0.9642857313156128,4,144,
+pisa,150,0.3991829896935895,0.7949473857879639,19,144,
+pisa,151,0.21784136760802075,0.6175710558891296,15,144,
+pisa,152,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,153,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,154,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,155,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,156,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,157,0.0070921985815602835,0.02097902074456215,1,144,
+pisa,158,0.07539924906215822,0.34945055842399597,14,144,
+pisa,159,0.3420179347430995,0.7879032492637634,20,144,
+pisa,160,0.6386904761904761,0.9040667414665222,7,144,
+pisa,161,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,162,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,163,0.4670116465974783,0.8513413071632385,22,144,
+pisa,164,0.5152797258272263,0.7848761677742004,26,144,
+pisa,165,0.15261711972238287,0.8589285612106323,4,144,
+pisa,166,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,167,0.012048192771084338,0.42657342553138733,1,144,
+pisa,168,0.024208347977105193,0.166906476020813,5,144,
+pisa,169,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,170,0.03145741161008336,0.5106382966041565,3,144,
+pisa,171,0.24897407503009103,0.5865546464920044,25,144,
+pisa,172,0.6238367839030994,0.8599106073379517,22,144,
+pisa,173,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,174,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,175,0.06117429058720881,0.5628019571304321,6,144,
+pisa,176,0.22248017549022905,0.6147515177726746,27,144,
+pisa,177,0.32660508856780635,0.7778151035308838,25,144,
+pisa,178,0.10945071010860485,0.8321428298950195,4,144,
+pisa,179,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,180,0.015625,0.559440553188324,1,144,
+pisa,181,0.04235036525067015,0.4299516975879669,6,144,
+pisa,182,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,183,0.03111111111111111,0.6760563254356384,2,144,
+pisa,184,0.1899469747320656,0.7904040217399597,12,144,
+pisa,185,0.8368208399787347,0.970895528793335,10,144,
+pisa,186,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,187,0.18087548416495786,0.7769784331321716,5,144,
+pisa,188,0.10087546555807586,0.5577580332756042,11,144,
+pisa,189,0.1250802947627765,0.6319444179534912,12,144,
+pisa,190,0.21284758504586088,0.9009661674499512,6,144,
+pisa,191,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,192,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,193,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+pisa,194,0.2520378151260504,0.8462686538696289,10,144,
+saclay_e,0,0.1111111111111111,0.9440559148788452,1,144,
+saclay_e,1,0.23350734233087173,0.8272947072982788,6,144,
+saclay_e,2,0.15063393778564058,0.7814009785652161,6,144,
+saclay_e,3,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,4,0.015151515151515152,0.5454545617103577,1,144,
+saclay_e,5,0.014925373134328358,0.5384615659713745,1,144,
+saclay_e,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,11,0.02040816326530612,0.6643356680870056,1,144,
+saclay_e,12,0.08938967136150235,0.6572104096412659,3,144,
+saclay_e,13,0.041666666666666664,0.8391608595848083,1,144,
+saclay_e,14,0.08570623418449505,0.6751207709312439,6,144,
+saclay_e,15,0.07744016662868718,0.6533816456794739,6,144,
+saclay_e,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,17,0.07417199098989784,0.6835748553276062,6,144,
+saclay_e,18,0.05814934464351778,0.6111111044883728,6,144,
+saclay_e,19,0.11174686140676238,0.8014388680458069,5,144,
+saclay_e,20,0.10802550737620453,0.5813432931900024,10,144,
+saclay_e,21,0.15724831284260363,0.5802469253540039,9,144,
+saclay_e,22,0.30341880341880345,0.8892857432365417,4,144,
+saclay_e,23,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,24,0.022222222222222223,0.692307710647583,1,144,
+saclay_e,25,0.01772946154968627,0.4260563254356384,2,144,
+saclay_e,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,28,0.04194078947368421,0.76408451795578,2,144,
+saclay_e,29,0.06620553359683795,0.8521126508712769,2,144,
+saclay_e,30,0.07547980683776563,0.7366906404495239,5,144,
+saclay_e,31,0.07807942796058245,0.7453237175941467,5,144,
+saclay_e,32,0.3391244239631336,0.8586956262588501,6,144,
+saclay_e,33,0.2462519784784695,0.6679894328117371,18,144,
+saclay_e,34,0.2610792657055944,0.6431451439857483,20,144,
+saclay_e,35,0.25571232845944797,0.7975308895111084,9,144,
+saclay_e,36,0.125,0.9510489702224731,1,144,
+saclay_e,37,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,38,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,39,0.07916666666666666,0.7711267471313477,2,144,
+saclay_e,40,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,41,0.020300751879699246,0.4964788854122162,2,144,
+saclay_e,42,0.031046461137646544,0.672535240650177,2,144,
+saclay_e,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,44,0.6055555555555556,0.9535714387893677,4,144,
+saclay_e,45,0.6920634920634919,0.9568345546722412,5,144,
+saclay_e,46,0.16123405989728856,0.7144032716751099,9,144,
+saclay_e,47,0.10542574271663675,0.5808081030845642,12,144,
+saclay_e,48,0.07100240543681502,0.6503596901893616,5,144,
+saclay_e,49,0.045454545454545456,0.8531468510627747,1,144,
+saclay_e,50,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,51,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,52,0.03260257924504749,0.5721040368080139,3,144,
+saclay_e,53,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,55,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,56,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,57,0.5811546840958606,0.9339285492897034,4,144,
+saclay_e,58,0.5885416666666666,0.9410714507102966,4,144,
+saclay_e,59,0.008928571428571428,0.2237762212753296,1,144,
+saclay_e,60,0.008264462809917356,0.16083915531635284,1,144,
+saclay_e,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,64,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,65,0.015151515151515152,0.5454545617103577,1,144,
+saclay_e,66,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,67,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,68,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,69,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,70,0.029001176468902386,0.4303571283817291,4,144,
+saclay_e,71,0.02934903391115643,0.4357142746448517,4,144,
+saclay_e,72,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,73,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,74,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,75,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,76,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,77,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,78,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,79,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,80,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,81,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,82,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,83,0.027698434015410087,0.4035714268684387,4,144,
+saclay_e,84,0.024136686427907568,0.3107142746448517,4,144,
+saclay_e,85,0.013959504058513959,0.26408451795578003,2,144,
+saclay_e,86,0.04958274587415155,0.19002050161361694,11,144,
+saclay_e,87,0.04197669795812756,0.20987653732299805,9,144,
+saclay_e,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,89,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,90,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,91,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,92,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,93,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,94,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,95,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,96,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,97,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,98,0.015744060959211117,0.34507042169570923,2,144,
+saclay_e,99,0.052083081515398415,0.23855091631412506,11,144,
+saclay_e,100,0.10259477021944532,0.36544695496559143,17,144,
+saclay_e,101,0.13204010087271054,0.45263671875,16,144,
+saclay_e,102,0.16989223455230298,0.4757201671600342,9,144,
+saclay_e,103,0.01694915254237288,0.5944055914878845,1,144,
+saclay_e,104,0.3528123612981679,0.7146464586257935,12,144,
+saclay_e,105,0.008771929824561403,0.2097902148962021,1,144,
+saclay_e,106,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,107,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,108,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,109,0.014084507042253521,0.5104895234107971,1,144,
+saclay_e,110,0.022222222222222223,0.692307710647583,1,144,
+saclay_e,111,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,112,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,113,0.1094486431986432,0.6819853186607361,8,144,
+saclay_e,114,0.28012550720512386,0.69677734375,16,144,
+saclay_e,115,0.1938828851390051,0.5662878751754761,12,144,
+saclay_e,116,0.03912736466844818,0.4082125723361969,6,144,
+saclay_e,117,0.21727511659523474,0.5883064270019531,20,144,
+saclay_e,118,0.01,0.3076923191547394,1,144,
+saclay_e,119,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,120,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,121,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,122,0.008849557522123894,0.21678321063518524,1,144,
+saclay_e,123,0.0125,0.4475524425506592,1,144,
+saclay_e,124,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,125,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,126,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,127,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,128,0.0242774114519534,0.44680851697921753,3,144,
+saclay_e,129,0.0337076332271312,0.4057554006576538,5,144,
+saclay_e,130,0.045404886471414566,0.3547794222831726,8,144,
+saclay_e,131,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,132,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,133,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,134,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,135,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,136,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,137,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,138,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,139,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,140,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,141,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,142,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,143,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,144,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,145,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,146,0.027777777777777776,0.7552447319030762,1,144,
+saclay_e,147,0.017543859649122806,0.6083915829658508,1,144,
+saclay_e,148,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,149,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,150,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,151,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,152,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,153,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,154,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+saclay_e,155,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,1,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,2,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,3,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,4,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,5,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,7,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,8,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,10,0.8666666666666667,0.9952718615531921,3,144,
+beirut,11,0.8766666666666667,0.9956834316253662,5,144,
+beirut,12,1.0,1.0,2,144,
+beirut,13,1.0,1.0,6,144,
+beirut,14,0.9952380952380953,0.9994505643844604,14,144,
+beirut,15,0.9544270833333333,0.9873046875,16,144,
+beirut,16,0.8836247086247087,0.9843283295631409,10,144,
+beirut,17,1.0,1.0,2,144,
+beirut,18,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,19,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,20,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,21,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,22,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,23,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,24,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,25,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,27,1.0,1.0,1,144,
+beirut,28,0.6962260290878711,0.9237903356552124,20,144,
+beirut,29,0.7261003764772707,0.9116741418838501,41,144,
+beirut,30,0.8193326522656623,0.9399999976158142,44,144,
+beirut,31,0.90192893632864,0.9776452779769897,22,144,
+beirut,32,0.9666666666666667,0.9985611438751221,5,144,
+beirut,33,0.8424122934535795,0.952768087387085,21,144,
+beirut,34,0.8096664031045522,0.9363722801208496,27,144,
+beirut,35,0.7180857395500878,0.9152941107749939,25,144,
+beirut,36,0.7054152795049936,0.8968515992164612,29,144,
+beirut,37,0.809601264060489,0.9393742084503174,26,144,
+beirut,38,0.9385370175280356,0.9854497313499451,18,144,
+beirut,39,1.0,1.0,8,144,
+beirut,40,1.0,1.0,7,144,
+beirut,41,1.0,1.0,6,144,
+beirut,42,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,43,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,44,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,47,0.9166666666666666,0.9964285492897034,4,144,
+beirut,48,0.510648997741389,0.90625,8,144,
+beirut,49,0.5371499437847622,0.8058127760887146,36,144,
+beirut,50,0.703345224517694,0.8299427032470703,61,144,
+beirut,51,0.76330571262113,0.8504115343093872,54,144,
+beirut,52,0.7576690611671384,0.8709243535995483,25,144,
+beirut,53,0.9325396825396826,0.9958289861679077,7,144,
+beirut,54,0.8158418865671332,0.9446640610694885,23,144,
+beirut,55,0.7715830611633662,0.9119654893875122,23,144,
+beirut,56,0.49870822096096823,0.9048737287521362,13,144,
+beirut,57,0.6274716521556489,0.9034391641616821,18,144,
+beirut,58,0.9319892983867347,0.9535953402519226,52,144,
+beirut,59,0.972955269572768,0.9717492461204529,76,144,
+beirut,60,0.9498062928336684,0.9784511923789978,45,144,
+beirut,61,0.9964047100321609,0.9978916049003601,51,144,
+beirut,62,0.9966621577276087,0.9979423880577087,54,144,
+beirut,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,64,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,65,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,66,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,67,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,68,0.8611111111111112,0.9910714030265808,4,144,
+beirut,69,0.3625324484308774,0.8258602619171143,7,144,
+beirut,70,0.4313149604841752,0.816118597984314,17,144,
+beirut,71,0.5223684159917992,0.869205892086029,23,144,
+beirut,72,0.300616858099849,0.7551379799842834,13,144,
+beirut,73,0.20206447963800905,0.5714285969734192,4,144,
+beirut,74,1.0,1.0,4,144,
+beirut,75,0.95,0.9982143044471741,4,144,
+beirut,76,0.75,0.9929577708244324,2,144,
+beirut,77,0.41666666666666663,0.98591548204422,2,144,
+beirut,78,0.6111888111888112,0.9553956985473633,5,144,
+beirut,79,0.9367153306058784,0.9686852693557739,43,144,
+beirut,80,0.967417309636384,0.9682108759880066,67,144,
+beirut,81,0.9184134618285835,0.9618754386901855,41,144,
+beirut,82,0.9876225780401393,0.992328405380249,53,144,
+beirut,83,0.9908922027845859,0.9946091771125793,53,144,
+beirut,84,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,85,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,86,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,87,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,88,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,89,0.14285714285714285,0.9580419659614563,1,144,
+beirut,90,0.07692307692307693,0.9160839319229126,1,144,
+beirut,91,0.5666666666666667,0.971222996711731,5,144,
+beirut,92,0.4542371553884712,0.9301470518112183,8,144,
+beirut,93,0.33701690821256036,0.8992805480957031,5,144,
+beirut,94,0.5317460317460317,0.9858155846595764,3,144,
+beirut,95,1.0,1.0,3,144,
+beirut,96,1.0,1.0,2,144,
+beirut,97,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,98,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,99,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,100,0.4163220551378446,0.9520333409309387,7,144,
+beirut,101,0.3323348720945975,0.9353493452072144,7,144,
+beirut,102,1.0,1.0,4,144,
+beirut,103,0.8477833894500562,0.981893002986908,9,144,
+beirut,104,0.7019155030433226,0.9676746726036072,7,144,
+beirut,105,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,106,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,107,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,108,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,109,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,110,0.25,0.9790209531784058,1,144,
+beirut,111,0.1111111111111111,0.9440559148788452,1,144,
+beirut,112,0.725,0.9839285612106323,4,144,
+beirut,113,0.6105555555555555,0.965467631816864,5,144,
+beirut,114,0.5833333333333334,0.9647887349128723,2,144,
+beirut,115,1.0,1.0,2,144,
+beirut,116,1.0,1.0,1,144,
+beirut,117,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,118,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,119,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,120,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,121,0.8541666666666666,0.9946428537368774,4,144,
+beirut,122,0.6931405895691609,0.9770594239234924,7,144,
+beirut,123,0.8333333333333333,0.9929078221321106,3,144,
+beirut,124,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,125,0.5714285714285714,0.9577465057373047,2,144,
+beirut,126,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,127,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,128,0.5434782608695652,0.9260563254356384,2,144,
+beirut,129,0.6836026077097506,0.9323671460151672,6,144,
+beirut,130,0.8026315789473684,0.9732142686843872,4,144,
+beirut,131,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,132,0.09090909090909091,0.9300699234008789,1,144,
+beirut,133,0.1,0.9370629191398621,1,144,
+beirut,134,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,135,1.0,1.0,1,144,
+beirut,136,0.2,0.9720279574394226,1,144,
+beirut,137,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,138,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,139,0.06559139784946236,0.8485915660858154,2,144,
+beirut,140,0.10133547008547009,0.8723404407501221,3,144,
+beirut,141,0.1111111111111111,0.9440559148788452,1,144,
+beirut,142,0.1908068783068783,0.9196428656578064,4,144,
+beirut,143,0.5197139170353455,0.9405630826950073,7,144,
+beirut,144,0.6182539682539682,0.8392857313156128,4,144,
+beirut,145,0.01818181818181818,0.6223776340484619,1,144,
+beirut,146,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,147,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,148,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,149,0.18333333333333335,0.9507042169570923,2,144,
+beirut,150,0.5438076416337286,0.9335748553276062,6,144,
+beirut,151,0.8125,0.9785714149475098,4,144,
+beirut,152,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,153,0.125,0.9510489702224731,1,144,
+beirut,154,0.25,0.9790209531784058,1,144,
+beirut,155,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,156,0.4356353987378083,0.6908212304115295,6,144,
+beirut,157,0.14081890331890332,0.6304348111152649,6,144,
+beirut,158,1.0,1.0,1,144,
+beirut,159,0.7093875260541926,0.978600800037384,9,144,
+beirut,160,0.5355110835228623,0.8876262903213501,12,144,
+beirut,161,0.09601061477222467,0.7424460649490356,5,144,
+beirut,162,0.0625,0.8951048851013184,1,144,
+beirut,163,0.08333333333333333,0.9230769276618958,1,144,
+beirut,164,0.1,0.9370629191398621,1,144,
+beirut,165,0.26136363636363635,0.6936619877815247,2,144,
+beirut,166,0.37389770723104054,0.7990543842315674,3,144,
+beirut,167,0.03571428571428571,0.811188817024231,1,144,
+beirut,168,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,169,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,170,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,171,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,172,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,173,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,174,0.17142857142857143,0.9436619877815247,2,144,
+beirut,175,0.15476190476190477,0.9436619877815247,2,144,
+beirut,176,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,177,0.2828896776101745,0.7093524932861328,5,144,
+beirut,178,0.272318643797517,0.7413972616195679,7,144,
+beirut,179,0.4111111111111111,0.9763593673706055,3,144,
+beirut,180,0.5305717709477489,0.944505512714386,14,144,
+beirut,181,0.5119658039743649,0.890625,16,144,
+beirut,182,0.10901078088578088,0.8196428418159485,4,144,
+beirut,183,0.2,0.9720279574394226,1,144,
+beirut,184,0.3333333333333333,0.9860140085220337,1,144,
+beirut,185,0.2,0.9720279574394226,1,144,
+beirut,186,0.3759352643654361,0.8033088445663452,8,144,
+beirut,187,0.4859624180841556,0.8352272510528564,12,144,
+beirut,188,0.3972222222222222,0.9125000238418579,4,144,
+beirut,189,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,190,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,191,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,192,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,193,0.5,0.9930070042610168,1,144,
+beirut,194,0.5825825825825827,0.9172576665878296,3,144,
+beirut,195,0.40964912280701754,0.9107142686843872,4,144,
+beirut,196,0.25,0.9577465057373047,2,144,
+beirut,197,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,198,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,199,0.75,0.9929577708244324,2,144,
+beirut,200,0.3333333333333333,0.9788732528686523,2,144,
+beirut,201,0.42916666666666664,0.9669064879417419,5,144,
+beirut,202,0.40228119600330553,0.9067164063453674,10,144,
+beirut,203,0.1681455069752942,0.8331595659255981,7,144,
+beirut,204,0.25,0.9577465057373047,2,144,
+beirut,205,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,206,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,207,0.34373740294792926,0.767466127872467,7,144,
+beirut,208,0.3947972028498594,0.8598769903182983,11,144,
+beirut,209,0.5011904761904762,0.9839285612106323,4,144,
+beirut,210,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,211,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,212,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,213,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,214,0.5,0.9930070042610168,1,144,
+beirut,215,0.5357142857142857,0.936170220375061,3,144,
+beirut,216,0.20833333333333331,0.9154929518699646,2,144,
+beirut,217,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,218,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,219,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,220,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,221,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,222,0.8333333333333333,0.9964788556098938,2,144,
+beirut,223,0.6560104980741495,0.9130945205688477,13,144,
+beirut,224,0.46845432821940536,0.8697802424430847,14,144,
+beirut,225,0.21171717171717172,0.9219858050346375,3,144,
+beirut,226,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,227,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,228,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,229,0.3333333333333333,0.9860140085220337,1,144,
+beirut,230,0.5,0.9930070042610168,1,144,
+beirut,231,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,232,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,233,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,234,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,235,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,236,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,237,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,238,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,239,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,240,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,241,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,242,0.19642857142857142,0.9471830725669861,2,144,
+beirut,243,0.47971491228070173,0.9571428298950195,4,144,
+beirut,244,0.565442792501616,0.9251028895378113,9,144,
+beirut,245,0.46402400598529203,0.9097014665603638,10,144,
+beirut,246,0.12749615975422426,0.8912529349327087,3,144,
+beirut,247,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,248,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,249,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,250,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,251,0.3363095238095238,0.9660714268684387,4,144,
+beirut,252,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,253,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,254,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,255,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,256,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,257,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,258,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,259,0.584126984126984,0.9219858050346375,3,144,
+beirut,260,0.576388888888889,0.8912529349327087,3,144,
+beirut,261,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,262,0.25,0.9790209531784058,1,144,
+beirut,263,0.10909090909090909,0.8888888955116272,3,144,
+beirut,264,0.1605496227910021,0.8248175382614136,7,144,
+beirut,265,0.24540517961570593,0.8864734172821045,6,144,
+beirut,266,0.19999999999999998,0.8943662047386169,2,144,
+beirut,267,0.02631578947368421,0.7412587404251099,1,144,
+beirut,268,0.4211494252873563,0.9294964075088501,5,144,
+beirut,269,0.34449760765550236,0.875373125076294,10,144,
+beirut,270,0.18435277241335463,0.8780193328857422,6,144,
+beirut,271,0.19396135265700482,0.8910714387893677,4,144,
+beirut,272,0.395766069585729,0.9022387862205505,10,144,
+beirut,273,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,274,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,275,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,276,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,277,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,278,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,279,0.12777777777777777,0.8661971688270569,2,144,
+beirut,280,0.5959534815467019,0.8978102207183838,7,144,
+beirut,281,0.6385185185185185,0.9208633303642273,5,144,
+beirut,282,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,283,0.3333333333333333,0.9860140085220337,1,144,
+beirut,284,0.33650793650793653,0.9496402740478516,5,144,
+beirut,285,0.3580400173537428,0.9004115462303162,9,144,
+beirut,286,0.6179933084344849,0.9261363744735718,12,144,
+beirut,287,0.6377551020408163,0.965589165687561,7,144,
+beirut,288,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,289,0.4348614808242137,0.9405630826950073,7,144,
+beirut,290,0.4714206137000255,0.9135100841522217,12,144,
+beirut,291,0.3114197530864197,0.9094203114509583,6,144,
+beirut,292,0.20603841536614645,0.8906474709510803,5,144,
+beirut,293,0.2820185766614338,0.9051094651222229,7,144,
+beirut,294,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,295,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,296,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,297,0.6666666666666666,0.98591548204422,2,144,
+beirut,298,0.6428571428571428,0.9823943376541138,2,144,
+beirut,299,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,300,0.18761004401760703,0.7321428656578064,4,144,
+beirut,301,0.6548941798941799,0.7910627722740173,6,144,
+beirut,302,0.8333333333333333,0.9964788556098938,2,144,
+beirut,303,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,304,1.0,1.0,1,144,
+beirut,305,0.8583333333333333,0.9928057789802551,5,144,
+beirut,306,0.9333333333333333,0.9951691031455994,6,144,
+beirut,307,0.6934523809523809,0.9650735259056091,8,144,
+beirut,308,0.6271825396825397,0.9492753744125366,6,144,
+beirut,309,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,310,0.8875,0.9964285492897034,4,144,
+beirut,311,0.8819444444444444,0.9927536249160767,6,144,
+beirut,312,0.8875,0.9964285492897034,4,144,
+beirut,313,0.4211843711843712,0.9494485259056091,8,144,
+beirut,314,0.32999840153452686,0.90625,8,144,
+beirut,315,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,316,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,317,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,318,0.29166666666666663,0.9753521084785461,2,144,
+beirut,319,0.6846590909090909,0.9785714149475098,4,144,
+beirut,320,0.9791666666666666,0.997474730014801,12,144,
+beirut,321,0.9124487145125044,0.957134485244751,13,144,
+beirut,322,0.677304964539007,0.7848699688911438,3,144,
+beirut,323,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,324,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,325,0.5,0.9930070042610168,1,144,
+beirut,326,0.23225806451612901,0.8888888955116272,3,144,
+beirut,327,0.45395972008875235,0.8979423642158508,9,144,
+beirut,328,0.39865476554994467,0.9051094651222229,7,144,
+beirut,329,1.0,1.0,3,144,
+beirut,330,1.0,1.0,3,144,
+beirut,331,0.625,0.9788732528686523,2,144,
+beirut,332,0.9038342609771182,0.9937434792518616,7,144,
+beirut,333,0.5824263038548753,0.9791449308395386,7,144,
+beirut,334,0.3703020101645639,0.9255514740943909,8,144,
+beirut,335,0.5609684108627822,0.8919896483421326,15,144,
+beirut,336,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,337,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,338,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,339,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,340,0.6464646464646464,0.978723406791687,3,144,
+beirut,341,0.8677684946860731,0.9757495522499084,18,144,
+beirut,342,0.9081388478879828,0.9847151637077332,17,144,
+beirut,343,1.0,1.0,2,144,
+beirut,344,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,345,0.480035650623886,0.9568345546722412,5,144,
+beirut,346,0.34915032679738567,0.9050359725952148,5,144,
+beirut,347,0.07738095238095238,0.8767605423927307,2,144,
+beirut,348,0.4718896588486141,0.9111940264701843,10,144,
+beirut,349,0.32054052973170616,0.8961396813392639,8,144,
+beirut,350,0.7184797647872707,0.9270073175430298,7,144,
+beirut,351,0.709508348794063,0.9238790273666382,7,144,
+beirut,352,0.25,0.9790209531784058,1,144,
+beirut,353,0.8761904761904762,0.9942445755004883,5,144,
+beirut,354,0.4388888888888889,0.9726618528366089,5,144,
+beirut,355,0.26715686274509803,0.949999988079071,4,144,
+beirut,356,0.5965696360377211,0.9238805770874023,10,144,
+beirut,357,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,358,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,359,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,360,0.14285714285714285,0.9580419659614563,1,144,
+beirut,361,0.4444444444444444,0.978723406791687,3,144,
+beirut,362,0.6356567674749494,0.9610389471054077,11,144,
+beirut,363,0.8622817397903904,0.9722093343734741,17,144,
+beirut,364,0.8618464868464868,0.9835391044616699,9,144,
+beirut,365,0.3954545454545455,0.9553571343421936,4,144,
+beirut,366,0.6261233660130718,0.953125,8,144,
+beirut,367,0.3342727272727273,0.8834532499313354,5,144,
+beirut,368,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,369,0.6333333333333333,0.9858155846595764,3,144,
+beirut,370,0.6333333333333333,0.9858155846595764,3,144,
+beirut,371,0.47551187551187546,0.9287439584732056,6,144,
+beirut,372,0.4396942396942397,0.8973429799079895,6,144,
+beirut,373,0.6666666666666666,0.98591548204422,2,144,
+beirut,374,1.0,1.0,3,144,
+beirut,375,0.8666666666666667,0.9952718615531921,3,144,
+beirut,376,0.5238095238095237,0.9821428656578064,4,144,
+beirut,377,0.959375,0.9972426295280457,8,144,
+beirut,378,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,379,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,380,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,381,0.6179398148148149,0.9012345671653748,9,144,
+beirut,382,0.8044152424145761,0.9346774220466614,20,144,
+beirut,383,0.8353451701277788,0.9524548053741455,15,144,
+beirut,384,0.9213184476342371,0.989063560962677,11,144,
+beirut,385,0.9583333333333333,0.9963235259056091,8,144,
+beirut,386,0.7625,0.9830917716026306,6,144,
+beirut,387,0.8083333333333333,0.9913669228553772,5,144,
+beirut,388,1.0,1.0,1,144,
+beirut,389,1.0,1.0,1,144,
+beirut,390,0.8333333333333333,0.9964788556098938,2,144,
+beirut,391,0.8333333333333333,0.9964788556098938,2,144,
+beirut,392,0.5833333333333334,0.9647887349128723,2,144,
+beirut,393,0.5714285714285714,0.9577465057373047,2,144,
+beirut,394,1.0,1.0,1,144,
+beirut,395,0.45,0.98591548204422,2,144,
+beirut,396,0.6239434235232555,0.9457768797874451,7,144,
+beirut,397,0.7138685225146157,0.9360670447349548,18,144,
+beirut,398,0.656076380980325,0.9049925208091736,22,144,
+beirut,399,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,400,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,401,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,402,0.5797808766202093,0.8238683342933655,9,144,
+beirut,403,0.7829426257581498,0.9343158006668091,19,144,
+beirut,404,0.8655122655122656,0.9761193990707397,10,144,
+beirut,405,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,406,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,407,0.8916666666666666,0.9522058963775635,8,144,
+beirut,408,0.5572397090372754,0.8860294222831726,8,144,
+beirut,409,0.5184189723320158,0.9280575513839722,5,144,
+beirut,410,0.6889880952380952,0.9485294222831726,8,144,
+beirut,411,0.7972789115646258,0.9895724654197693,7,144,
+beirut,412,0.6868115942028986,0.9697842001914978,5,144,
+beirut,413,0.14285714285714285,0.9580419659614563,1,144,
+beirut,414,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,415,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,416,0.6666666666666666,0.98591548204422,2,144,
+beirut,417,0.7153598795840175,0.9447761178016663,10,144,
+beirut,418,0.7005739763568986,0.9051490426063538,21,144,
+beirut,419,0.4759128434945333,0.8665322661399841,20,144,
+beirut,420,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,421,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,422,1.0,1.0,1,144,
+beirut,423,0.6632477734369115,0.852773129940033,25,144,
+beirut,424,0.7904972376479729,0.9381944537162781,24,144,
+beirut,425,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,426,0.8,0.9714285731315613,4,144,
+beirut,427,0.7071078431372548,0.9142857193946838,4,144,
+beirut,428,0.6296209805639674,0.8659611940383911,18,144,
+beirut,429,0.4735987977927039,0.7718289494514465,23,144,
+beirut,430,0.32365425137191806,0.7627716064453125,13,144,
+beirut,431,0.629048009835146,0.9059431552886963,15,144,
+beirut,432,0.7851956782786822,0.9740259647369385,11,144,
+beirut,433,0.7204545454545455,0.9758453965187073,6,144,
+beirut,434,0.6111111111111112,0.9621749520301819,3,144,
+beirut,435,0.5666666666666667,0.987500011920929,4,144,
+beirut,436,0.7642857142857142,0.9870503544807434,5,144,
+beirut,437,0.7916666666666666,0.9881796836853027,3,144,
+beirut,438,0.8019047619047619,0.9739311933517456,7,144,
+beirut,439,0.5767992424242423,0.8639705777168274,8,144,
+beirut,440,0.6141308566120596,0.8706986308097839,7,144,
+beirut,441,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,442,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,443,1.0,1.0,13,144,
+beirut,444,0.867100297943064,0.8983050584793091,59,144,
+beirut,445,0.9407865546304968,0.9736024737358093,46,144,
+beirut,446,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,447,0.5734126984126984,0.9009384512901306,7,144,
+beirut,448,0.44175685425685424,0.8090534806251526,9,144,
+beirut,449,0.5562521641659339,0.8271484375,16,144,
+beirut,450,0.4336798288635689,0.752842128276825,19,144,
+beirut,451,0.31698230468283944,0.7416267991065979,11,144,
+beirut,452,0.6189986963880973,0.9298507571220398,10,144,
+beirut,453,0.7078156565656566,0.9641790986061096,10,144,
+beirut,454,0.5458196694609738,0.9411764740943909,8,144,
+beirut,455,0.4404040404040404,0.9535714387893677,4,144,
+beirut,456,0.6087301587301588,0.9856114983558655,5,144,
+beirut,457,0.6315068965547064,0.9538461565971375,14,144,
+beirut,458,0.5771055371643607,0.9312661290168762,15,144,
+beirut,459,0.6088688123470731,0.9530761241912842,7,144,
+beirut,460,0.7946395292906921,0.9183462262153625,15,144,
+beirut,461,0.7256707869661834,0.9044354557991028,20,144,
+beirut,462,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,463,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,464,0.9621946169772257,0.9917355179786682,23,144,
+beirut,465,0.9111229496851228,0.9458149075508118,51,144,
+beirut,466,0.9536196036284228,0.9862068891525269,29,144,
+beirut,467,0.16666666666666666,0.9650349617004395,1,144,
+beirut,468,0.07724014336917562,0.7872340679168701,3,144,
+beirut,469,0.3385530173861376,0.8201492428779602,10,144,
+beirut,470,0.5063551780433079,0.8651162981987,15,144,
+beirut,471,0.2924107142857143,0.8685661554336548,8,144,
+beirut,472,0.41666666666666663,0.98591548204422,2,144,
+beirut,473,0.5009523809523809,0.9669064879417419,5,144,
+beirut,474,0.44121019295517966,0.8677002787590027,15,144,
+beirut,475,0.27184385594934823,0.813857913017273,13,144,
+beirut,476,0.6165158371040724,0.9589285850524902,4,144,
+beirut,477,0.95,0.9982143044471741,4,144,
+beirut,478,0.5630307539836588,0.9342337250709534,13,144,
+beirut,479,0.591324365733342,0.8935346603393555,21,144,
+beirut,480,0.552026862026862,0.9328358173370361,10,144,
+beirut,481,0.8701583865882777,0.9763779640197754,17,144,
+beirut,482,0.8656588615604305,0.9658170938491821,29,144,
+beihai,0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,1,0.1,0.9370629191398621,1,144,
+beihai,2,0.07692307692307693,0.9160839319229126,1,144,
+beihai,3,0.01818181818181818,0.6223776340484619,1,144,
+beihai,4,0.016129032258064516,0.5734265446662903,1,144,
+beihai,5,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,6,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,7,0.03333333333333333,0.7972028255462646,1,144,
+beihai,8,0.08130076358053158,0.6850886344909668,7,144,
+beihai,9,0.09627922853729307,0.772946834564209,6,144,
+beihai,10,0.25,0.9790209531784058,1,144,
+beihai,11,0.26324786324786326,0.9464285969734192,4,144,
+beihai,12,0.3277777777777778,0.9716312289237976,3,144,
+beihai,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,15,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,16,0.07692307692307693,0.9160839319229126,1,144,
+beihai,17,0.05555555555555555,0.881118893623352,1,144,
+beihai,18,0.011363636363636364,0.3916083872318268,1,144,
+beihai,19,0.06433392018779342,0.4803571403026581,4,144,
+beihai,20,0.09040178571428571,0.6625000238418579,4,144,
+beihai,21,0.035437430786267994,0.6338028311729431,2,144,
+beihai,22,0.0136986301369863,0.4965035021305084,1,144,
+beihai,23,0.13025210084033612,0.9260563254356384,2,144,
+beihai,24,0.225,0.9612675905227661,2,144,
+beihai,25,0.2,0.9720279574394226,1,144,
+beihai,26,0.24118283677107208,0.9375,4,144,
+beihai,27,0.6,0.965467631816864,5,144,
+beihai,28,0.7103030303030303,0.9510791301727295,5,144,
+beihai,29,0.5069444444444444,0.9598108530044556,3,144,
+beihai,30,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,31,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,32,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,33,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,34,0.06011979823455233,0.5531914830207825,3,144,
+beihai,35,0.0694864810330912,0.6303571462631226,4,144,
+beihai,36,0.023252688172043012,0.5422534942626953,2,144,
+beihai,37,0.00980392156862745,0.2937062978744507,1,144,
+beihai,38,0.03708791208791209,0.7218309640884399,2,144,
+beihai,39,0.10416666666666666,0.8978873491287231,2,144,
+beihai,40,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,41,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,42,0.5833333333333333,0.9929577708244324,2,144,
+beihai,43,0.8736170419254659,0.9560546875,16,144,
+beihai,44,0.9168851540616245,0.9819121360778809,15,144,
+beihai,45,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,47,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,48,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,49,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,50,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,51,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,52,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,53,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,54,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,55,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,56,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,57,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,58,0.6556456787106941,0.9410852789878845,15,144,
+beihai,59,0.8928835053835054,0.978515625,16,144,
+beihai,60,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,62,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,63,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,64,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,65,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,66,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,67,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,68,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,69,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,70,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,71,0.11056147720128381,0.7089372277259827,6,144,
+beihai,72,0.0961202753296942,0.6497584581375122,6,144,
+beihai,73,0.18116883116883117,0.9232142567634583,4,144,
+beihai,74,0.14459841628959275,0.8999999761581421,4,144,
+beihai,75,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,76,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,77,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,78,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,79,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,80,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,81,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,82,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,83,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,84,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,85,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,86,0.3541750900918581,0.8598901033401489,14,144,
+beihai,87,0.3690159144615943,0.7729069590568542,23,144,
+beihai,88,0.25238856907374857,0.7028806805610657,9,144,
+beihai,89,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,90,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,91,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,92,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,93,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,94,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,95,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,96,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,97,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,98,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,99,0.10066699604743083,0.7777777910232544,6,144,
+beihai,100,0.23142857142857143,0.8592283725738525,7,144,
+beihai,101,0.6955941286264176,0.96337890625,16,144,
+beihai,102,0.7228301825351595,0.8992503881454468,29,144,
+beihai,103,0.4073741997243825,0.7467032670974731,14,144,
+beihai,104,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,105,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,106,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,107,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,108,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,109,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,110,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,111,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,112,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,113,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,114,0.10189829148033483,0.7898550629615784,6,144,
+beihai,115,0.26176688380527546,0.8335821032524109,10,144,
+beihai,116,0.6005010836283676,0.8427419066429138,20,144,
+beihai,117,0.6342445079811899,0.8722415566444397,21,144,
+beihai,118,0.3102285281746897,0.8417266011238098,5,144,
+beihai,119,0.06666666666666667,0.9020978808403015,1,144,
+beihai,120,0.02714796299101707,0.508274257183075,3,144,
+beihai,121,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,122,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,123,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,124,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,125,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,126,0.12388887848512939,0.7536231875419617,6,144,
+beihai,127,0.1577170240005489,0.7358024716377258,9,144,
+beihai,128,0.08118711300309597,0.6767857074737549,4,144,
+beihai,129,0.0625,0.8951048851013184,1,144,
+beihai,130,0.10475516310930177,0.48806583881378174,9,144,
+beihai,131,0.352413322354103,0.6891129016876221,20,144,
+beihai,132,0.49379499751298517,0.7923387289047241,20,144,
+beihai,133,0.18996279515422929,0.6992481350898743,11,144,
+beihai,134,0.0926839826839827,0.8628841638565063,3,144,
+beihai,135,0.032407407407407406,0.45178571343421936,4,144,
+beihai,136,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,137,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,138,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,139,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,140,0.045272117360166494,0.4004170894622803,7,144,
+beihai,141,0.29856955923563616,0.7007355690002441,21,144,
+beihai,142,0.3235252992715151,0.7952755689620972,17,144,
+beihai,143,0.1721732026143791,0.7857142686843872,4,144,
+beihai,144,0.08333333333333333,0.9230769276618958,1,144,
+beihai,145,0.29069064217778595,0.6258241534233093,14,144,
+beihai,146,0.6669915333318117,0.8016042709350586,34,144,
+beihai,147,0.7250270652803116,0.8531258702278137,33,144,
+beihai,148,0.3562557200729982,0.749870777130127,15,144,
+beihai,149,0.13991224824558157,0.6666666865348816,9,144,
+beihai,150,0.08679400565569051,0.49496403336524963,5,144,
+beihai,151,0.19999999999999998,0.8943662047386169,2,144,
+beihai,152,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,153,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,154,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,155,0.0761375103655029,0.5440329313278198,9,144,
+beihai,156,0.6493466576478106,0.7882044315338135,35,144,
+beihai,157,0.8049217593806245,0.882748544216156,30,144,
+beihai,158,0.675595238095238,0.9785714149475098,4,144,
+beihai,159,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,160,0.34332230269730274,0.8566176295280457,8,144,
+beihai,161,0.7500933219963097,0.8763951063156128,32,144,
+beihai,162,0.7182496834810516,0.8569958806037903,36,144,
+beihai,163,0.619980494197339,0.7931451797485352,20,144,
+beihai,164,0.41869868725790416,0.6682170629501343,15,144,
+beihai,165,0.1852153548518481,0.6892856955528259,4,144,
+beihai,166,0.20192307692307693,0.9507042169570923,2,144,
+beihai,167,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,168,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,169,0.03225806451612903,0.7902097702026367,1,144,
+beihai,170,0.11687344913151365,0.8865247964859009,3,144,
+beihai,171,0.7532365690471058,0.9016128778457642,20,144,
+beihai,172,0.8699551766238369,0.933308482170105,22,144,
+beihai,173,0.37797619047619047,0.9624999761581421,4,144,
+beihai,174,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,175,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,176,0.45146051712089447,0.8880658149719238,9,144,
+beihai,177,0.668215174525024,0.9152385592460632,17,144,
+beihai,178,0.6565949870805496,0.815696656703949,18,144,
+beihai,179,0.6272885428617233,0.7680563926696777,13,144,
+beihai,180,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,181,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,182,0.051371035915157195,0.4163602888584137,8,144,
+beihai,183,0.04764107236325969,0.3814338147640228,8,144,
+beihai,184,0.0625,0.8951048851013184,1,144,
+beihai,185,0.16666666666666666,0.9650349617004395,1,144,
+beihai,186,0.04105677308802309,0.6017857193946838,4,144,
+beihai,187,0.052645687645687646,0.6964285969734192,4,144,
+beihai,188,0.11062801932367149,0.8534278869628906,3,144,
+beihai,189,0.048001102839812515,0.716312050819397,3,144,
+beihai,190,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,191,0.15312594382361824,0.8392857313156128,4,144,
+beihai,192,0.17622687232787848,0.7858455777168274,8,144,
+beihai,193,0.46206085526972424,0.8335821032524109,10,144,
+beihai,194,0.7314399058232244,0.8594657182693481,21,144,
+beihai,195,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,196,0.8956845238095238,0.9944853186607361,8,144,
+beihai,197,0.5177523125838164,0.7399404048919678,22,144,
+beihai,198,0.2498347077778439,0.66318678855896,14,144,
+beihai,199,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,200,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,201,0.04887562034739454,0.6696428656578064,4,144,
+beihai,202,0.06616938601917724,0.7410714030265808,4,144,
+beihai,203,0.2523809523809524,0.9267139434814453,3,144,
+beihai,204,0.25114942528735634,0.9243499040603638,3,144,
+beihai,205,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,206,0.09036863480162449,0.602877676486969,5,144,
+beihai,207,0.12591111101514182,0.6261193752288818,10,144,
+beihai,208,0.4660635893426882,0.809876561164856,9,144,
+beihai,209,0.7099747265071022,0.8732631802558899,19,144,
+beihai,210,0.04023870161169883,0.36231884360313416,6,144,
+beihai,211,0.7971741221741222,0.9111111164093018,9,144,
+beihai,212,0.6957298167922676,0.8961538672447205,14,144,
+beihai,213,0.3878410127542259,0.8097015023231506,10,144,
+beihai,214,0.3621212121212121,0.862500011920929,4,144,
+beihai,215,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,216,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,217,0.55,0.9366196990013123,2,144,
+beihai,218,0.5909090909090909,0.9683098793029785,2,144,
+beihai,219,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,220,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,221,0.07625275987588018,0.7553571462631226,4,144,
+beihai,222,0.7056405769566515,0.8837890625,16,144,
+beihai,223,0.8429229104229105,0.9463383555412292,12,144,
+beihai,224,0.2969979716024341,0.9064748287200928,5,144,
+beihai,225,0.3070724443860201,0.6553030014038086,12,144,
+beihai,226,0.22598152108930297,0.7761316895484924,9,144,
+beihai,227,0.17818627864995668,0.6483516693115234,14,144,
+beihai,228,0.2553452374593755,0.6641790866851807,10,144,
+beihai,229,0.4698879551820728,0.9321428537368774,4,144,
+beihai,230,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,231,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,232,0.2537483805408036,0.602877676486969,5,144,
+beihai,233,0.2352973969757099,0.6382575631141663,12,144,
+beihai,234,0.8078368469690329,0.8649122714996338,30,144,
+beihai,235,0.7307986577681451,0.8876226544380188,27,144,
+beihai,236,0.48210955710955705,0.9134514927864075,7,144,
+beihai,237,0.8800674442622383,0.96875,24,144,
+beihai,238,0.7813108989057092,0.9427083134651184,24,144,
+beihai,239,0.3066885964912281,0.9136690497398376,5,144,
+beihai,240,0.7883357383357383,0.9141414165496826,12,144,
+beihai,241,0.2501702357446321,0.6641963720321655,17,144,
+beihai,242,0.3908041048734633,0.6853801012039185,30,144,
+beihai,243,0.4710687281673923,0.797802209854126,14,144,
+beihai,244,1.0,1.0,1,144,
+beihai,245,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,246,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,247,0.02722092722092722,0.4018912613391876,3,144,
+beihai,248,0.2722644671480273,0.6368563771247864,21,144,
+beihai,249,0.7945969119266356,0.8273244500160217,51,144,
+beihai,250,0.7182858182724139,0.8350961804389954,40,144,
+beihai,251,0.4289602265000062,0.8940298557281494,10,144,
+beihai,252,0.7932413414683412,0.9659424424171448,13,144,
+beihai,253,0.5793421793265375,0.8745644688606262,21,144,
+beihai,254,0.43994780466700223,0.8170329928398132,14,144,
+cupertino,0,0.7526930433907179,0.9447340965270996,7,144,
+cupertino,1,0.4138221153846154,0.8357142806053162,4,144,
+cupertino,2,0.7886986301369863,0.9145220518112183,8,144,
+cupertino,3,0.8279687190532778,0.9476010203361511,12,144,
+cupertino,4,0.7416666666666667,0.9899280667304993,5,144,
+cupertino,5,0.5,0.9930070042610168,1,144,
+cupertino,6,0.6,0.9718309640884399,2,144,
+cupertino,7,0.9256238553113553,0.982421875,16,144,
+cupertino,8,0.9472789115646258,0.9840659499168396,14,144,
+cupertino,9,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,10,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,11,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,12,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,13,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,14,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,15,0.43333333333333335,0.9767857193946838,4,144,
+cupertino,16,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,17,0.45571095571095566,0.8852657079696655,6,144,
+cupertino,18,0.4979528209751334,0.8798353672027588,9,144,
+cupertino,19,0.5917948717948718,0.9597122073173523,5,144,
+cupertino,20,0.9166666666666666,0.9976359605789185,3,144,
+cupertino,21,1.0,1.0,1,144,
+cupertino,22,0.7756410256410257,0.9375,4,144,
+cupertino,23,0.889235366123365,0.9708198308944702,17,144,
+cupertino,24,0.9332500832500832,0.9906593561172485,14,144,
+cupertino,25,1.0,1.0,1,144,
+cupertino,26,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,27,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,28,0.5142857142857142,0.9464285969734192,4,144,
+cupertino,29,0.6076923076923078,0.9535714387893677,4,144,
+cupertino,30,0.26666666666666666,0.9621749520301819,3,144,
+cupertino,31,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,32,0.12835249042145594,0.834515392780304,3,144,
+cupertino,33,0.3330436720142602,0.8675704002380371,7,144,
+cupertino,34,0.557037037037037,0.9568345546722412,5,144,
+cupertino,35,0.8055555555555556,0.9952718615531921,3,144,
+cupertino,36,0.8333333333333333,0.9964788556098938,2,144,
+cupertino,37,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,38,0.6299340041843102,0.9444210529327393,19,144,
+cupertino,39,0.9157689132333096,0.9850806593894958,20,144,
+cupertino,40,1.0,1.0,1,144,
+cupertino,41,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,42,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,43,0.9422249957330603,0.988095223903656,18,144,
+cupertino,44,0.940060049216225,0.9813151359558105,23,144,
+cupertino,45,0.7,0.9894366264343262,2,144,
+cupertino,46,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,47,0.5,0.9930070042610168,1,144,
+cupertino,48,0.5916666666666666,0.9810874462127686,3,144,
+cupertino,49,0.7,0.9894366264343262,2,144,
+cupertino,50,0.5,0.9930070042610168,1,144,
+cupertino,51,1.0,1.0,1,144,
+cupertino,52,0.5754452618088982,0.9678742289543152,11,144,
+cupertino,53,0.6562380470905816,0.9523809552192688,21,144,
+cupertino,54,0.8644332519332519,0.9886363744735718,12,144,
+cupertino,55,0.75,0.9929577708244324,2,144,
+cupertino,56,0.75,0.9929577708244324,2,144,
+cupertino,57,0.75,0.9929577708244324,2,144,
+cupertino,58,0.9735304378161522,0.9967032670974731,14,144,
+cupertino,59,0.9406051862012591,0.9837027192115784,26,144,
+cupertino,60,0.7467120181405895,0.9812304377555847,7,144,
+cupertino,61,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,62,0.20887445887445888,0.9101654887199402,3,144,
+cupertino,63,0.5952656647778598,0.9481481313705444,9,144,
+cupertino,64,0.5634006892230576,0.9242798089981079,9,144,
+cupertino,65,0.13630672926447573,0.8061465620994568,3,144,
+cupertino,66,0.9028532608695652,0.9852941036224365,8,144,
+cupertino,67,0.90884890133753,0.978440523147583,23,144,
+cupertino,68,0.8898840195475222,0.9802533388137817,22,144,
+cupertino,69,0.9287651790360769,0.986331582069397,18,144,
+cupertino,70,0.8716775374189615,0.9725126028060913,21,144,
+cupertino,71,0.9264586115777655,0.9751673936843872,32,144,
+cupertino,72,0.927958721788645,0.9850968718528748,22,144,
+cupertino,73,0.8666666666666667,0.9952718615531921,3,144,
+cupertino,74,0.9442640692640691,0.9917929172515869,12,144,
+cupertino,75,0.830654761904762,0.9871323704719543,8,144,
+cupertino,76,0.7875,0.987500011920929,4,144,
+cupertino,77,0.6110722610722611,0.9504830837249756,6,144,
+cupertino,78,0.5535148230270182,0.9497942328453064,9,144,
+cupertino,79,0.5065350877192982,0.9201492667198181,10,144,
+cupertino,80,0.2751582278481013,0.8410714268684387,4,144,
+cupertino,81,0.9380952380952381,0.9942386746406555,9,144,
+cupertino,82,0.8514013764013764,0.9847328066825867,13,144,
+cupertino,83,0.4945276945276945,0.9718456864356995,7,144,
+cupertino,84,0.641881024255788,0.958314061164856,17,144,
+cupertino,85,0.7765367018802743,0.9585312008857727,27,144,
+cupertino,86,0.9527326121920368,0.9774349331855774,43,144,
+cupertino,87,0.9238143587365919,0.9771929979324341,30,144,
+cupertino,88,0.7847222222222222,0.989130437374115,6,144,
+cupertino,89,0.9416666666666667,0.9935661554336548,8,144,
+cupertino,90,0.25,0.9790209531784058,1,144,
+cupertino,91,0.85,0.9892857074737549,4,144,
+cupertino,92,1.0,1.0,3,144,
+cupertino,93,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,94,0.8555555555555556,0.9939613342285156,6,144,
+cupertino,95,0.859750566893424,0.9937434792518616,7,144,
+cupertino,96,1.0,1.0,2,144,
+cupertino,97,1.0,1.0,1,144,
+cupertino,98,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,99,0.3693040293040293,0.965467631816864,5,144,
+cupertino,100,0.5054563492063492,0.9678308963775635,8,144,
+cupertino,101,0.9278749907709184,0.9923664331436157,13,144,
+cupertino,102,0.9433119658119659,0.9955223798751831,10,144,
+cupertino,103,1.0,1.0,3,144,
+cupertino,104,0.86,0.9913669228553772,5,144,
+cupertino,105,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,106,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,107,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,108,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,109,0.9444444444444444,0.9963768124580383,6,144,
+cupertino,110,0.9797979797979798,0.998353898525238,9,144,
+cupertino,111,1.0,1.0,5,144,
+cupertino,112,1.0,1.0,2,144,
+cupertino,113,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,114,0.3333333333333333,0.9860140085220337,1,144,
+cupertino,115,0.3333333333333333,0.9860140085220337,1,144,
+cupertino,116,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,117,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,118,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,119,0.25,0.9683098793029785,2,144,
+cupertino,120,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,121,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,122,1.0,1.0,2,144,
+cupertino,123,1.0,1.0,2,144,
+cupertino,124,1.0,1.0,1,144,
+cupertino,125,0.9166666666666666,0.9976359605789185,3,144,
+cupertino,126,0.9028571428571428,0.9956834316253662,5,144,
+cupertino,127,0.9166666666666666,0.9976359605789185,3,144,
+cupertino,128,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,129,0.5916666666666666,0.9810874462127686,3,144,
+cupertino,130,0.3655913978494624,0.9071428775787354,4,144,
+cupertino,131,0.175,0.9260563254356384,2,144,
+cupertino,132,0.3333333333333333,0.9860140085220337,1,144,
+cupertino,133,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,134,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,135,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,136,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,137,0.41666666666666663,0.9823943376541138,2,144,
+cupertino,138,0.8333333333333333,0.9964788556098938,2,144,
+cupertino,139,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,140,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,141,1.0,1.0,1,144,
+cupertino,142,1.0,1.0,1,144,
+cupertino,143,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,144,0.19444444444444442,0.9577465057373047,2,144,
+cupertino,145,0.7869949494949495,0.9532828330993652,12,144,
+cupertino,146,0.8377297816782301,0.968878448009491,13,144,
+cupertino,147,0.6833333333333333,0.9785714149475098,4,144,
+cupertino,148,1.0,1.0,2,144,
+cupertino,149,0.9166666666666666,0.9976359605789185,3,144,
+cupertino,150,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,151,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,152,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,153,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,154,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,155,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,156,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,157,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,158,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,159,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,160,0.9765432098765432,0.998353898525238,9,144,
+cupertino,161,0.9543335452426362,0.9958988428115845,11,144,
+cupertino,162,0.8095238095238095,0.9905437231063843,3,144,
+cupertino,163,1.0,1.0,2,144,
+cupertino,164,0.5977777777777777,0.9856114983558655,5,144,
+cupertino,165,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,166,1.0,1.0,1,144,
+cupertino,167,0.5,0.9930070042610168,1,144,
+cupertino,168,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,169,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,170,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,171,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,172,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,173,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,174,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,175,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,176,1.0,1.0,3,144,
+cupertino,177,0.7861904761904762,0.9928057789802551,5,144,
+cupertino,178,0.29166666666666663,0.9718309640884399,2,144,
+cupertino,179,0.29166666666666663,0.9753521084785461,2,144,
+cupertino,180,1.0,1.0,2,144,
+cupertino,181,1.0,1.0,2,144,
+cupertino,182,1.0,1.0,1,144,
+cupertino,183,0.5833333333333333,0.9929577708244324,2,144,
+cupertino,184,0.5833333333333333,0.9929577708244324,2,144,
+cupertino,185,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,186,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,187,0.9968055555555555,0.9991227984428406,30,144,
+cupertino,188,0.9982161035238164,0.99861741065979,61,144,
+cupertino,189,1.0,1.0,31,144,
+cupertino,190,1.0,1.0,1,144,
+cupertino,191,0.8928571428571428,0.9946428537368774,4,144,
+cupertino,192,0.7683333333333333,0.9913669228553772,5,144,
+cupertino,193,0.4444444444444444,0.978723406791687,3,144,
+cupertino,194,0.2,0.9720279574394226,1,144,
+cupertino,195,0.29166666666666663,0.9753521084785461,2,144,
+cupertino,196,0.25,0.9790209531784058,1,144,
+cupertino,197,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,198,0.9821428571428572,0.9989572763442993,7,144,
+cupertino,199,0.9500000000000001,0.9958847761154175,9,144,
+cupertino,200,0.6428571428571428,0.9823943376541138,2,144,
+cupertino,201,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,202,0.9786958751127324,0.9898989796638489,45,144,
+cupertino,203,0.9821613622588684,0.9521604776382446,108,144,
+cupertino,204,0.971834615644591,0.9800117611885071,63,144,
+cupertino,205,0.5,0.9930070042610168,1,144,
+cupertino,206,0.5,0.9930070042610168,1,144,
+cupertino,207,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,208,0.5833333333333333,0.9929577708244324,2,144,
+cupertino,209,0.4091666666666667,0.965467631816864,5,144,
+cupertino,210,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,211,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,212,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,213,1.0,1.0,5,144,
+cupertino,214,0.9571428571428572,0.9968717694282532,7,144,
+cupertino,215,0.8333333333333333,0.9964788556098938,2,144,
+cupertino,216,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,217,0.9210975213720898,0.9873684048652649,19,144,
+cupertino,218,0.9271460858059577,0.9613891839981079,55,144,
+cupertino,219,0.9019950425989522,0.9714506268501282,36,144,
+cupertino,220,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,221,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,222,1.0,1.0,1,144,
+cupertino,223,0.5404761904761904,0.9750000238418579,4,144,
+cupertino,224,0.732936507936508,0.987922728061676,6,144,
+cupertino,225,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,226,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,227,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,228,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,229,0.6666666666666666,0.98591548204422,2,144,
+cupertino,230,0.8333333333333333,0.9929078221321106,3,144,
+cupertino,231,1.0,1.0,1,144,
+cupertino,232,1.0,1.0,4,144,
+cupertino,233,0.8287477954144621,0.9893004298210144,9,144,
+cupertino,234,0.6116666666666666,0.9870503544807434,5,144,
+cupertino,235,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,236,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,237,1.0,1.0,1,144,
+cupertino,238,0.5535714285714286,0.9763593673706055,3,144,
+cupertino,239,0.41666666666666663,0.98591548204422,2,144,
+cupertino,240,0.6699348799348799,0.9695473313331604,9,144,
+cupertino,241,0.225,0.9612675905227661,2,144,
+cupertino,242,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,243,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,244,0.20833333333333331,0.9542253613471985,2,144,
+cupertino,245,0.5138888888888888,0.9834515452384949,3,144,
+cupertino,246,0.25,0.9790209531784058,1,144,
+cupertino,247,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,248,1.0,1.0,1,144,
+cupertino,249,0.5,0.9930070042610168,1,144,
+cupertino,250,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,251,0.5,0.9930070042610168,1,144,
+cupertino,252,0.3333333333333333,0.9860140085220337,1,144,
+cupertino,253,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,254,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,255,0.6283808783808784,0.9736625552177429,9,144,
+cupertino,256,0.25,0.9683098793029785,2,144,
+cupertino,257,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,258,0.1716117216117216,0.8553571701049805,4,144,
+cupertino,259,0.13899122807017544,0.8035714030265808,4,144,
+cupertino,260,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,261,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,262,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,263,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,264,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,265,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,266,0.3333333333333333,0.9860140085220337,1,144,
+cupertino,267,0.2,0.9720279574394226,1,144,
+cupertino,268,0.95,0.9982143044471741,4,144,
+cupertino,269,0.9666666666666667,0.9985611438751221,5,144,
+cupertino,270,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,271,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,272,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,273,0.2803030303030303,0.9178571701049805,4,144,
+cupertino,274,0.2512254901960784,0.8785714507102966,4,144,
+cupertino,275,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,276,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,277,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,278,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,279,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,280,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,281,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,282,0.7476190476190476,0.9841726422309875,5,144,
+cupertino,283,0.8048944675738934,0.9829118251800537,11,144,
+cupertino,284,1.0,1.0,7,144,
+cupertino,285,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,286,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,287,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,288,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,289,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,290,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,291,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,292,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,293,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,294,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,295,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,296,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+cupertino,297,0.7642857142857142,0.9870503544807434,5,144,
+cupertino,298,0.7264128728414443,0.9822732210159302,7,144,
+cupertino,299,1.0,1.0,2,144,

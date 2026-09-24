@@ -81,6 +81,19 @@ SATMAE_FMOW_SENTINEL = ModelSpec(
     ),
 )
 
+# Estadisticas oficiales de fMoW-Sentinel (util/datasets.py, clase
+# SentinelIndividualImageDataset, repo sustainlab-group/SatMAE), en el orden
+# de SENTINEL2_ALL_BANDS (13 bandas). SatMAE NO usa z-score normal: usa
+# SentinelNormalize, que estira [mean-2*std, mean+2*std] a [0,255] con clip
+# (ver preprocessing.sentinel_normalize_satmae). Sin esto, los embeddings de
+# SatMAE quedan casi sin senal (ver discusion: effect_size ~0.5 = azar).
+SATMAE_MEAN_13 = [1370.19151926, 1184.3824625, 1120.77120066, 1136.26026392,
+                   1263.73947144, 1645.40315151, 1846.87040806, 1762.59530783,
+                   1972.62420416, 582.72633433, 14.77112979, 1732.16362238, 1247.91870117]
+SATMAE_STD_13 = [633.15169573, 650.2842772, 712.12507725, 965.23119807,
+                  948.9819932, 1108.06650639, 1258.36394548, 1233.1492281,
+                  1364.38688993, 472.37967789, 14.3114637, 1310.36996126, 1087.6020813]
+
 PRITHVI_EO2_300M = ModelSpec(
     name="prithvi_eo_2.0_300m",
     chip_size=192,   # NO 224: ver preprocessing.py, se ajusta tras remuestrear a 30 m

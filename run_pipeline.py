@@ -173,16 +173,27 @@ def run_for_clay(img_t1, img_t2, mask, model, meta_t1: dict, meta_t2: dict,
     return results
 
 
-def run_for_satmae(img_t1, img_t2, mask, model, combine_mode="mean"):
+def run_for_satmae(img_t1, img_t2, mask, model, device: str = "cpu",
+                    max_chips: int | None = None, stride: int | None = None,
+                    combine_mode: str = "max"):
+    """
+    combine_mode="max" por defecto (no "mean"): ver discusion del protocolo --
+    promediar los 3 grupos espectrales puede diluir un cambio que solo es
+    visible en uno de ellos.
+    """
     from models.satmae_extractor import extract_satmae_patch_tokens
 
-    chips_t1 = prepare_for_satmae(img_t1, SATMAE_FMOW_SENTINEL)
-    chips_t2 = prepare_for_satmae(img_t2, SATMAE_FMOW_SENTINEL)
+    chips_t1 = prepare_for_satmae(img_t1, SATMAE_FMOW_SENTINEL, stride=stride)
+    chips_t2 = prepare_for_satmae(img_t2, SATMAE_FMOW_SENTINEL, stride=stride)
+
+    if max_chips is not None:
+        chips_t1 = chips_t1[:max_chips]
+        chips_t2 = chips_t2[:max_chips]
 
     results = []
     for chip1, chip2 in zip(chips_t1, chips_t2):
-        emb1 = extract_satmae_patch_tokens(model, [chip1])[0]  # (3, 12, 12, 1024)
-        emb2 = extract_satmae_patch_tokens(model, [chip2])[0]
+        emb1 = extract_satmae_patch_tokens(model, [chip1], device=device)[0]  # (3, 12, 12, 1024)
+        emb2 = extract_satmae_patch_tokens(model, [chip2], device=device)[0]
 
         dist_per_group = np.stack([
             cosine_distance_map(emb1[g], emb2[g]) for g in range(emb1.shape[0])
@@ -231,21 +242,30 @@ def pick_device() -> str:
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--model", type=str, choices=["clay", "satmae"], default="clay")
     parser.add_argument("--oscd-root", type=Path, required=True,
                          help="Carpeta donde torchgeo descargara/ya descargo OSCD")
     parser.add_argument("--pair-index", type=int, default=0,
                          help="Indice del par dentro del split 'train' (0-13)")
-    parser.add_argument("--clay-checkpoint", type=Path, required=True)
-    parser.add_argument("--clay-metadata", type=Path, required=True)
+    parser.add_argument("--clay-checkpoint", type=Path, default=None,
+                         help="Requerido si --model clay")
+    parser.add_argument("--clay-metadata", type=Path, default=None,
+                         help="Requerido si --model clay")
+    parser.add_argument("--satmae-combine-mode", type=str, choices=["mean", "max"], default="max")
     parser.add_argument("--device", type=str, default=None,
                          help="cuda, mps o cpu. Si no se especifica, se detecta automaticamente.")
-    parser.add_argument("--out", type=Path, default=Path("clay_results.json"))
+    parser.add_argument("--out", type=Path, default=None,
+                         help="Por defecto: results/<model>/<model>_results.json")
     parser.add_argument("--max-chips", type=int, default=None,
                          help="Limitar a los primeros N chips de la escena (prueba rapida)")
     parser.add_argument("--chip-overlap", type=float, default=0.0,
                          help="Fraccion de solape entre chips (0.0 = sin solape, 0.5 = 50%% de solape). "
                               "Util para escenas mas chicas que el chip_size del modelo.")
     args = parser.parse_args()
+    if args.model == "clay" and (args.clay_checkpoint is None or args.clay_metadata is None):
+        parser.error("--clay-checkpoint y --clay-metadata son requeridos con --model clay")
+    if args.out is None:
+        args.out = Path(f"results/{args.model}/{args.model}_results.json")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     device = args.device or pick_device()
     print(f"Usando device: {device}")
@@ -259,27 +279,33 @@ def main():
     img_t1 = resample_20m_bands_to_10m(img_t1)
     img_t2 = resample_20m_bands_to_10m(img_t2)
     print(f"Tamano de la escena (bandas, H, W): {img_t1.shape}")
-
     date_t1, date_t2 = parse_oscd_date(date_t1_str), parse_oscd_date(date_t2_str)
-    meta_t1 = get_scene_metadata(region, date_t1)
-    meta_t2 = get_scene_metadata(region, date_t2)
-    print(f"Region: {region}  |  lat/lon: {meta_t1['lat']}, {meta_t1['lon']}")
-    print(f"Fechas: t1={date_t1}  t2={date_t2}")
+    print(f"Region: {region}  |  Fechas: t1={date_t1}  t2={date_t2}")
 
-    from models.clay_extractor import load_clay_model
-    clay_model = load_clay_model(
-        checkpoint_path=str(args.clay_checkpoint),
-        metadata_path=str(args.clay_metadata),
-        device=device,
-    )
+    if args.model == "clay":
+        meta_t1 = get_scene_metadata(region, date_t1)
+        meta_t2 = get_scene_metadata(region, date_t2)
 
-    clay_stride = int(CLAY_V15.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
-    clay_results = run_for_clay(img_t1, img_t2, mask, clay_model, meta_t1, meta_t2,
-                                 device=device, max_chips=args.max_chips, stride=clay_stride)
+        from models.clay_extractor import load_clay_model
+        clay_model = load_clay_model(
+            checkpoint_path=str(args.clay_checkpoint),
+            metadata_path=str(args.clay_metadata),
+            device=device,
+        )
+        clay_stride = int(CLAY_V15.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
+        results = run_for_clay(img_t1, img_t2, mask, clay_model, meta_t1, meta_t2,
+                                device=device, max_chips=args.max_chips, stride=clay_stride)
+    else:
+        from models.satmae_extractor import load_satmae_model
+        satmae_model = load_satmae_model(device=device)
+        satmae_stride = int(SATMAE_FMOW_SENTINEL.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
+        results = run_for_satmae(img_t1, img_t2, mask, satmae_model,
+                                  device=device, max_chips=args.max_chips, stride=satmae_stride,
+                                  combine_mode=args.satmae_combine_mode)
 
-    args.out.write_text(json.dumps({"clay": clay_results}, indent=2))
+    args.out.write_text(json.dumps({args.model: results}, indent=2))
     print(f"Resultados guardados en {args.out}")
-    print(f"Chips procesados: {len(clay_results)}")
+    print(f"Chips procesados: {len(results)}")
 
 
 if __name__ == "__main__":

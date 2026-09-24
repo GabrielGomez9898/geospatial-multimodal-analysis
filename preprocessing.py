@@ -21,6 +21,8 @@ from config import (
     ModelSpec,
     SENTINEL2_ALL_BANDS,
     SENTINEL2_20M_BANDS,
+    SATMAE_MEAN_13,
+    SATMAE_STD_13,
 )
 
 
@@ -138,6 +140,26 @@ def zscore_normalize(image: np.ndarray, mean: List[float], std: List[float]) -> 
     return (image.astype(np.float32) - mean_arr) / std_arr
 
 
+def sentinel_normalize_satmae(image: np.ndarray, mean: List[float], std: List[float]) -> np.ndarray:
+    """
+    Replica EXACTA de la clase SentinelNormalize del repo oficial de SatMAE
+    (util/datasets.py): NO es z-score. Estira cada banda al rango
+    [mean - 2*std, mean + 2*std], lo mapea a [0, 255] con clip, lo castea a
+    uint8 (para replicar la perdida de precision del pipeline original, que
+    pasa por una imagen de 8 bits antes de volver a tensor) y lo vuelve a
+    escalar a [0, 1] (equivalente al ToTensor() que sigue en el repo original).
+    mean/std deben ser los de SATMAE_MEAN_13/SATMAE_STD_13 (config.py),
+    ya recortados al subconjunto de bandas que usa SatMAE.
+    """
+    mean_arr = np.array(mean, dtype=np.float64).reshape(-1, 1, 1)
+    std_arr = np.array(std, dtype=np.float64).reshape(-1, 1, 1)
+    min_value = mean_arr - 2 * std_arr
+    max_value = mean_arr + 2 * std_arr
+    img = (image.astype(np.float64) - min_value) / (max_value - min_value) * 255.0
+    img = np.clip(img, 0, 255).astype(np.uint8)
+    return (img.astype(np.float32) / 255.0)
+
+
 # ---------------------------------------------------------------------------
 # Pipeline especifico por modelo (junta los pasos anteriores)
 # ---------------------------------------------------------------------------
@@ -156,7 +178,12 @@ def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec, stride: int | None 
 
 def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec, stride: int | None = None) -> List[Chip]:
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
-    # TODO: normalizar con las estadisticas de fMoW-Sentinel publicadas en el repo oficial.
+    # Estadisticas oficiales de fMoW-Sentinel, recortadas al subconjunto y
+    # orden de spec.bands (SatMAE usa 10 de las 13 bandas de SENTINEL2_ALL_BANDS).
+    band_idx = [SENTINEL2_ALL_BANDS.index(b) for b in spec.bands]
+    mean_subset = [SATMAE_MEAN_13[i] for i in band_idx]
+    std_subset = [SATMAE_STD_13[i] for i in band_idx]
+    img = sentinel_normalize_satmae(img, mean_subset, std_subset)
     return extract_dense_chips(img, spec.chip_size, stride=stride)
 
 

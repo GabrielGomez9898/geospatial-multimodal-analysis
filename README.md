@@ -19,13 +19,13 @@ models/
 run_pipeline.py          Orquestador end-to-end para un par OSCD
 ```
 
-## Qué falta que TÚ conectes (marcado como `TODO` en el código)
+## Qué falta que conectar (marcado como `TODO` en el código)
 
 Este pipeline define correctamente la interfaz, los tamaños esperados y el
 manejo de metadatos/GSD según la documentación oficial de cada modelo, pero
 **no puede instalar ni ejecutar los tres repositorios de terceros desde este
 entorno** (sin acceso de red a GitHub/HuggingFace de terceros). Antes de correr
-`run_pipeline.py` necesitas:
+`run_pipeline.py` se necesita:
 
 1. **Clay**: `pip install git+https://github.com/Clay-foundation/model.git`,
    descargar `clay-v1.5.ckpt`, y confirmar en `models/clay_extractor.py` el
@@ -65,10 +65,3 @@ entorno** (sin acceso de red a GitHub/HuggingFace de terceros). Antes de correr
   comparable en interpretación a la de Clay/SatMAE, aunque el cálculo
   numérico es el mismo. Documentar esto en la sección de resultados.
 
-## Próximo paso sugerido
-
-Una vez conectes los tres extractores contra un solo par de imágenes de
-prueba, corre `run_pipeline.py` sobre los 14 pares de OSCD y agrega los
-resultados (media y dispersión de AUPRC / tamaño de efecto por modelo) — ese
-agregado es el que te da la base para "tomar una decisión" según el objetivo
-del protocolo.

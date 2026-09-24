@@ -142,18 +142,22 @@ def zscore_normalize(image: np.ndarray, mean: List[float], std: List[float]) -> 
 # Pipeline especifico por modelo (junta los pasos anteriores)
 # ---------------------------------------------------------------------------
 
-def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec) -> List[Chip]:
-    """image_10m: (13, H, W) en band_order = SENTINEL2_ALL_BANDS, ya a 10 m."""
+def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec, stride: int | None = None) -> List[Chip]:
+    """image_10m: (13, H, W) en band_order = SENTINEL2_ALL_BANDS, ya a 10 m.
+    stride: paso entre chips en pixeles. None = sin solape (stride=chip_size).
+    Usa un stride menor a spec.chip_size para solapar chips en escenas
+    pequenas (ver discusion: muchas escenas de OSCD son mas chicas que 512 px,
+    lo que con stride=chip_size solo da 1 chip)."""
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
     # TODO: normalizar con las estadisticas oficiales de configs/metadata.yaml de Clay
     # (dependen del sensor: sentinel-2-l2a). No inventar mean/std aqui.
-    return extract_dense_chips(img, spec.chip_size)
+    return extract_dense_chips(img, spec.chip_size, stride=stride)
 
 
-def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec) -> List[Chip]:
+def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec, stride: int | None = None) -> List[Chip]:
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
     # TODO: normalizar con las estadisticas de fMoW-Sentinel publicadas en el repo oficial.
-    return extract_dense_chips(img, spec.chip_size)
+    return extract_dense_chips(img, spec.chip_size, stride=stride)
 
 
 def prepare_for_prithvi(image_10m: np.ndarray, spec: ModelSpec, mean: List[float], std: List[float]) -> List[Chip]:

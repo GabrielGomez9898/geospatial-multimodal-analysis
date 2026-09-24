@@ -12,11 +12,33 @@ documentada en sus tutoriales oficiales (ClayMAEModule + ClayDataModule).
 
 from __future__ import annotations
 from typing import List
+import math
 import numpy as np
 import torch
 
 from preprocessing import Chip
 from config import CLAY_V15
+
+
+def normalize_latlon(lat: float, lon: float) -> List[float]:
+    """
+    Replica exacta de la funcion del tutorial oficial de Clay: lat/lon deben
+    llegar al modelo como seno/coseno (4 valores), NO como grados crudos.
+    https://clay-foundation.github.io/model/tutorials/wall-to-wall.html
+    """
+    lat_rad = lat * math.pi / 180
+    lon_rad = lon * math.pi / 180
+    return [math.sin(lat_rad), math.cos(lat_rad), math.sin(lon_rad), math.cos(lon_rad)]
+
+
+def normalize_timestamp(week: int, hour: int) -> List[float]:
+    """
+    Replica exacta de la funcion del tutorial oficial de Clay: semana/hora
+    deben llegar como seno/coseno (4 valores), NO como enteros crudos.
+    """
+    week_rad = week * 2 * math.pi / 52
+    hour_rad = hour * 2 * math.pi / 24
+    return [math.sin(week_rad), math.cos(week_rad), math.sin(hour_rad), math.cos(hour_rad)]
 
 
 def load_clay_model(checkpoint_path: str, metadata_path: str, device: str = "cuda"):
@@ -58,16 +80,15 @@ def extract_clay_patch_tokens(
     for chip in chips:
         pixels = torch.from_numpy(chip.array).unsqueeze(0).float().to(device)  # (1, C, 256, 256)
 
-        # TODO: el nombre/forma exacta del "datacube" de entrada depende de la
-        # version del repo -- normalmente es un dict con: pixels, gsd, waves,
-        # latlon, time. Revisa ClayDataModule / el notebook de tutoriales
-        # "Explore embeddings from Clay Encoder" para el formato exacto.
+        # Formato confirmado contra el tutorial oficial de Clay (wall-to-wall.html):
+        # latlon y time van pre-codificados en seno/coseno de 4 valores cada uno,
+        # no como (lat,lon)/(week,hour) crudos.
         datacube = {
             "pixels": pixels,
             "gsd": torch.tensor([gsd_m], device=device),
             "waves": torch.tensor(wavelengths_um, device=device),
-            "latlon": torch.tensor([[lat, lon]], device=device),
-            "time": torch.tensor([week_hour], device=device),
+            "latlon": torch.tensor([normalize_latlon(lat, lon)], device=device),          # (1, 4)
+            "time": torch.tensor([normalize_timestamp(*week_hour)], device=device),        # (1, 4)
         }
 
         unmsk_patch, *_ = model.model.encoder(datacube)

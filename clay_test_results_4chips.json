@@ -1,0 +1,28 @@
+{
+  "clay": [
+    {
+      "auprc": 0.10284931951930544,
+      "effect_size_auc": 0.9323471188545227,
+      "n_change_tokens": 10,
+      "n_total_tokens": 1024
+    },
+    {
+      "auprc": 0.07450409613168085,
+      "effect_size_auc": 0.8848814368247986,
+      "n_change_tokens": 12,
+      "n_total_tokens": 1024
+    },
+    {
+      "auprc": 0.13339807247876898,
+      "effect_size_auc": 0.9192307591438293,
+      "n_change_tokens": 10,
+      "n_total_tokens": 1024
+    },
+    {
+      "auprc": 0.09651441309223825,
+      "effect_size_auc": 0.8494170308113098,
+      "n_change_tokens": 7,
+      "n_total_tokens": 1024
+    }
+  ]
+}

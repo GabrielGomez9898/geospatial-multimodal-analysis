@@ -1,0 +1,10 @@
+{
+  "clay": [
+    {
+      "auprc": 0.10284931951930544,
+      "effect_size_auc": 0.9323471188545227,
+      "n_change_tokens": 10,
+      "n_total_tokens": 1024
+    }
+  ]
+}

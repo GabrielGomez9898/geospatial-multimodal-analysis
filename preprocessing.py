@@ -187,10 +187,61 @@ def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec, stride: int | Non
     return extract_dense_chips(img, spec.chip_size, stride=stride)
 
 
-def prepare_for_prithvi(image_10m: np.ndarray, spec: ModelSpec, mean: List[float], std: List[float]) -> List[Chip]:
-    img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
-    img_30m = average_pool_downsample(img, factor=3)          # 10 m -> ~30 m
-    img_30m = center_crop_to_multiple(img_30m, spec.patch_size)  # -> multiplo de 16 (192 tipicamente)
-    img_30m = zscore_normalize(img_30m, mean, std)
-    # Con una escena de ~600x600 a 10 m, esto normalmente da 1 solo chip de 192x192.
-    return extract_dense_chips(img_30m, spec.chip_size)
+def prithvi_scene_size_30m(h_10m: int, w_10m: int) -> tuple[int, int]:
+    """Tamano (alto, ancho) de una escena tras el remuestreo 10 m -> 30 m (factor 3)."""
+    return h_10m // 3, w_10m // 3
+
+
+def prepare_prithvi_pairs(
+    img_t1: np.ndarray,
+    img_t2: np.ndarray,
+    mask: np.ndarray,
+    spec: ModelSpec,
+    mean: List[float],
+    std: List[float],
+    stride: int | None = None,
+) -> list[dict]:
+    """
+    Prepara, para UNA escena, los pares de chips (t1, t2) de Prithvi junto con
+    la mascara de cambio, todos en el MISMO sistema de coordenadas (grilla de 30 m).
+
+    Por que imagen y mascara se procesan juntas: Prithvi remuestrea la imagen de
+    10 m a 30 m, y los offsets de los chips (row_off, col_off) estan en esa grilla
+    de 30 m. La mascara original esta en 10 m; si se cortara con esos offsets sin
+    remuestrearla, apuntaria a otra zona del terreno. La version anterior
+    (prepare_for_prithvi) tenia justo ese error: solo procesaba la imagen.
+
+    La mascara se reduce con el mismo promedio de bloques 3x3 que la imagen y
+    queda como FRACCION de cambio (0-1) por pixel de 30 m. Como todos los bloques
+    tienen el mismo tamano, promediar fracciones equivale a promediar los pixeles
+    originales de 10 m, asi que el umbral posterior (resample_mask_to_grid) da lo
+    mismo que si se calculara sobre la mascara original.
+
+    No hay padding, ni reescalado, ni recorte al centro: los chips se extraen con
+    ventana deslizante desde la esquina (0, 0), igual que en Clay y SatMAE. Si la
+    escena a 30 m mide menos de spec.chip_size en alguna dimension, no sale ningun
+    chip (lista vacia) y la escena se excluye de la evaluacion de Prithvi.
+
+    Devuelve una lista de dicts con: chip_t1, chip_t2 (Chip) y mask_chip
+    (array (chip_size, chip_size) con fracciones de cambio a 30 m).
+    """
+    factor = 3  # 10 m -> 30 m
+    sel1 = select_and_reorder_bands(img_t1, SENTINEL2_ALL_BANDS, spec.bands)
+    sel2 = select_and_reorder_bands(img_t2, SENTINEL2_ALL_BANDS, spec.bands)
+
+    a1 = zscore_normalize(average_pool_downsample(sel1, factor), mean, std)
+    a2 = zscore_normalize(average_pool_downsample(sel2, factor), mean, std)
+    m30 = average_pool_downsample(mask[None, :, :].astype(np.float32), factor)  # (1, h, w)
+
+    stride = stride or spec.chip_size
+    c = spec.chip_size
+    H, W = a1.shape[1], a1.shape[2]
+    pairs = []
+    for row in range(0, H - c + 1, stride):
+        for col in range(0, W - c + 1, stride):
+            pairs.append({
+                "chip_t1": Chip(array=a1[:, row:row + c, col:col + c], row_off=row, col_off=col),
+                "chip_t2": Chip(array=a2[:, row:row + c, col:col + c], row_off=row, col_off=col),
+                "mask_chip": m30[0, row:row + c, col:col + c],
+            })
+    return pairs

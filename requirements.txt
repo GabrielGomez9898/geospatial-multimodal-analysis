@@ -5,4 +5,6 @@ numpy
 scipy
 scikit-learn
 torch
-rasterio      # o tifffile, segun como implementes load_oscd_pair()
+rasterio     
+rshf
+terratorch

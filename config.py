@@ -96,19 +96,20 @@ SATMAE_STD_13 = [633.15169573, 650.2842772, 712.12507725, 965.23119807,
 
 PRITHVI_EO2_300M = ModelSpec(
     name="prithvi_eo_2.0_300m",
-    chip_size=192,   # NO 224: ver preprocessing.py, se ajusta tras remuestrear a 30 m
+    chip_size=224,   # tamano de entrenamiento (config oficial: img_size=224). Sin padding ni reescalado.
     patch_size=16,
     embed_dim=1024,
     native_gsd_m=30.0,
     # Orden exacto exigido por el checkpoint oficial: Blue, Green, Red, NIR estrecho, SWIR1, SWIR2
     bands=["B02", "B03", "B04", "B8A", "B11", "B12"],
-    uses_metadata=True,   # variante -TL: lat/lon + fecha (opcional, con drop en pretraining)
+    uses_metadata=False,  # modelo base (sin sufijo _tl): coords_encoding=[], no acepta lat/lon/fecha
     joint_temporal=True,  # patch embedding 3D: t1 y t2 se procesan en una sola pasada (T=2)
     notes=(
         "Preentrenado a 30 m (HLS). Se remuestrea Sentinel-2 de 10 m a 30 m por "
-        "average pooling 3x3 antes de recortar a un multiplo de 16 px (192, no 224). "
-        "El positional encoding es sinusoidal (no aprendido), por lo que el checkpoint "
-        "oficial admite cambiar img_size sin reentrenar."
+        "average pooling 3x3 y se usan chips de 224x224 (6720 m de lado). "
+        "No se hace padding ni reescalado: las escenas que a 30 m miden menos de "
+        "224 px en alguna dimension se EXCLUYEN de la evaluacion de Prithvi "
+        "(ver run_all_prithvi.py, que las lista en 'excluded_pairs')."
     ),
 )
 

@@ -1,0 +1,292 @@
+{
+  "chip_size": 224,
+  "per_pair": {
+    "abudhabi": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.13603718144849417,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.6054053902626038,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "auprc": 0.13603718144849417,
+          "effect_size_auc": 0.6054053902626038,
+          "n_change_tokens": 11,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "pisa": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.04010001770791518,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.42403629422187805,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "auprc": 0.04010001770791518,
+          "effect_size_auc": 0.42403629422187805,
+          "n_change_tokens": 7,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "beirut": {
+      "n_chips": 4,
+      "auprc": {
+        "mean": 0.4431973672244426,
+        "std": 0.1200410124627875,
+        "n_valid": 4,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.8251271545886993,
+        "std": 0.12845690567375526,
+        "n_valid": 4,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "auprc": 0.45851328061638275,
+          "effect_size_auc": 0.7096491456031799,
+          "n_change_tokens": 6,
+          "n_total_tokens": 196
+        },
+        {
+          "auprc": 0.48599335999855925,
+          "effect_size_auc": 0.6865941882133484,
+          "n_change_tokens": 12,
+          "n_total_tokens": 196
+        },
+        {
+          "auprc": 0.5782828282828283,
+          "effect_size_auc": 0.9274611473083496,
+          "n_change_tokens": 3,
+          "n_total_tokens": 196
+        },
+        {
+          "auprc": 0.25,
+          "effect_size_auc": 0.9768041372299194,
+          "n_change_tokens": 2,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "beihai": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.03680344478216818,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.739205539226532,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "auprc": 0.03680344478216818,
+          "effect_size_auc": 0.739205539226532,
+          "n_change_tokens": 3,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "cupertino": {
+      "n_chips": 2,
+      "auprc": {
+        "mean": 0.5558845475512142,
+        "std": 0.05522656355989691,
+        "n_valid": 2,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.9801218211650848,
+        "std": 0.006265610456466675,
+        "n_valid": 2,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "auprc": 0.5006579839913173,
+          "effect_size_auc": 0.9738562107086182,
+          "n_change_tokens": 9,
+          "n_total_tokens": 196
+        },
+        {
+          "auprc": 0.6111111111111112,
+          "effect_size_auc": 0.9863874316215515,
+          "n_change_tokens": 5,
+          "n_total_tokens": 196
+        }
+      ]
+    }
+  },
+  "excluded_pairs": [
+    {
+      "region": "paris",
+      "size_10m": [
+        408,
+        390
+      ],
+      "size_30m": [
+        136,
+        130
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "mumbai",
+      "size_10m": [
+        858,
+        557
+      ],
+      "size_30m": [
+        286,
+        185
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "aguasclaras",
+      "size_10m": [
+        471,
+        525
+      ],
+      "size_30m": [
+        157,
+        175
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "nantes",
+      "size_10m": [
+        522,
+        582
+      ],
+      "size_30m": [
+        174,
+        194
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "rennes",
+      "size_10m": [
+        339,
+        563
+      ],
+      "size_30m": [
+        113,
+        187
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "bercy",
+      "size_10m": [
+        395,
+        360
+      ],
+      "size_30m": [
+        131,
+        120
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "bordeaux",
+      "size_10m": [
+        517,
+        461
+      ],
+      "size_30m": [
+        172,
+        153
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "hongkong",
+      "size_10m": [
+        695,
+        540
+      ],
+      "size_30m": [
+        231,
+        180
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    },
+    {
+      "region": "saclay_e",
+      "size_10m": [
+        639,
+        688
+      ],
+      "size_30m": [
+        213,
+        229
+      ],
+      "required_chip_size": 224,
+      "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. Sin padding ni reescalado no sale ningun chip."
+    }
+  ],
+  "failed_pairs": [],
+  "aggregate_across_all_chips": {
+    "auprc": {
+      "mean": 0.34416657865986405,
+      "std": 0.21675975587817994,
+      "n_valid": 9,
+      "n_nan": 0
+    },
+    "effect_size_auc": {
+      "mean": 0.7810443871551089,
+      "std": 0.18653994450326053,
+      "n_valid": 9,
+      "n_nan": 0
+    }
+  },
+  "aggregate_across_pairs": {
+    "auprc": {
+      "mean": 0.24240451174284688,
+      "std": 0.21591684494680602,
+      "n_valid": 5,
+      "n_nan": 0
+    },
+    "effect_size_auc": {
+      "mean": 0.7147792398929596,
+      "std": 0.18956481279680945,
+      "n_valid": 5,
+      "n_nan": 0
+    }
+  }
+}

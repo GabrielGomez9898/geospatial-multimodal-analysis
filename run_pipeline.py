@@ -31,7 +31,8 @@ from preprocessing import (
     resample_20m_bands_to_10m,
     prepare_for_clay,
     prepare_for_satmae,
-    prepare_for_prithvi,
+    prepare_prithvi_pairs,
+    prithvi_scene_size_30m,
 )
 from metrics import (
     cosine_distance_map,
@@ -209,23 +210,31 @@ def run_for_satmae(img_t1, img_t2, mask, model, device: str = "cpu",
     return results
 
 
-def run_for_prithvi(img_t1, img_t2, mask, model):
+def run_for_prithvi(img_t1, img_t2, mask, model, device: str = "cpu",
+                     max_chips: int | None = None, stride: int | None = None):
+    """
+    A diferencia de Clay/SatMAE, Prithvi procesa t1 y t2 JUNTOS en una sola
+    pasada (patch embedding 3D con T=2) -- ver prithvi_extractor.py. Por eso
+    aqui se llama extract_prithvi_patch_tokens una vez por PAR de chips.
+
+    La mascara viene ya remuestreada a 30 m y alineada con los chips (ver
+    preprocessing.prepare_prithvi_pairs). Si la escena es mas chica que el chip
+    a 30 m, devuelve una lista vacia: la escena queda fuera de la evaluacion.
+    """
     from models.prithvi_extractor import extract_prithvi_patch_tokens
 
-    chips_t1 = prepare_for_prithvi(img_t1, PRITHVI_EO2_300M, PRITHVI_MEAN, PRITHVI_STD)
-    chips_t2 = prepare_for_prithvi(img_t2, PRITHVI_EO2_300M, PRITHVI_MEAN, PRITHVI_STD)
-    # Con una escena OSCD tipica, esto normalmente da 1 solo chip (ver discusion).
+    pairs = prepare_prithvi_pairs(img_t1, img_t2, mask, PRITHVI_EO2_300M,
+                                   PRITHVI_MEAN, PRITHVI_STD, stride=stride)
+    if max_chips is not None:
+        pairs = pairs[:max_chips]
 
     results = []
-    for chip1, chip2 in zip(chips_t1, chips_t2):
-        joint = extract_prithvi_patch_tokens(model, chip1, chip2)  # (2, 12, 12, 1024)
-        emb1, emb2 = joint[0], joint[1]
-        dist_map = cosine_distance_map(emb1, emb2)
+    for p in pairs:
+        joint = extract_prithvi_patch_tokens(model, p["chip_t1"], p["chip_t2"], device=device)  # (2, 14, 14, 1024)
+        dist_map = cosine_distance_map(joint[0], joint[1])
 
         grid_h, grid_w = dist_map.shape
-        mask_chip = mask[chip1.row_off:chip1.row_off + PRITHVI_EO2_300M.chip_size,
-                          chip1.col_off:chip1.col_off + PRITHVI_EO2_300M.chip_size]
-        mask_grid = resample_mask_to_grid(mask_chip, grid_h, grid_w)
+        mask_grid = resample_mask_to_grid(p["mask_chip"], grid_h, grid_w)
 
         results.append(separability_metrics(dist_map, mask_grid))
     return results
@@ -242,7 +251,7 @@ def pick_device() -> str:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", type=str, choices=["clay", "satmae"], default="clay")
+    parser.add_argument("--model", type=str, choices=["clay", "satmae", "prithvi"], default="clay")
     parser.add_argument("--oscd-root", type=Path, required=True,
                          help="Carpeta donde torchgeo descargara/ya descargo OSCD")
     parser.add_argument("--pair-index", type=int, default=0,
@@ -295,13 +304,27 @@ def main():
         clay_stride = int(CLAY_V15.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
         results = run_for_clay(img_t1, img_t2, mask, clay_model, meta_t1, meta_t2,
                                 device=device, max_chips=args.max_chips, stride=clay_stride)
-    else:
+    elif args.model == "satmae":
         from models.satmae_extractor import load_satmae_model
         satmae_model = load_satmae_model(device=device)
         satmae_stride = int(SATMAE_FMOW_SENTINEL.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
         results = run_for_satmae(img_t1, img_t2, mask, satmae_model,
                                   device=device, max_chips=args.max_chips, stride=satmae_stride,
                                   combine_mode=args.satmae_combine_mode)
+    else:  # prithvi
+        h30, w30 = prithvi_scene_size_30m(img_t1.shape[1], img_t1.shape[2])
+        chip = PRITHVI_EO2_300M.chip_size
+        print(f"Escena a 30 m: {h30}x{w30} px  (chip de Prithvi: {chip}x{chip})")
+        if h30 < chip or w30 < chip:
+            print("Esta escena NO alcanza el tamano minimo de Prithvi a 30 m: queda fuera "
+                  "de la evaluacion (sin padding ni reescalado). Elige otro --pair-index.")
+            results = []
+        else:
+            from models.prithvi_extractor import load_prithvi_model
+            prithvi_model = load_prithvi_model(device=device)
+            prithvi_stride = int(chip * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
+            results = run_for_prithvi(img_t1, img_t2, mask, prithvi_model,
+                                       device=device, max_chips=args.max_chips, stride=prithvi_stride)
 
     args.out.write_text(json.dumps({args.model: results}, indent=2))
     print(f"Resultados guardados en {args.out}")

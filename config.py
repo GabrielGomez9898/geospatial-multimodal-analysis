@@ -107,9 +107,10 @@ PRITHVI_EO2_300M = ModelSpec(
     notes=(
         "Preentrenado a 30 m (HLS). Se remuestrea Sentinel-2 de 10 m a 30 m por "
         "average pooling 3x3 y se usan chips de 224x224 (6720 m de lado). "
-        "No se hace padding ni reescalado: las escenas que a 30 m miden menos de "
-        "224 px en alguna dimension se EXCLUYEN de la evaluacion de Prithvi "
-        "(ver run_all_prithvi.py, que las lista en 'excluded_pairs')."
+        "No se hace padding ni reescalado. Su huella (672 px a 10 m) es la mas grande "
+        "de los tres modelos y define la grilla comun de ventanas: las escenas donde "
+        "no cabe una ventana se EXCLUYEN para todos los modelos (ver "
+        "preprocessing.common_windows y 'excluded_pairs' en los run_all_*.py)."
     ),
 )
 

@@ -52,6 +52,15 @@ entorno** (sin acceso de red a GitHub/HuggingFace de terceros). Antes de correr
 
 - **Prithvi se remuestrea de 10 m a 30 m** por average pooling 3×3 y se recorta
   a 192×192 px (múltiplo de 16), en vez de forzar 224×224 con padding.
+- **Mismas ventanas para los tres modelos, sin solape.** La huella de cada chip
+  en terreno es distinta (Clay 256 px × 10 m = 2560 m, SatMAE 96 px × 10 m =
+  960 m, Prithvi 224 px × 30 m = 6720 m). La grilla de ventanas se arma con la
+  huella más grande del conjunto `--align-with` (por defecto los tres → 672 px a
+  10 m), centrada en la escena y sin solape; cada modelo recorta su chip
+  centrado en cada ventana. Así todos los modelos tienen el mismo número de
+  chips por escena y cada chip mira el mismo centro. Las escenas donde no cabe
+  ninguna ventana se excluyen para todos. Cada chip del JSON/CSV lleva
+  `window_idx`, `row_off_10m`, `col_off_10m` y `footprint_m` para cruzar modelos.
 - **La máscara de cambio se remuestrea a la grilla nativa de cada modelo**
   (no al revés) — se evita interpolar vectores de 1024 dimensiones.
 - **Distancia coseno** como métrica principal (invariante a norma).

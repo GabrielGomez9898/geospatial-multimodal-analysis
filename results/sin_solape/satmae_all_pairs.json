@@ -1,0 +1,272 @@
+{
+  "combine_mode": "max",
+  "align_with": [
+    "clay_v1.5",
+    "satmae_vit_large_fmow_sentinel",
+    "prithvi_eo_2.0_300m"
+  ],
+  "window_px_10m": 672,
+  "chip_footprint_m": 960,
+  "excluded_pairs": [
+    {
+      "region": "paris",
+      "size_10m": [
+        408,
+        390
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "mumbai",
+      "size_10m": [
+        858,
+        557
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "aguasclaras",
+      "size_10m": [
+        471,
+        525
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "nantes",
+      "size_10m": [
+        522,
+        582
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "rennes",
+      "size_10m": [
+        339,
+        563
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "bercy",
+      "size_10m": [
+        395,
+        360
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "bordeaux",
+      "size_10m": [
+        517,
+        461
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "hongkong",
+      "size_10m": [
+        695,
+        540
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "saclay_e",
+      "size_10m": [
+        639,
+        688
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    }
+  ],
+  "per_pair": {
+    "abudhabi": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.1746718043713152,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.7218106985092163,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 351,
+          "col_off_10m": 344,
+          "footprint_m": 960,
+          "center_row_10m": 399.0,
+          "center_col_10m": 392.0,
+          "auprc": 0.1746718043713152,
+          "effect_size_auc": 0.7218106985092163,
+          "n_change_tokens": 9,
+          "n_total_tokens": 144
+        }
+      ]
+    },
+    "pisa": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "effect_size_auc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 340,
+          "col_off_10m": 311,
+          "footprint_m": 960,
+          "center_row_10m": 388.0,
+          "center_col_10m": 359.0,
+          "auprc": NaN,
+          "effect_size_auc": NaN,
+          "n_change_tokens": 0,
+          "n_total_tokens": 144,
+          "note": "No hay ambas clases presentes en este chip; metricas no definidas."
+        }
+      ]
+    },
+    "beirut": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "effect_size_auc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 542,
+          "col_off_10m": 487,
+          "footprint_m": 960,
+          "center_row_10m": 590.0,
+          "center_col_10m": 535.0,
+          "auprc": NaN,
+          "effect_size_auc": NaN,
+          "n_change_tokens": 0,
+          "n_total_tokens": 144,
+          "note": "No hay ambas clases presentes en este chip; metricas no definidas."
+        }
+      ]
+    },
+    "beihai": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.29280027767930994,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.8417874574661255,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 403,
+          "col_off_10m": 338,
+          "footprint_m": 960,
+          "center_row_10m": 451.0,
+          "center_col_10m": 386.0,
+          "auprc": 0.29280027767930994,
+          "effect_size_auc": 0.8417874574661255,
+          "n_change_tokens": 6,
+          "n_total_tokens": 144
+        }
+      ]
+    },
+    "cupertino": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "effect_size_auc": {
+        "mean": NaN,
+        "std": NaN,
+        "n_valid": 0,
+        "n_nan": 1
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 459,
+          "col_off_10m": 346,
+          "footprint_m": 960,
+          "center_row_10m": 507.0,
+          "center_col_10m": 394.0,
+          "auprc": NaN,
+          "effect_size_auc": NaN,
+          "n_change_tokens": 0,
+          "n_total_tokens": 144,
+          "note": "No hay ambas clases presentes en este chip; metricas no definidas."
+        }
+      ]
+    }
+  },
+  "failed_pairs": [],
+  "aggregate_across_all_chips": {
+    "auprc": {
+      "mean": 0.23373604102531256,
+      "std": 0.059064236653997376,
+      "n_valid": 2,
+      "n_nan": 3
+    },
+    "effect_size_auc": {
+      "mean": 0.7817990779876709,
+      "std": 0.05998837947845459,
+      "n_valid": 2,
+      "n_nan": 3
+    }
+  },
+  "aggregate_across_pairs": {
+    "auprc": {
+      "mean": 0.23373604102531256,
+      "std": 0.059064236653997376,
+      "n_valid": 2,
+      "n_nan": 0
+    },
+    "effect_size_auc": {
+      "mean": 0.7817990779876709,
+      "std": 0.05998837947845459,
+      "n_valid": 2,
+      "n_nan": 0
+    }
+  }
+}

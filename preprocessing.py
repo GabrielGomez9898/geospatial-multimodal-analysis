@@ -127,6 +127,63 @@ def extract_dense_chips(image: np.ndarray, chip_size: int, stride: int | None = 
     return chips
 
 
+def extract_chips_at(image: np.ndarray, chip_size: int, offsets: List[Tuple[int, int]]) -> List[Chip]:
+    """Extrae chips de chip_size x chip_size en las esquinas (row, col) dadas."""
+    return [
+        Chip(array=image[:, r:r + chip_size, c:c + chip_size], row_off=r, col_off=c)
+        for r, c in offsets
+    ]
+
+
+# ---------------------------------------------------------------------------
+# Ventanas comunes entre modelos (sin solape)
+#
+# Cada modelo ve un area de terreno distinta por chip:
+#   Clay    256 px x 10 m = 2560 m
+#   SatMAE   96 px x 10 m =  960 m
+#   Prithvi 224 px x 30 m = 6720 m  (672 px en la grilla de 10 m)
+# Para que todos evaluen la MISMA zona y el MISMO numero de chips por escena,
+# la grilla de ventanas se arma con la huella mas grande (sin solape), y cada
+# modelo recorta su chip centrado dentro de cada ventana. Si una escena no
+# alcanza para una sola ventana, queda fuera para TODOS los modelos.
+# ---------------------------------------------------------------------------
+
+def footprint_px_10m(spec: ModelSpec) -> int:
+    """Lado del chip de `spec` medido en pixeles de la grilla de 10 m."""
+    return int(round(spec.chip_size * spec.native_gsd_m / 10.0))
+
+
+def common_windows(h: int, w: int, align_specs: List[ModelSpec]) -> Tuple[int, List[Tuple[int, int]]]:
+    """
+    Grilla de ventanas no solapadas de lado = huella mas grande entre
+    `align_specs`, centrada en la escena (el sobrante se reparte por igual
+    entre los bordes, en vez de quedar todo abajo/a la derecha).
+    Devuelve (lado_ventana_px_10m, [(row_off, col_off), ...]) en la grilla de 10 m.
+    """
+    window = max(footprint_px_10m(s) for s in align_specs)
+    n_rows, n_cols = h // window, w // window
+    top = (h - n_rows * window) // 2
+    left = (w - n_cols * window) // 2
+    offsets = [(top + i * window, left + j * window) for i in range(n_rows) for j in range(n_cols)]
+    return window, offsets
+
+
+def aligned_chip_offsets(h: int, w: int, spec: ModelSpec, align_specs: List[ModelSpec]) -> List[Tuple[int, int]]:
+    """
+    Esquinas (en la grilla de 10 m) de los chips de `spec`, uno por ventana
+    comun, centrados en el centro de cada ventana.
+    """
+    window, windows = common_windows(h, w, align_specs)
+    fp = footprint_px_10m(spec)
+    if fp > window:
+        raise ValueError(
+            f"La huella de {spec.name} ({fp} px) es mayor que la ventana comun ({window} px); "
+            f"incluye {spec.name} en align_specs."
+        )
+    margin = (window - fp) // 2
+    return [(r + margin, c + margin) for r, c in windows]
+
+
 # ---------------------------------------------------------------------------
 # Normalizacion
 # ---------------------------------------------------------------------------
@@ -164,19 +221,18 @@ def sentinel_normalize_satmae(image: np.ndarray, mean: List[float], std: List[fl
 # Pipeline especifico por modelo (junta los pasos anteriores)
 # ---------------------------------------------------------------------------
 
-def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec, stride: int | None = None) -> List[Chip]:
+def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec,
+                     offsets: List[Tuple[int, int]]) -> List[Chip]:
     """image_10m: (13, H, W) en band_order = SENTINEL2_ALL_BANDS, ya a 10 m.
-    stride: paso entre chips en pixeles. None = sin solape (stride=chip_size).
-    Usa un stride menor a spec.chip_size para solapar chips en escenas
-    pequenas (ver discusion: muchas escenas de OSCD son mas chicas que 512 px,
-    lo que con stride=chip_size solo da 1 chip)."""
+    offsets: esquinas de los chips en la grilla de 10 m (ver aligned_chip_offsets)."""
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
     # TODO: normalizar con las estadisticas oficiales de configs/metadata.yaml de Clay
     # (dependen del sensor: sentinel-2-l2a). No inventar mean/std aqui.
-    return extract_dense_chips(img, spec.chip_size, stride=stride)
+    return extract_chips_at(img, spec.chip_size, offsets)
 
 
-def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec, stride: int | None = None) -> List[Chip]:
+def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec,
+                       offsets: List[Tuple[int, int]]) -> List[Chip]:
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
     # Estadisticas oficiales de fMoW-Sentinel, recortadas al subconjunto y
     # orden de spec.bands (SatMAE usa 10 de las 13 bandas de SENTINEL2_ALL_BANDS).
@@ -184,12 +240,7 @@ def prepare_for_satmae(image_10m: np.ndarray, spec: ModelSpec, stride: int | Non
     mean_subset = [SATMAE_MEAN_13[i] for i in band_idx]
     std_subset = [SATMAE_STD_13[i] for i in band_idx]
     img = sentinel_normalize_satmae(img, mean_subset, std_subset)
-    return extract_dense_chips(img, spec.chip_size, stride=stride)
-
-
-def prithvi_scene_size_30m(h_10m: int, w_10m: int) -> tuple[int, int]:
-    """Tamano (alto, ancho) de una escena tras el remuestreo 10 m -> 30 m (factor 3)."""
-    return h_10m // 3, w_10m // 3
+    return extract_chips_at(img, spec.chip_size, offsets)
 
 
 def prepare_prithvi_pairs(
@@ -199,17 +250,18 @@ def prepare_prithvi_pairs(
     spec: ModelSpec,
     mean: List[float],
     std: List[float],
-    stride: int | None = None,
+    offsets: List[Tuple[int, int]],
 ) -> list[dict]:
     """
     Prepara, para UNA escena, los pares de chips (t1, t2) de Prithvi junto con
-    la mascara de cambio, todos en el MISMO sistema de coordenadas (grilla de 30 m).
+    la mascara de cambio, todos alineados sobre el mismo terreno.
 
-    Por que imagen y mascara se procesan juntas: Prithvi remuestrea la imagen de
-    10 m a 30 m, y los offsets de los chips (row_off, col_off) estan en esa grilla
-    de 30 m. La mascara original esta en 10 m; si se cortara con esos offsets sin
-    remuestrearla, apuntaria a otra zona del terreno. La version anterior
-    (prepare_for_prithvi) tenia justo ese error: solo procesaba la imagen.
+    offsets: esquinas de los chips en la grilla de 10 m (ver aligned_chip_offsets).
+    Para cada una se corta una ventana de footprint_px_10m(spec) = 672 px a 10 m
+    y se reduce a 30 m (224 px) por promedio de bloques 3x3. Cortar ANTES de
+    remuestrear hace que la ventana de Prithvi coincida exactamente con la
+    ventana comun en la grilla de 10 m, sin depender de que el offset sea
+    multiplo de 3.
 
     La mascara se reduce con el mismo promedio de bloques 3x3 que la imagen y
     queda como FRACCION de cambio (0-1) por pixel de 30 m. Como todos los bloques
@@ -217,31 +269,25 @@ def prepare_prithvi_pairs(
     originales de 10 m, asi que el umbral posterior (resample_mask_to_grid) da lo
     mismo que si se calculara sobre la mascara original.
 
-    No hay padding, ni reescalado, ni recorte al centro: los chips se extraen con
-    ventana deslizante desde la esquina (0, 0), igual que en Clay y SatMAE. Si la
-    escena a 30 m mide menos de spec.chip_size en alguna dimension, no sale ningun
-    chip (lista vacia) y la escena se excluye de la evaluacion de Prithvi.
-
-    Devuelve una lista de dicts con: chip_t1, chip_t2 (Chip) y mask_chip
-    (array (chip_size, chip_size) con fracciones de cambio a 30 m).
+    Devuelve una lista de dicts con: chip_t1, chip_t2 (Chip, con row_off/col_off
+    en la grilla de 10 m) y mask_chip (array (chip_size, chip_size) con
+    fracciones de cambio a 30 m).
     """
     factor = 3  # 10 m -> 30 m
+    fp = footprint_px_10m(spec)
     sel1 = select_and_reorder_bands(img_t1, SENTINEL2_ALL_BANDS, spec.bands)
     sel2 = select_and_reorder_bands(img_t2, SENTINEL2_ALL_BANDS, spec.bands)
 
-    a1 = zscore_normalize(average_pool_downsample(sel1, factor), mean, std)
-    a2 = zscore_normalize(average_pool_downsample(sel2, factor), mean, std)
-    m30 = average_pool_downsample(mask[None, :, :].astype(np.float32), factor)  # (1, h, w)
-
-    stride = stride or spec.chip_size
-    c = spec.chip_size
-    H, W = a1.shape[1], a1.shape[2]
     pairs = []
-    for row in range(0, H - c + 1, stride):
-        for col in range(0, W - c + 1, stride):
-            pairs.append({
-                "chip_t1": Chip(array=a1[:, row:row + c, col:col + c], row_off=row, col_off=col),
-                "chip_t2": Chip(array=a2[:, row:row + c, col:col + c], row_off=row, col_off=col),
-                "mask_chip": m30[0, row:row + c, col:col + c],
-            })
+    for r, c in offsets:
+        win1 = sel1[:, r:r + fp, c:c + fp]
+        win2 = sel2[:, r:r + fp, c:c + fp]
+        win_mask = mask[None, r:r + fp, c:c + fp].astype(np.float32)
+        pairs.append({
+            "chip_t1": Chip(array=zscore_normalize(average_pool_downsample(win1, factor), mean, std),
+                            row_off=r, col_off=c),
+            "chip_t2": Chip(array=zscore_normalize(average_pool_downsample(win2, factor), mean, std),
+                            row_off=r, col_off=c),
+            "mask_chip": average_pool_downsample(win_mask, factor)[0],
+        })
     return pairs

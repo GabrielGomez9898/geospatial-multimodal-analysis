@@ -1,0 +1,6 @@
+region,chip_idx,window_idx,row_off_10m,col_off_10m,footprint_m,center_row_10m,center_col_10m,auprc,effect_size_auc,n_change_tokens,n_total_tokens,note
+abudhabi,0,0,351,344,960,399.0,392.0,0.1746718043713152,0.7218106985092163,9,144,
+pisa,0,0,340,311,960,388.0,359.0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beirut,0,0,542,487,960,590.0,535.0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.
+beihai,0,0,403,338,960,451.0,386.0,0.29280027767930994,0.8417874574661255,6,144,
+cupertino,0,0,459,346,960,507.0,394.0,nan,nan,0,144,No hay ambas clases presentes en este chip; metricas no definidas.

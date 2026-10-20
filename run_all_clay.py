@@ -10,7 +10,7 @@ Uso:
         --oscd-root model_assets/clay/data/oscd \
         --clay-checkpoint model_assets/clay/clay-v1.5.ckpt \
         --clay-metadata model_assets/clay/metadata.yaml \
-        --chip-overlap 0.5 \
+        --align-with clay satmae prithvi \
         --out clay_all_pairs.json
 """
 
@@ -23,13 +23,16 @@ from pathlib import Path
 import numpy as np
 
 from config import CLAY_V15
-from preprocessing import resample_20m_bands_to_10m
+from preprocessing import resample_20m_bands_to_10m, common_windows, aligned_chip_offsets, footprint_px_10m
 from run_pipeline import (
     pick_device,
     load_oscd_pair,
     parse_oscd_date,
     get_scene_metadata,
     run_for_clay,
+    add_align_args,
+    align_specs_from_names,
+    window_info,
 )
 
 
@@ -54,7 +57,7 @@ def main():
     parser.add_argument("--clay-checkpoint", type=Path, required=True)
     parser.add_argument("--clay-metadata", type=Path, required=True)
     parser.add_argument("--device", type=str, default=None)
-    parser.add_argument("--chip-overlap", type=float, default=0.0)
+    add_align_args(parser)
     parser.add_argument("--out", type=Path, default=Path("results/clay/clay_all_pairs.json"))
     parser.add_argument("--csv-out", type=Path, default=None,
                          help="CSV con una fila por chip. Por defecto, mismo nombre que --out "
@@ -80,11 +83,13 @@ def main():
     )
     print("Clay cargado. Empezando el loop sobre los pares...\n")
 
-    clay_stride = int(CLAY_V15.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
+    align_specs = align_specs_from_names(args.align_with, "clay")
+    print(f"Ventanas alineadas con: {[s.name for s in align_specs]}")
 
     per_pair = {}
     all_chip_rows = []  # para el CSV: una fila por chip
     failed_pairs = []
+    excluded_pairs = []  # escenas donde no cabe ni una ventana comun
 
     for index in range(len(oscd)):
         try:
@@ -98,8 +103,22 @@ def main():
 
             print(f"[{index+1}/{len(oscd)}] {region:15s} tamano={img_t1.shape[1]}x{img_t1.shape[2]}", end="  ")
 
+            window, _ = common_windows(img_t1.shape[1], img_t1.shape[2], align_specs)
+            offsets = aligned_chip_offsets(img_t1.shape[1], img_t1.shape[2], CLAY_V15, align_specs)
+            if not offsets:
+                print(f"-> EXCLUIDA (no cabe una ventana comun de {window}x{window} px a 10 m)")
+                excluded_pairs.append({
+                    "region": region,
+                    "size_10m": [int(img_t1.shape[1]), int(img_t1.shape[2])],
+                    "window_px_10m": window,
+                    "reason": "La escena es mas chica que la ventana comun (huella mas grande de "
+                              "--align-with). Se excluye para todos los modelos.",
+                })
+                continue
+
             chip_results = run_for_clay(img_t1, img_t2, mask, clay_model, meta_t1, meta_t2,
-                                         device=device, stride=clay_stride)
+                                         offsets, device=device)
+            chip_results = [{**info, **r} for info, r in zip(window_info(offsets, CLAY_V15), chip_results)]
 
             auprc_vals = [r["auprc"] for r in chip_results]
             effect_vals = [r["effect_size_auc"] for r in chip_results]
@@ -129,11 +148,14 @@ def main():
     pair_level_effect = [pair["effect_size_auc"]["mean"] for pair in per_pair.values() if pair["effect_size_auc"]["n_valid"] > 0]
 
     summary = {
+        "align_with": [s.name for s in align_specs],
+        "window_px_10m": max(footprint_px_10m(s) for s in align_specs),
+        "chip_footprint_m": footprint_px_10m(CLAY_V15) * 10,
+        "excluded_pairs": excluded_pairs,
         "per_pair": per_pair,
         "failed_pairs": failed_pairs,
-        # Agregado sobre TODOS los chips de TODAS las escenas (ojo: los chips
-        # dentro de una misma escena pueden estar solapados si --chip-overlap > 0,
-        # asi que no son totalmente independientes entre si).
+        # Agregado sobre TODOS los chips de TODAS las escenas (los chips no se
+        # solapan, pero los de una misma escena no son independientes entre si).
         "aggregate_across_all_chips": {
             "auprc": aggregate(all_auprc),
             "effect_size_auc": aggregate(all_effect),
@@ -167,7 +189,8 @@ def main():
         print(f"CSV por chip guardado en {args.csv_out}")
 
     print(f"\n=== RESUMEN ===")
-    print(f"Pares procesados OK: {len(per_pair)} / {len(oscd)}  (fallidos: {len(failed_pairs)})")
+    print(f"Pares evaluados: {len(per_pair)} / {len(oscd)}  "
+          f"(excluidos por tamano: {len(excluded_pairs)}, fallidos: {len(failed_pairs)})")
     print(f"Effect size (por escena) -> media={summary['aggregate_across_pairs']['effect_size_auc']['mean']:.3f}, "
           f"std={summary['aggregate_across_pairs']['effect_size_auc']['std']:.3f}")
     print(f"AUPRC (por escena)       -> media={summary['aggregate_across_pairs']['auprc']['mean']:.3f}, "

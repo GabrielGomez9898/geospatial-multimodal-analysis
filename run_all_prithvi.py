@@ -9,7 +9,7 @@ metadatos -- ver prithvi_extractor.py).
 Uso:
     python run_all_prithvi.py \
         --oscd-root model_assets/clay/data/oscd \
-        --chip-overlap 0.5 \
+        --align-with clay satmae prithvi \
         --out results/prithvi/prithvi_all_pairs.json
 """
 
@@ -20,8 +20,9 @@ import json
 from pathlib import Path
 
 from config import PRITHVI_EO2_300M
-from preprocessing import resample_20m_bands_to_10m, prithvi_scene_size_30m
-from run_pipeline import pick_device, load_oscd_pair, run_for_prithvi
+from preprocessing import resample_20m_bands_to_10m, common_windows, aligned_chip_offsets, footprint_px_10m
+from run_pipeline import (pick_device, load_oscd_pair, run_for_prithvi,
+                          add_align_args, align_specs_from_names, window_info)
 from run_all_clay import aggregate  # misma funcion, no hace falta duplicarla
 
 
@@ -29,7 +30,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--oscd-root", type=Path, required=True)
     parser.add_argument("--device", type=str, default=None)
-    parser.add_argument("--chip-overlap", type=float, default=0.0)
+    add_align_args(parser)
     parser.add_argument("--out", type=Path, default=Path("results/prithvi/prithvi_all_pairs.json"))
     parser.add_argument("--csv-out", type=Path, default=None)
     args = parser.parse_args()
@@ -49,13 +50,13 @@ def main():
     prithvi_model = load_prithvi_model(device=device)
     print("Prithvi cargado. Empezando el loop sobre los pares...\n")
 
-    prithvi_stride = int(PRITHVI_EO2_300M.chip_size * (1 - args.chip_overlap)) if args.chip_overlap > 0 else None
+    align_specs = align_specs_from_names(args.align_with, "prithvi")
+    print(f"Ventanas alineadas con: {[s.name for s in align_specs]}")
 
     per_pair = {}
     all_chip_rows = []
     failed_pairs = []
-    excluded_pairs = []  # escenas que a 30 m no alcanzan el chip de Prithvi (sin padding ni reescalado)
-    required = PRITHVI_EO2_300M.chip_size
+    excluded_pairs = []  # escenas donde no cabe ni una ventana comun
 
     for index in range(len(oscd)):
         try:
@@ -63,24 +64,25 @@ def main():
             img_t1 = resample_20m_bands_to_10m(img_t1)
             img_t2 = resample_20m_bands_to_10m(img_t2)
 
-            h30, w30 = prithvi_scene_size_30m(img_t1.shape[1], img_t1.shape[2])
-            print(f"[{index+1}/{len(oscd)}] {region:15s} tamano={img_t1.shape[1]}x{img_t1.shape[2]} "
-                  f"(30 m: {h30}x{w30})", end="  ")
+            print(f"[{index+1}/{len(oscd)}] {region:15s} tamano={img_t1.shape[1]}x{img_t1.shape[2]}", end="  ")
 
-            if h30 < required or w30 < required:
-                print(f"-> EXCLUIDA (a 30 m mide menos de {required}x{required})")
+            window, _ = common_windows(img_t1.shape[1], img_t1.shape[2], align_specs)
+            offsets = aligned_chip_offsets(img_t1.shape[1], img_t1.shape[2], PRITHVI_EO2_300M, align_specs)
+            if not offsets:
+                print(f"-> EXCLUIDA (no cabe una ventana comun de {window}x{window} px a 10 m)")
                 excluded_pairs.append({
                     "region": region,
                     "size_10m": [int(img_t1.shape[1]), int(img_t1.shape[2])],
-                    "size_30m": [int(h30), int(w30)],
-                    "required_chip_size": required,
-                    "reason": "La escena, remuestreada a 30 m, es mas chica que el chip de Prithvi. "
-                              "Sin padding ni reescalado no sale ningun chip.",
+                    "window_px_10m": window,
+                    "reason": "La escena es mas chica que la ventana comun (huella mas grande de "
+                              "--align-with). Se excluye para todos los modelos.",
                 })
                 continue
 
-            chip_results = run_for_prithvi(img_t1, img_t2, mask, prithvi_model,
-                                            device=device, stride=prithvi_stride)
+            chip_results = run_for_prithvi(img_t1, img_t2, mask, prithvi_model, offsets,
+                                            device=device)
+            chip_results = [{**info, **r} for info, r in
+                            zip(window_info(offsets, PRITHVI_EO2_300M), chip_results)]
 
             auprc_vals = [r["auprc"] for r in chip_results]
             effect_vals = [r["effect_size_auc"] for r in chip_results]
@@ -108,9 +110,12 @@ def main():
     pair_level_effect = [p["effect_size_auc"]["mean"] for p in per_pair.values() if p["effect_size_auc"]["n_valid"] > 0]
 
     summary = {
-        "chip_size": required,
-        "per_pair": per_pair,
+        "chip_size": PRITHVI_EO2_300M.chip_size,
+        "align_with": [s.name for s in align_specs],
+        "window_px_10m": max(footprint_px_10m(s) for s in align_specs),
+        "chip_footprint_m": footprint_px_10m(PRITHVI_EO2_300M) * 10,
         "excluded_pairs": excluded_pairs,
+        "per_pair": per_pair,
         "failed_pairs": failed_pairs,
         "aggregate_across_all_chips": {
             "auprc": aggregate(all_auprc),

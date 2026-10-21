@@ -10,8 +10,7 @@ Uso:
         --oscd-root model_assets/clay/data/oscd \
         --clay-checkpoint model_assets/clay/clay-v1.5.ckpt \
         --clay-metadata model_assets/clay/metadata.yaml \
-        --align-with clay satmae prithvi \
-        --out clay_all_pairs.json
+        --out results/sin_solape_escena_completa/clay_all_pairs.json
 """
 
 from __future__ import annotations
@@ -58,7 +57,7 @@ def main():
     parser.add_argument("--clay-metadata", type=Path, required=True)
     parser.add_argument("--device", type=str, default=None)
     add_align_args(parser)
-    parser.add_argument("--out", type=Path, default=Path("results/clay/clay_all_pairs.json"))
+    parser.add_argument("--out", type=Path, default=Path("results/sin_solape_escena_completa/clay_all_pairs.json"))
     parser.add_argument("--csv-out", type=Path, default=None,
                          help="CSV con una fila por chip. Por defecto, mismo nombre que --out "
                               "pero con sufijo _chips.csv, en la misma carpeta.")

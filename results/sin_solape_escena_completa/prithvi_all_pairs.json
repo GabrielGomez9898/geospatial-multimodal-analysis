@@ -1,0 +1,267 @@
+{
+  "chip_size": 224,
+  "align_with": [
+    "prithvi_eo_2.0_300m"
+  ],
+  "window_px_10m": 672,
+  "chip_footprint_m": 6720,
+  "excluded_pairs": [
+    {
+      "region": "paris",
+      "size_10m": [
+        408,
+        390
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "mumbai",
+      "size_10m": [
+        858,
+        557
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "aguasclaras",
+      "size_10m": [
+        471,
+        525
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "nantes",
+      "size_10m": [
+        522,
+        582
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "rennes",
+      "size_10m": [
+        339,
+        563
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "bercy",
+      "size_10m": [
+        395,
+        360
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "bordeaux",
+      "size_10m": [
+        517,
+        461
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "hongkong",
+      "size_10m": [
+        695,
+        540
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    },
+    {
+      "region": "saclay_e",
+      "size_10m": [
+        639,
+        688
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana comun (huella mas grande de --align-with). Se excluye para todos los modelos."
+    }
+  ],
+  "per_pair": {
+    "abudhabi": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.2744255486907834,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.7141656279563904,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 63,
+          "col_off_10m": 56,
+          "footprint_m": 6720,
+          "center_row_10m": 399.0,
+          "center_col_10m": 392.0,
+          "auprc": 0.2744255486907834,
+          "effect_size_auc": 0.7141656279563904,
+          "n_change_tokens": 13,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "pisa": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.18012396201386371,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.45502644777297974,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 52,
+          "col_off_10m": 23,
+          "footprint_m": 6720,
+          "center_row_10m": 388.0,
+          "center_col_10m": 359.0,
+          "auprc": 0.18012396201386371,
+          "effect_size_auc": 0.45502644777297974,
+          "n_change_tokens": 7,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "beirut": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.23333333333333334,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.9613401889801025,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 254,
+          "col_off_10m": 199,
+          "footprint_m": 6720,
+          "center_row_10m": 590.0,
+          "center_col_10m": 535.0,
+          "auprc": 0.23333333333333334,
+          "effect_size_auc": 0.9613401889801025,
+          "n_change_tokens": 2,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "beihai": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.043330805527468826,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.71875,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 115,
+          "col_off_10m": 50,
+          "footprint_m": 6720,
+          "center_row_10m": 451.0,
+          "center_col_10m": 386.0,
+          "auprc": 0.043330805527468826,
+          "effect_size_auc": 0.71875,
+          "n_change_tokens": 4,
+          "n_total_tokens": 196
+        }
+      ]
+    },
+    "cupertino": {
+      "n_chips": 1,
+      "auprc": {
+        "mean": 0.3739397651147974,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "effect_size_auc": {
+        "mean": 0.9406703114509583,
+        "std": 0.0,
+        "n_valid": 1,
+        "n_nan": 0
+      },
+      "chips": [
+        {
+          "window_idx": 0,
+          "row_off_10m": 171,
+          "col_off_10m": 58,
+          "footprint_m": 6720,
+          "center_row_10m": 507.0,
+          "center_col_10m": 394.0,
+          "auprc": 0.3739397651147974,
+          "effect_size_auc": 0.9406703114509583,
+          "n_change_tokens": 12,
+          "n_total_tokens": 196
+        }
+      ]
+    }
+  },
+  "failed_pairs": [],
+  "aggregate_across_all_chips": {
+    "auprc": {
+      "mean": 0.22103068293604933,
+      "std": 0.10921003667808295,
+      "n_valid": 5,
+      "n_nan": 0
+    },
+    "effect_size_auc": {
+      "mean": 0.7579905152320862,
+      "std": 0.1843749780809567,
+      "n_valid": 5,
+      "n_nan": 0
+    }
+  },
+  "aggregate_across_pairs": {
+    "auprc": {
+      "mean": 0.22103068293604933,
+      "std": 0.10921003667808295,
+      "n_valid": 5,
+      "n_nan": 0
+    },
+    "effect_size_auc": {
+      "mean": 0.7579905152320862,
+      "std": 0.1843749780809567,
+      "n_valid": 5,
+      "n_nan": 0
+    }
+  }
+}

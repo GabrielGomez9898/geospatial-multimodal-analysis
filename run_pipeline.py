@@ -134,11 +134,12 @@ def get_scene_metadata(region: str, acquisition_date) -> dict:
 def add_align_args(parser: argparse.ArgumentParser) -> None:
     """Argumento comun a todos los scripts: con que modelos se alinean las ventanas."""
     parser.add_argument("--align-with", nargs="+", choices=list(ALL_MODEL_SPECS),
-                         default=list(ALL_MODEL_SPECS),
+                         default=[],
                          help="Modelos cuyas huellas definen la grilla comun de ventanas (sin solape). "
                               "La ventana mide lo que la huella mas grande del conjunto; todos los "
                               "modelos evaluan las mismas ventanas, con su chip centrado en cada una. "
-                              "Por defecto, los tres (ventana = huella de Prithvi, 6720 m).")
+                              "Por defecto, solo el modelo que se corre: grilla propia sobre toda la "
+                              "escena. Para la comparacion alineada: --align-with clay satmae prithvi.")
 
 
 def align_specs_from_names(names: list[str], model_name: str) -> list:

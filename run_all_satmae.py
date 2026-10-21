@@ -8,9 +8,8 @@ fechas reales (SatMAE no usa metadatos geograficos).
 Uso:
     python run_all_satmae.py \
         --oscd-root model_assets/clay/data/oscd \
-        --align-with clay satmae prithvi \
         --combine-mode max \
-        --out results/satmae/satmae_all_pairs.json
+        --out results/sin_solape_escena_completa/satmae_all_pairs.json
 """
 
 from __future__ import annotations
@@ -34,7 +33,7 @@ def main():
     parser.add_argument("--device", type=str, default=None)
     add_align_args(parser)
     parser.add_argument("--combine-mode", type=str, choices=["mean", "max"], default="max")
-    parser.add_argument("--out", type=Path, default=Path("results/satmae/satmae_all_pairs.json"))
+    parser.add_argument("--out", type=Path, default=Path("results/sin_solape_escena_completa/satmae_all_pairs.json"))
     parser.add_argument("--csv-out", type=Path, default=None)
     args = parser.parse_args()
     if args.csv_out is None:

@@ -1,0 +1,144 @@
+{
+  "model": "prithvi_eo_2.0_300m",
+  "align_with": [
+    "prithvi_eo_2.0_300m"
+  ],
+  "window_px_10m": 672,
+  "chip_footprint_m": 6720,
+  "token_grid": [
+    14,
+    14
+  ],
+  "token_size_m": 480,
+  "thresholds": {
+    "C": "p > 0.5",
+    "NC": "p < 0.05",
+    "mixed_excluded": "0.05 <= p <= 0.5"
+  },
+  "scenes": {
+    "abudhabi": {
+      "n_chips": 1,
+      "n_tokens": 196,
+      "n_C": 3,
+      "n_NC": 163,
+      "n_mixed_excluded": 30,
+      "pct_excluded": 15.306122448979592
+    },
+    "pisa": {
+      "n_chips": 1,
+      "n_tokens": 196,
+      "n_C": 0,
+      "n_NC": 174,
+      "n_mixed_excluded": 22,
+      "pct_excluded": 11.224489795918368
+    },
+    "beirut": {
+      "n_chips": 1,
+      "n_tokens": 196,
+      "n_C": 0,
+      "n_NC": 179,
+      "n_mixed_excluded": 17,
+      "pct_excluded": 8.673469387755102
+    },
+    "beihai": {
+      "n_chips": 1,
+      "n_tokens": 196,
+      "n_C": 0,
+      "n_NC": 169,
+      "n_mixed_excluded": 27,
+      "pct_excluded": 13.775510204081632
+    },
+    "cupertino": {
+      "n_chips": 1,
+      "n_tokens": 196,
+      "n_C": 3,
+      "n_NC": 173,
+      "n_mixed_excluded": 20,
+      "pct_excluded": 10.204081632653061
+    }
+  },
+  "excluded_pairs": [
+    {
+      "region": "paris",
+      "size_10m": [
+        408,
+        390
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "mumbai",
+      "size_10m": [
+        858,
+        557
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "aguasclaras",
+      "size_10m": [
+        471,
+        525
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "nantes",
+      "size_10m": [
+        522,
+        582
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "rennes",
+      "size_10m": [
+        339,
+        563
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "bercy",
+      "size_10m": [
+        395,
+        360
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "bordeaux",
+      "size_10m": [
+        517,
+        461
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "hongkong",
+      "size_10m": [
+        695,
+        540
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    },
+    {
+      "region": "saclay_e",
+      "size_10m": [
+        639,
+        688
+      ],
+      "window_px_10m": 672,
+      "reason": "La escena es mas chica que la ventana (huella mas grande de --align-with); no sale ningun chip sin padding ni reescalado."
+    }
+  ],
+  "failed_pairs": []
+}

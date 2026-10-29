@@ -1,19 +1,17 @@
 """
 metrics.py
 
-Implementa lo que acordamos en la discusion conceptual:
-  - distancia coseno entre t1 y t2, token a token
-  - remuestreo de la MASCARA de cambio (no de los embeddings) a la grilla nativa
-    de cada modelo
-  - separabilidad zero-shot: AUPRC + tamano de efecto (AUC de Mann-Whitney),
-    en vez de una clasificacion con umbral entrenado
+Implementa la seccion G del protocolo:
+  - distancia coseno entre t1 y t2, token a token (G.2)
+  - fraccion de cambio p por token, calculada sobre la MASCARA llevada a la
+    grilla nativa de cada modelo (no se remuestrean los embeddings), y
+    etiquetas C / NC / mixtas (G.1)
+  - AUROC (G.3) e indice de Fisher (G.4)
 """
 
 from __future__ import annotations
-from typing import Tuple
 import numpy as np
-from sklearn.metrics import average_precision_score
-from scipy.stats import mannwhitneyu
+from sklearn.metrics import roc_auc_score
 
 
 # ---------------------------------------------------------------------------
@@ -50,24 +48,24 @@ def combine_satmae_groups(distance_per_group: np.ndarray, mode: str = "mean") ->
 
 
 # ---------------------------------------------------------------------------
-# Remuestreo de la mascara de cambio a la grilla nativa de cada modelo
+# Seccion G.1 del protocolo: regiones con cambio (C), sin cambio (NC) y mixtas
 # ---------------------------------------------------------------------------
 
-def resample_mask_to_grid(
-    mask: np.ndarray,
-    grid_h: int,
-    grid_w: int,
-    threshold: float = 0.15,
-) -> np.ndarray:
-    """
-    mask: (H_px, W_px) binaria (0/1) a resolucion de pixel original de OSCD,
-          YA RECORTADA al mismo extent espacial que el chip que se paso al modelo
-          (fundamental: si hiciste center-crop o remuestreo de GSD en preprocessing.py,
-          debes aplicar EXACTAMENTE la misma transformacion geometrica a la mascara
-          antes de llamar a esta funcion).
+# Umbrales del protocolo (seccion G.1), sobre la fraccion p de pixeles con
+# cambio dentro de la region que cubre cada token.
+CHANGE_THRESHOLD = 0.50      # C:  p > 0.50
+NO_CHANGE_THRESHOLD = 0.05   # NC: p < 0.05
+LABEL_C, LABEL_NC, LABEL_MIXED = 1, 0, -1   # mixtas: 0.05 <= p <= 0.50 (excluidas)
 
-    Devuelve (grid_h, grid_w) binaria: un token se marca como "cambio" si la
-    fraccion de pixeles de cambio dentro de su area cubierta supera `threshold`.
+
+def token_change_fraction(mask: np.ndarray, grid_h: int, grid_w: int) -> np.ndarray:
+    """
+    mask: (H_px, W_px) con valores en [0, 1] (binaria a 10 m, o fracciones de
+          cambio ya promediadas, como la de Prithvi a 30 m), YA RECORTADA al
+          mismo extent espacial que el chip que se paso al modelo.
+
+    Devuelve (grid_h, grid_w): p = pixeles con cambio / pixeles de la region
+    que cubre cada token.
     """
     h_px, w_px = mask.shape
     assert h_px % grid_h == 0 and w_px % grid_w == 0, (
@@ -75,44 +73,39 @@ def resample_mask_to_grid(
         "revisa que se le aplico el mismo crop/resample que a la imagen."
     )
     block_h, block_w = h_px // grid_h, w_px // grid_w
-    reshaped = mask.reshape(grid_h, block_h, grid_w, block_w)
-    fraction_changed = reshaped.mean(axis=(1, 3))
-    return (fraction_changed > threshold).astype(np.int32)
+    reshaped = mask.astype(np.float32).reshape(grid_h, block_h, grid_w, block_w)
+    return reshaped.mean(axis=(1, 3))
+
+
+def label_tokens(p: np.ndarray) -> np.ndarray:
+    """Etiqueta cada token como LABEL_C, LABEL_NC o LABEL_MIXED segun G.1."""
+    labels = np.full(p.shape, LABEL_MIXED, dtype=np.int8)
+    labels[p > CHANGE_THRESHOLD] = LABEL_C
+    labels[p < NO_CHANGE_THRESHOLD] = LABEL_NC
+    return labels
 
 
 # ---------------------------------------------------------------------------
-# Separabilidad zero-shot
+# Secciones G.3 y G.4: discriminacion (AUROC) y separabilidad (Fisher)
 # ---------------------------------------------------------------------------
 
-def separability_metrics(distance_map: np.ndarray, mask_grid: np.ndarray) -> dict:
+def auroc(dist_c: np.ndarray, dist_nc: np.ndarray) -> float:
+    """AUROC de la distancia coseno con C como clase positiva. NaN si falta una clase."""
+    if len(dist_c) == 0 or len(dist_nc) == 0:
+        return float("nan")
+    y_true = np.concatenate([np.ones(len(dist_c)), np.zeros(len(dist_nc))])
+    return float(roc_auc_score(y_true, np.concatenate([dist_c, dist_nc])))
+
+
+def fisher_index(dist_c: np.ndarray, dist_nc: np.ndarray) -> float:
     """
-    distance_map, mask_grid: (grid_h, grid_w), ya alineados uno a uno.
-    Devuelve AUPRC y el tamano de efecto no parametrico (AUC de Mann-Whitney,
-    equivalente al "Probability of Superiority": la probabilidad de que un
-    token de cambio elegido al azar tenga mayor distancia que uno sin cambio).
+    F = (mu_C - mu_NC)^2 / (var_C + var_NC). Varianzas poblacionales (ddof=0).
+    NaN si falta una clase o si el denominador es cero (G.4 pide reportar ese
+    caso por separado).
     """
-    y_true = mask_grid.flatten()
-    scores = distance_map.flatten()
-
-    if y_true.sum() == 0 or y_true.sum() == len(y_true):
-        return {
-            "auprc": float("nan"),
-            "effect_size_auc": float("nan"),
-            "n_change_tokens": int(y_true.sum()),
-            "n_total_tokens": int(len(y_true)),
-            "note": "No hay ambas clases presentes en este chip; metricas no definidas.",
-        }
-
-    auprc = average_precision_score(y_true, scores)
-
-    changed_scores = scores[y_true == 1]
-    unchanged_scores = scores[y_true == 0]
-    u_stat, _ = mannwhitneyu(changed_scores, unchanged_scores, alternative="greater")
-    effect_size_auc = u_stat / (len(changed_scores) * len(unchanged_scores))
-
-    return {
-        "auprc": float(auprc),
-        "effect_size_auc": float(effect_size_auc),
-        "n_change_tokens": int(y_true.sum()),
-        "n_total_tokens": int(len(y_true)),
-    }
+    if len(dist_c) == 0 or len(dist_nc) == 0:
+        return float("nan")
+    denom = dist_c.var() + dist_nc.var()
+    if denom == 0:
+        return float("nan")
+    return float((dist_c.mean() - dist_nc.mean()) ** 2 / denom)

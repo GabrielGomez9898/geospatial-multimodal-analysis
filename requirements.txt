@@ -8,3 +8,7 @@ torch
 rasterio     
 rshf
 terratorch
+
+# Solo para build_report.py (informe PDF)
+matplotlib
+reportlab

@@ -44,6 +44,21 @@ build_report.py          Informe PDF de la comparación a partir de la salida de
    configuración, limitaciones y decisiones son texto fijo y hay que
    actualizarlos si cambia la configuración.
 
+**Variante con 50 % de solape** (para comparar contra la corrida sin solape):
+```bash
+O=results/comparacion_protocolo_50_solapamiento
+python run_all_clay.py ... --chip-overlap 0.5 --out-dir $O     # mismos argumentos que arriba
+python run_all_satmae.py --oscd-root model_assets/clay/data/oscd --chip-overlap 0.5 --out-dir $O
+python run_all_prithvi.py --oscd-root model_assets/clay/data/oscd --chip-overlap 0.5 --out-dir $O
+python evaluate.py --results-dir $O
+```
+Con solape, la grilla de chips (paso = medio chip) se centra en la escena y se
+desplaza lo necesario para que sus tokens caigan sobre la misma grilla del
+terreno que la corrida sin solape: el mismo `center_row_10m`/`center_col_10m`
+identifica la misma región en ambas corridas. Un mismo lugar aparece en varios
+chips (con distinto contexto), así que en el AUROC por par cuenta varias veces.
+`build_report.py` describe la corrida sin solape; no usarlo sobre esta carpeta.
+
 ## Qué falta que conectar (marcado como `TODO` en el código)
 
 Este pipeline define correctamente la interfaz, los tamaños esperados y el

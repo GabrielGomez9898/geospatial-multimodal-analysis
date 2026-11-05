@@ -41,7 +41,8 @@ def main():
     def run_scene(img_t1, img_t2, mask, region, date_t1, date_t2, offsets):
         return run_for_prithvi(img_t1, img_t2, mask, prithvi_model, offsets, device=device)
 
-    extract_all("prithvi", args.oscd_root, run_scene, args.align_with, args.out_dir)
+    extract_all("prithvi", args.oscd_root, run_scene, args.align_with, args.out_dir,
+                overlap=args.chip_overlap)
 
 
 if __name__ == "__main__":

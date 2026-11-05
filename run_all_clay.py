@@ -54,7 +54,8 @@ def main():
         meta_t2 = get_scene_metadata(region, date_t2)
         return run_for_clay(img_t1, img_t2, mask, clay_model, meta_t1, meta_t2, offsets, device=device)
 
-    extract_all("clay", args.oscd_root, run_scene, args.align_with, args.out_dir)
+    extract_all("clay", args.oscd_root, run_scene, args.align_with, args.out_dir,
+                overlap=args.chip_overlap)
 
 
 if __name__ == "__main__":

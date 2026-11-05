@@ -38,6 +38,8 @@ from preprocessing import (
     prepare_prithvi_pairs,
     aligned_chip_offsets,
     common_windows,
+    window_stride,
+    token_px_10m,
     footprint_px_10m,
 )
 from metrics import (
@@ -147,6 +149,10 @@ def add_align_args(parser: argparse.ArgumentParser) -> None:
                               "modelos evaluan las mismas ventanas, con su chip centrado en cada una. "
                               "Por defecto, solo el modelo que se corre: grilla propia sobre toda la "
                               "escena. Para la comparacion alineada: --align-with clay satmae prithvi.")
+    parser.add_argument("--chip-overlap", type=float, default=0.0,
+                         help="Fraccion de solape entre ventanas vecinas (0 = sin solape, 0.5 = 50%%). "
+                              "Con solape, el mismo terreno aparece en varios chips; usar un --out-dir "
+                              "distinto, p. ej. results/comparacion_protocolo_50_solapamiento.")
 
 
 def align_specs_from_names(names: list[str], model_name: str) -> list:
@@ -204,11 +210,6 @@ def token_record(row_off: int, col_off: int, token_px: int, dist: np.ndarray,
     return record
 
 
-def token_px_10m(spec, grid_h: int) -> int:
-    """Lado (px de 10 m) de la region que cubre cada token de `spec`."""
-    return footprint_px_10m(spec) // grid_h
-
-
 def run_for_clay(img_t1, img_t2, mask, model, meta_t1: dict, meta_t2: dict,
                   offsets: list[tuple[int, int]], device: str = "cpu", max_chips: int | None = None):
     """
@@ -246,7 +247,7 @@ def run_for_clay(img_t1, img_t2, mask, model, meta_t1: dict, meta_t2: dict,
                           chip1.col_off:chip1.col_off + CLAY_V15.chip_size]
         p = token_change_fraction(mask_chip, grid_h, grid_w)
 
-        results.append(token_record(chip1.row_off, chip1.col_off, token_px_10m(CLAY_V15, grid_h),
+        results.append(token_record(chip1.row_off, chip1.col_off, token_px_10m(CLAY_V15),
                                     dist_map, p, emb1, emb2))
     return results
 
@@ -285,7 +286,7 @@ def run_for_satmae(img_t1, img_t2, mask, model, offsets: list[tuple[int, int]],
         p = token_change_fraction(mask_chip, grid_h, grid_w)
 
         results.append(token_record(chip1.row_off, chip1.col_off,
-                                    token_px_10m(SATMAE_FMOW_SENTINEL, grid_h),
+                                    token_px_10m(SATMAE_FMOW_SENTINEL),
                                     dist_map, p, emb1, emb2,
                                     dist_groups=np.moveaxis(dist_per_group, 0, -1)))  # (12, 12, 3)
     return results
@@ -318,7 +319,7 @@ def run_for_prithvi(img_t1, img_t2, mask, model, offsets: list[tuple[int, int]],
         p = token_change_fraction(pr["mask_chip"], grid_h, grid_w)
 
         results.append(token_record(pr["chip_t1"].row_off, pr["chip_t1"].col_off,
-                                    token_px_10m(PRITHVI_EO2_300M, grid_h),
+                                    token_px_10m(PRITHVI_EO2_300M),
                                     dist_map, p, joint[0], joint[1]))
     return results
 
@@ -359,7 +360,7 @@ def save_scene_tokens(path: Path, records: list[dict], chip_offsets: list[tuple[
     grid = int(round(np.sqrt(len(records[0]["dist"]))))
     path.parent.mkdir(parents=True, exist_ok=True)
     np.savez(path, region=region, model=spec.name, grid_size=grid,
-             token_size_m=token_px_10m(spec, grid) * 10, chip_footprint_m=footprint_px_10m(spec) * 10,
+             token_size_m=token_px_10m(spec) * 10, chip_footprint_m=footprint_px_10m(spec) * 10,
              **arrays)
     return label_counts(arrays["label"])
 
@@ -368,7 +369,8 @@ SceneRunner = Callable[..., list]
 
 
 def extract_all(model_name: str, oscd_root: Path, run_scene: SceneRunner,
-                align_names: list[str], out_dir: Path, extra_config: dict | None = None) -> None:
+                align_names: list[str], out_dir: Path, extra_config: dict | None = None,
+                overlap: float = 0.0) -> None:
     """
     Loop sobre los 14 pares de OSCD (split "train") para un modelo: extrae,
     guarda <out_dir>/<model_name>/<region>.npz por escena y un manifest.json
@@ -385,7 +387,7 @@ def extract_all(model_name: str, oscd_root: Path, run_scene: SceneRunner,
     align_specs = align_specs_from_names(align_names, model_name)
     model_dir = out_dir / model_name
     model_dir.mkdir(parents=True, exist_ok=True)
-    print(f"Ventanas alineadas con: {[s.name for s in align_specs]}")
+    print(f"Ventanas alineadas con: {[s.name for s in align_specs]} | solape: {overlap:.0%}")
     print(f"Guardando en: {model_dir}\n")
 
     scenes, excluded_pairs, failed_pairs = {}, [], []
@@ -397,8 +399,8 @@ def extract_all(model_name: str, oscd_root: Path, run_scene: SceneRunner,
             h, w = img_t1.shape[1], img_t1.shape[2]
             print(f"[{index+1}/{len(oscd)}] {region:15s} tamano={h}x{w}", end="  ")
 
-            window, _ = common_windows(h, w, align_specs)
-            offsets = aligned_chip_offsets(h, w, spec, align_specs)
+            window, _ = common_windows(h, w, align_specs, overlap)
+            offsets = aligned_chip_offsets(h, w, spec, align_specs, overlap)
             if not offsets:
                 print(f"-> EXCLUIDA (no cabe una ventana de {window}x{window} px a 10 m)")
                 excluded_pairs.append({
@@ -422,13 +424,16 @@ def extract_all(model_name: str, oscd_root: Path, run_scene: SceneRunner,
             failed_pairs.append({"index": index, "error": str(e)})
 
     grid_h = spec.chip_size // spec.patch_size
+    window = max(footprint_px_10m(s) for s in align_specs)
     manifest = {
         "model": spec.name,
         "align_with": [s.name for s in align_specs],
-        "window_px_10m": max(footprint_px_10m(s) for s in align_specs),
+        "window_px_10m": window,
+        "chip_overlap": overlap,
+        "stride_px_10m": window_stride(window, overlap),
         "chip_footprint_m": footprint_px_10m(spec) * 10,
         "token_grid": [grid_h, grid_h],
-        "token_size_m": token_px_10m(spec, grid_h) * 10,
+        "token_size_m": token_px_10m(spec) * 10,
         "thresholds": {"C": f"p > {CHANGE_THRESHOLD}", "NC": f"p < {NO_CHANGE_THRESHOLD}",
                        "mixed_excluded": f"{NO_CHANGE_THRESHOLD} <= p <= {CHANGE_THRESHOLD}"},
         **(extra_config or {}),
@@ -494,8 +499,8 @@ def main():
     spec = ALL_MODEL_SPECS[args.model]
     align_specs = align_specs_from_names(args.align_with, args.model)
     h, w = img_t1.shape[1], img_t1.shape[2]
-    window, _ = common_windows(h, w, align_specs)
-    offsets = aligned_chip_offsets(h, w, spec, align_specs)
+    window, _ = common_windows(h, w, align_specs, args.chip_overlap)
+    offsets = aligned_chip_offsets(h, w, spec, align_specs, args.chip_overlap)
     print(f"Ventana comun: {window} px a 10 m ({window * 10} m) -> {len(offsets)} ventanas")
 
     if not offsets:

@@ -11,6 +11,7 @@ Convencion de arrays: todas las imagenes se manejan como numpy arrays con forma
 """
 
 from __future__ import annotations
+import math
 from dataclasses import dataclass
 from typing import List, Tuple
 
@@ -136,7 +137,7 @@ def extract_chips_at(image: np.ndarray, chip_size: int, offsets: List[Tuple[int,
 
 
 # ---------------------------------------------------------------------------
-# Ventanas comunes entre modelos (sin solape)
+# Ventanas comunes entre modelos (sin solape por defecto)
 #
 # Cada modelo ve un area de terreno distinta por chip:
 #   Clay    256 px x 10 m = 2560 m
@@ -146,6 +147,13 @@ def extract_chips_at(image: np.ndarray, chip_size: int, offsets: List[Tuple[int,
 # la grilla de ventanas se arma con la huella mas grande (sin solape), y cada
 # modelo recorta su chip centrado dentro de cada ventana. Si una escena no
 # alcanza para una sola ventana, queda fuera para TODOS los modelos.
+#
+# Con overlap > 0 las ventanas se solapan (paso = ventana * (1 - overlap)).
+# Con overlap = 0.5 el paso es multiplo exacto del tamano del token en los tres
+# modelos (Clay 128 px = 16 tokens, SatMAE 48 px = 6, Prithvi 336 px a 10 m =
+# 7 tokens de 48 px), asi que los tokens de chips vecinos caen sobre la misma
+# grilla del terreno: el mismo lugar aparece en varios chips (con distinto
+# contexto alrededor) y se puede cruzar por center_row_10m / center_col_10m.
 # ---------------------------------------------------------------------------
 
 def footprint_px_10m(spec: ModelSpec) -> int:
@@ -153,27 +161,76 @@ def footprint_px_10m(spec: ModelSpec) -> int:
     return int(round(spec.chip_size * spec.native_gsd_m / 10.0))
 
 
-def common_windows(h: int, w: int, align_specs: List[ModelSpec]) -> Tuple[int, List[Tuple[int, int]]]:
+def window_stride(window: int, overlap: float) -> int:
+    """Paso entre ventanas (px de 10 m) para una fraccion de solape en [0, 1)."""
+    if not 0.0 <= overlap < 1.0:
+        raise ValueError(f"overlap debe estar en [0, 1), no {overlap}")
+    return window - int(round(window * overlap))
+
+
+def token_px_10m(spec: ModelSpec) -> int:
+    """Lado (px de 10 m) de la region que cubre cada token de `spec`."""
+    return footprint_px_10m(spec) // (spec.chip_size // spec.patch_size)
+
+
+def _axis_offsets(size: int, window: int, stride: int, lattice: int) -> List[int]:
     """
-    Grilla de ventanas no solapadas de lado = huella mas grande entre
-    `align_specs`, centrada en la escena (el sobrante se reparte por igual
-    entre los bordes, en vez de quedar todo abajo/a la derecha).
+    Posiciones de ventana en un eje: tantas como quepan con paso `stride`,
+    centradas en la escena (el sobrante se reparte entre los bordes).
+
+    Con solape, el bloque centrado se desplaza a la posicion mas cercana que
+    caiga sobre la misma grilla de `lattice` px que la corrida sin solape. Asi
+    los tokens de ambas corridas cubren exactamente las mismas regiones del
+    terreno y se pueden cruzar por center_row_10m / center_col_10m.
+    """
+    if size < window:
+        return []
+    if stride == window:
+        n = size // window
+        start = (size - n * window) // 2
+        return [start + i * stride for i in range(n)]
+
+    origin = (size - (size // window) * window) // 2   # inicio de la grilla sin solape
+    n = (size - window) // stride + 1
+    while n > 0:
+        span = window + (n - 1) * stride
+        centered = (size - span) // 2
+        # inicios validos (bloque dentro de la escena) que caen en la grilla de la corrida sin solape
+        candidates = range(origin % lattice, size - span + 1, lattice)
+        if len(candidates):
+            start = min(candidates, key=lambda x: (abs(x - centered), x))
+            return [start + i * stride for i in range(n)]
+        n -= 1   # el sobrante no alcanza para alinear: una ventana menos
+    return []
+
+
+def common_windows(h: int, w: int, align_specs: List[ModelSpec],
+                   overlap: float = 0.0) -> Tuple[int, List[Tuple[int, int]]]:
+    """
+    Grilla de ventanas de lado = huella mas grande entre `align_specs`, con
+    paso window_stride(window, overlap), centrada en la escena (ver _axis_offsets).
     Devuelve (lado_ventana_px_10m, [(row_off, col_off), ...]) en la grilla de 10 m.
     """
     window = max(footprint_px_10m(s) for s in align_specs)
-    n_rows, n_cols = h // window, w // window
-    top = (h - n_rows * window) // 2
-    left = (w - n_cols * window) // 2
-    offsets = [(top + i * window, left + j * window) for i in range(n_rows) for j in range(n_cols)]
-    return window, offsets
+    stride = window_stride(window, overlap)
+    lattice = math.lcm(*(token_px_10m(s) for s in align_specs))
+    if stride % lattice:
+        raise ValueError(
+            f"Con solape {overlap:.0%} el paso ({stride} px) no es multiplo del token "
+            f"({lattice} px): los tokens de chips vecinos no caerian sobre la misma grilla."
+        )
+    rows = _axis_offsets(h, window, stride, lattice)
+    cols = _axis_offsets(w, window, stride, lattice)
+    return window, [(r, c) for r in rows for c in cols]
 
 
-def aligned_chip_offsets(h: int, w: int, spec: ModelSpec, align_specs: List[ModelSpec]) -> List[Tuple[int, int]]:
+def aligned_chip_offsets(h: int, w: int, spec: ModelSpec, align_specs: List[ModelSpec],
+                         overlap: float = 0.0) -> List[Tuple[int, int]]:
     """
     Esquinas (en la grilla de 10 m) de los chips de `spec`, uno por ventana
     comun, centrados en el centro de cada ventana.
     """
-    window, windows = common_windows(h, w, align_specs)
+    window, windows = common_windows(h, w, align_specs, overlap)
     fp = footprint_px_10m(spec)
     if fp > window:
         raise ValueError(

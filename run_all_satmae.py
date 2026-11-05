@@ -40,7 +40,7 @@ def main():
                               device=device, combine_mode=args.combine_mode)
 
     extract_all("satmae", args.oscd_root, run_scene, args.align_with, args.out_dir,
-                extra_config={"combine_mode": args.combine_mode})
+                extra_config={"combine_mode": args.combine_mode}, overlap=args.chip_overlap)
 
 
 if __name__ == "__main__":

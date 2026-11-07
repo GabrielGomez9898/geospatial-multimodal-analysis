@@ -4,6 +4,8 @@
     "prithvi_eo_2.0_300m"
   ],
   "window_px_10m": 672,
+  "chip_overlap": 0.0,
+  "stride_px_10m": 672,
   "chip_footprint_m": 6720,
   "token_grid": [
     14,

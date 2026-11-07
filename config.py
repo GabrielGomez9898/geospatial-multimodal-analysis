@@ -81,6 +81,16 @@ SATMAE_FMOW_SENTINEL = ModelSpec(
     ),
 )
 
+# Estadisticas oficiales de Clay v1.5 para sentinel-2-l2a (configs/metadata.yaml
+# del repo Clay-foundation/model, copiado en model_assets/clay/metadata.yaml),
+# en el orden de CLAY_V15.bands: blue, green, red, rededge1-3, nir, nir08,
+# swir16, swir22. Se aplican como z-score: (x - mean) / std.
+# Sin esta normalizacion (corridas anteriores) Clay recibia reflectancias
+# crudas del orden de miles: sus distancias T1-T2 quedaban casi en cero y la
+# representacion de cada token dejaba de depender de su contexto en el chip.
+CLAY_MEAN = [1105.0, 1355.0, 1552.0, 1887.0, 2422.0, 2630.0, 2743.0, 2785.0, 2388.0, 1835.0]
+CLAY_STD = [1809.0, 1757.0, 1888.0, 1870.0, 1732.0, 1697.0, 1742.0, 1648.0, 1470.0, 1379.0]
+
 # Estadisticas oficiales de fMoW-Sentinel (util/datasets.py, clase
 # SentinelIndividualImageDataset, repo sustainlab-group/SatMAE), en el orden
 # de SENTINEL2_ALL_BANDS (13 bandas). SatMAE NO usa z-score normal: usa

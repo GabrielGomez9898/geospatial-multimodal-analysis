@@ -15,7 +15,7 @@ cambiar FONT_DIR.
 
 OJO: varios parrafos (configuracion, limitaciones, decisiones pendientes)
 son texto fijo que describe la ejecucion actual. Si cambia la configuracion
-(p. ej. al normalizar Clay o cambiar bandas), hay que actualizarlos a mano;
+(p. ej. al cambiar bandas o checkpoints), hay que actualizarlos a mano;
 las tablas, conteos y la figura si se regeneran desde los resultados.
 """
 import argparse
@@ -60,6 +60,7 @@ NAMES = {"clay": "Clay v1.5", "satmae": "SatMAE", "prithvi": "Prithvi EO 2.0"}
 SCENES = list(manifests["clay"]["scenes"])
 
 by = {(r["model"], r["region"]): r for r in rows}
+LEAD = NAMES["clay"] if PM["clay"]["complementaria"]["auroc"]["mean"] >= PM["satmae"]["complementaria"]["auroc"]["mean"] else NAMES["satmae"]
 
 # ---------------------------------------------------------------- estilos
 INK, INK2, MUTED, RULE, HEAD = (colors.HexColor(c) for c in ("#1b1b1a", "#52514e", "#7a7974", "#d9d8d3", "#f1f0ec"))
@@ -189,13 +190,14 @@ story += bullets([
     "estadístico.",
     f"<b>Clay y SatMAE sobre los 14 pares.</b> AUROC {ms(PM['clay']['complementaria']['auroc'])} y "
     f"{ms(PM['satmae']['complementaria']['auroc'])}; Fisher {ms(PM['clay']['complementaria']['fisher'], f2)} y "
-    f"{ms(PM['satmae']['complementaria']['fisher'], f2)}. SatMAE separa algo mejor, con alta variabilidad "
-    "entre pares en ambos.",
+    f"{ms(PM['satmae']['complementaria']['fisher'], f2)}. {LEAD} tiene el AUROC medio más alto, pero la "
+    "diferencia es menor que la variabilidad entre pares, así que no es concluyente.",
     f"<b>Prithvi tiene solo {PM['prithvi']['token_counts']['n_C']} tokens C en total.</b> Sus tokens cubren "
     "480 × 480 m y en OSCD casi ningún token de ese tamaño supera el 50 % de cambio. Solo 2 de sus "
-    "5 escenas permiten calcular AUROC, y por eso la comparación principal queda en 2 pares.",
-    "<b>Clay se evaluó con píxeles sin normalizar</b> (sección 8). Sus resultados deben "
-    "considerarse preliminares hasta repetir la extracción con la normalización oficial.",
+    f"5 escenas permiten calcular AUROC, y por eso la comparación principal queda en {len(common)} pares.",
+    "<b>Se corrigieron dos errores de extracción</b> (sección 8.1): Clay no recibía la normalización "
+    "oficial y la capa de entrada de Prithvi se cargaba con pesos aleatorios. Los resultados de este "
+    "informe son los de después de ambas correcciones.",
 ])
 
 # ---------------------------------------------------------------- 1
@@ -226,7 +228,7 @@ cfg = [["", "Clay v1.5", "SatMAE", "Prithvi EO 2.0"],
        ["Parche / grilla de tokens", "8 px / 32 × 32", "8 px / 12 × 12 (× 3 grupos)", "16 px / 14 × 14 (× 2 fechas)"],
        ["Región por token", "80 m", "80 m", "480 m"],
        ["Metadatos", "GSD, longitudes de onda, lat/lon (por ciudad), semana del año", "No", "No (versión base)"],
-       ["Normalización", "Ninguna (pendiente)", "SentinelNormalize oficial (μ ± 2σ → [0, 1])", "z-score oficial (config.json)"],
+       ["Normalización", "z-score oficial (metadata.yaml, sentinel-2-l2a)", "SentinelNormalize oficial (μ ± 2σ → [0, 1])", "z-score oficial (config.json)"],
        ["T1 y T2", "Pasadas separadas", "Pasadas separadas", "Una pasada conjunta (T = 2)"],
        ["Chips / escenas", f"{sum(s['n_chips'] for s in manifests['clay']['scenes'].values())} / 14",
         f"{sum(s['n_chips'] for s in manifests['satmae']['scenes'].values())} / 14",
@@ -358,34 +360,87 @@ story.append(P("«sin chips»: la escena es más pequeña que la huella del chip
 
 # ---------------------------------------------------------------- 7
 above = {m: sum(float(by[(m, s)]["auroc"]) >= 0.6 for s in SCENES) for m in ("clay", "satmae")}
+comp = {m: PM[m]["complementaria"] for m in ("clay", "satmae")}
+gap = abs(comp["clay"]["auroc"]["mean"] - comp["satmae"]["auroc"]["mean"])
+hard = {m: sorted(SCENES, key=lambda sc: float(by[(m, sc)]["auroc"]))[:3] for m in ("clay", "satmae")}
+shared_hard = [sc for sc in hard["clay"] if sc in hard["satmae"]]
+fis = {m: sorted(((float(by[(m, sc)]["fisher"]), sc) for sc in SCENES if (m, sc) in by
+                  and by[(m, sc)]["valid_auroc"] == "True")) for m in MODELS}
+mu = {m: [float(by[(m, sc)][k]) for sc in SCENES if (m, sc) in by for k in ("mu_C", "mu_NC")
+          if by[(m, sc)][k] not in ("", "nan")] for m in MODELS}
+fmax = {m: fis[m][-1] for m in ("clay", "satmae")}
 story += [P("7. Interpretación", h1)]
 story += bullets([
     "<b>Clay y SatMAE discriminan el cambio por encima del azar en la mayoría de los pares</b> "
-    f"(AUROC ≥ 0.6 en {above['clay']} de 14 pares con Clay y en {above['satmae']} de 14 con SatMAE). SatMAE tiene un AUROC medio algo mayor "
-    "y un índice de Fisher del doble, pero las desviaciones estándar entre pares (≈ 0.16 en AUROC) "
-    "son mayores que la diferencia entre ambos, por lo que con 14 pares la diferencia no es concluyente.",
-    "<b>Las escenas difíciles son las mismas para ambos modelos</b>: pisa, saclay_e y bercy, con "
-    "AUROC cercano al azar, y Clay por debajo del azar en bercy (0.39). Esa coincidencia sugiere que la "
-    "dificultad depende de la escena (tipo de cambio, poca cantidad de tokens C, diferencias "
-    "radiométricas entre fechas) más que del modelo.",
-    "<b>El índice de Fisher de SatMAE está dominado por pocas escenas</b>: va de 0.01 en pisa a 6.45 "
-    "en cupertino. Por eso su desviación estándar supera a la media, y conviene leerlo junto con el AUROC.",
-    "<b>El AUROC de Prithvi (0.958) no permite compararlo con los demás</b>: sale de 6 tokens C repartidos "
-    "en 2 pares. Es coherente con los otros modelos en esos mismos pares, pero no es una estimación "
-    "fiable.",
-    "<b>Las distancias no son comparables en escala entre modelos.</b> Las distancias medias de Clay son "
-    "del orden de 0.002–0.04, las de SatMAE de 0.07–0.43 y las de Prithvi de 0.02–0.06. Por eso la "
-    "comparación se apoya en AUROC y Fisher, que no dependen de la escala absoluta.",
+    f"(AUROC ≥ 0.6 en {above['clay']} de 14 pares con Clay y en {above['satmae']} de 14 con SatMAE). "
+    f"{LEAD} tiene el AUROC medio más alto, con una diferencia de {gap:.3f}, pero las desviaciones "
+    f"estándar entre pares (≈ {comp['clay']['auroc']['std']:.2f}) son mucho mayores que esa diferencia: "
+    "con 14 pares no se puede afirmar que un modelo discrimine mejor que el otro.",
+    f"<b>Las escenas más difíciles coinciden</b>: los tres AUROC más bajos son {', '.join(hard['clay'])} en "
+    f"Clay y {', '.join(hard['satmae'])} en SatMAE"
+    + (f"; comparten {', '.join(shared_hard)}" if shared_hard else "")
+    + ". La coincidencia sugiere que la dificultad depende de la escena (tipo de cambio, pocos tokens C, "
+    "diferencias radiométricas entre fechas) más que del modelo.",
+    "<b>El índice de Fisher está dominado por pocas escenas</b>: en Clay va de "
+    f"{f2(fis['clay'][0][0])} ({fis['clay'][0][1]}) a {f2(fmax['clay'][0])} ({fmax['clay'][1]}, con "
+    f"{by[('clay', fmax['clay'][1])]['n_C']} tokens C), y en SatMAE de {f2(fis['satmae'][0][0])} "
+    f"({fis['satmae'][0][1]}) a {f2(fmax['satmae'][0])} ({fmax['satmae'][1]}). Por eso su desviación "
+    "estándar supera a la media; conviene leerlo junto con el AUROC y no como criterio principal.",
+    f"<b>El AUROC de Prithvi ({PM['prithvi']['complementaria']['auroc']['mean']:.3f}) no permite compararlo "
+    f"con los demás</b>: sale de {PM['prithvi']['token_counts']['n_C']} tokens C repartidos en "
+    f"{PM['prithvi']['complementaria']['auroc']['n_pairs']} pares. En esos pares supera a Clay y SatMAE, "
+    "pero no es una estimación fiable.",
+    "<b>Las distancias no son comparables en escala entre modelos.</b> Las distancias medias por grupo "
+    f"van de {min(mu['clay']):.2f} a {max(mu['clay']):.2f} en Clay, de {min(mu['satmae']):.2f} a "
+    f"{max(mu['satmae']):.2f} en SatMAE y de {min(mu['prithvi']):.2f} a {max(mu['prithvi']):.2f} en "
+    "Prithvi. Por eso la comparación se apoya en AUROC y Fisher, que no dependen de la escala absoluta.",
 ])
 
+# --- robustez al solape (si existe la comparativa)
+CMP = RES.parent / "comparativa_solapamiento" / "tablas"
+if (CMP / "resumen_metricas.csv").exists():
+    cm_rows = {r["model"]: r for r in csv.DictReader(open(CMP / "resumen_metricas.csv"))}
+    em_rows = {r["model"]: r for r in csv.DictReader(open(CMP / "embeddings_por_modelo.csv"))}
+    story += [P("7.1 Robustez frente al solape de chips", h2),
+              P("Se repitió la extracción con 50 % de solape entre chips "
+                "(<font face='Courier'>results/comparacion_protocolo_50_solapamiento/</font>) y se comparó con "
+                "esta corrida en <font face='Courier'>results/comparativa_solapamiento/</font>. Las dos "
+                "corridas comparten la grilla de tokens sobre el terreno, así que cada lugar se puede cruzar.")]
+    rob = [["Modelo", "Pares", "AUROC sin solape", "AUROC con 50 %", "máx |Δ| por par", "Spearman ρ de la distancia por lugar",
+            "Dif. relativa de distancia (mediana)"]]
+    for m in MODELS:
+        r, e = cm_rows[m], em_rows[m]
+        rob.append([NAMES[m], r["pares"], f3(r["auroc_sin_media"]), f3(r["auroc_con_media"]),
+                    f3(r["delta_auroc_abs_max"]), f3(e["spearman_dist"]),
+                    f"{100 * float(e['dif_rel_dist_mediana_otro_chip']):.1f} %"])
+    story.append(table(rob, [2.9 * cm, 1.3 * cm, 2.4 * cm, 2.4 * cm, 2.2 * cm, 3.0 * cm, 2.7 * cm]))
+    story.append(P("El solape no cambia las conclusiones: el AUROC por par varía poco y el orden de las "
+                   "escenas se mantiene. A nivel de token, la distancia de un mismo lugar cambia unos pocos "
+                   "puntos porcentuales según el chip que lo contiene, efecto esperable porque cada token "
+                   "atiende al resto del chip.", small))
+
 # ---------------------------------------------------------------- 8
-story += [P("8. Limitaciones y diferencias con el protocolo", h1)]
+story += [P("8. Limitaciones y diferencias con el protocolo", h1), P("8.1 Correcciones aplicadas a la extracción", h2)]
 story += bullets([
-    "<b>Clay sin normalización de píxeles.</b> La función <font face='Courier'>prepare_for_clay</font> "
-    "conserva un TODO: no aplica la media y desviación estándar oficiales de "
-    "<font face='Courier'>metadata.yaml</font> (sensor sentinel-2-l2a), y el extractor tampoco lo hace. "
-    "El punto D pide usar el preprocesamiento recomendado por los autores, así que los resultados de Clay "
-    "deben repetirse con la normalización oficial antes de usarlos en la selección de modelo.",
+    "<b>Normalización de Clay.</b> En una primera ejecución, Clay recibía reflectancias crudas, del orden "
+    "de miles, sin la media y desviación estándar oficiales de <font face='Courier'>metadata.yaml</font>. "
+    "Sus distancias T1–T2 quedaban casi en cero y la representación de cada token dejaba de depender de "
+    "su contexto en el chip. Se aplicó el z-score oficial y se repitió la extracción.",
+    "<b>Pesos de la capa de entrada de Prithvi.</b> Al construir el modelo con los nombres de banda de "
+    "Sentinel-2 (B02, B03…), terratorch no los emparejaba con las bandas de preentrenamiento (BLUE, GREEN…) "
+    "e inicializaba al azar la capa <font face='Courier'>patch_embed</font>; el resto del modelo sí cargaba. "
+    "Se detectó porque el mismo chip daba distancias distintas en dos ejecuciones. Ahora se usan los "
+    "nombres HLS y el extractor verifica que esa capa coincida con el checkpoint.",
+    "Los resultados anteriores a ambas correcciones se conservan en las carpetas "
+    "<font face='Courier'>clay_sin_normalizar/</font> y <font face='Courier'>prithvi_patch_embed_aleatorio/</font>.",
+])
+story += [P("8.2 Limitaciones", h2)]
+story += bullets([
+    "<b>Condiciones de entrada de Prithvi.</b> Prithvi se preentrenó con HLS (Landsat y Sentinel-2 "
+    "armonizados, a 30 m). Aquí recibe Sentinel-2 de OSCD reducido de 10 m a 30 m por promedio de bloques "
+    "3 × 3, con su normalización oficial. Es una aproximación al producto HLS, no una réplica: no incluye "
+    "la armonización ni la corrección atmosférica de HLS. No se modificaron sus condiciones para "
+    "acercarlas a los otros modelos.",
     "<b>Bandas.</b> El protocolo (B) indica B02, B03, B04, B08, B11 y B12 para SatMAE y Clay. La ejecución "
     "usó 10 bandas en ambos (además B05, B06, B07 y B8A). En SatMAE responde a que el checkpoint group_c "
     "se entrenó con esos 3 grupos espectrales; en Clay es una decisión de implementación que el protocolo "
@@ -408,8 +463,6 @@ story += bullets([
 # ---------------------------------------------------------------- 9
 story += [P("9. Decisiones pendientes", h1)]
 story += bullets([
-    "<b>Normalización de Clay.</b> Aplicar las estadísticas oficiales y repetir la extracción de Clay. "
-    "Es prioritario, porque afecta los resultados de uno de los tres modelos.",
     "<b>Tratamiento de Prithvi.</b> Opciones: (a) mantener la configuración y reportar Prithvi como "
     "exploratorio, dejando Clay frente a SatMAE sobre 14 pares como comparación sólida; (b) pasarle la "
     "imagen a 10 m (tokens de 160 m), que se aparta de su resolución de preentrenamiento; (c) un umbral "

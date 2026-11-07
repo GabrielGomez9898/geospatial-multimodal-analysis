@@ -35,22 +35,50 @@ from config import PRITHVI_EO2_300M
 
 PRITHVI_BACKBONE_NAME = "prithvi_eo_v2_300"
 
+# Nombres HLS que terratorch usa para las bandas de preentrenamiento, en el
+# orden de PRITHVI_EO2_300M.bands. OJO: si se le pasan nombres que no reconoce
+# (p. ej. "B02"), terratorch no los empareja con las bandas preentrenadas e
+# inicializa AL AZAR la capa patch_embed (el resto del modelo si carga). Eso
+# paso en las corridas anteriores a este cambio: Prithvi daba distancias
+# distintas en cada ejecucion para el mismo chip.
+SENTINEL2_TO_HLS = {
+    "B02": "BLUE", "B03": "GREEN", "B04": "RED",
+    "B8A": "NIR_NARROW", "B11": "SWIR_1", "B12": "SWIR_2",
+}
+
 
 def load_prithvi_model(device: str = "cuda", chip_size: int | None = None):
     """chip_size: tamano de entrada con el que se construye el backbone (multiplo
     de patch_size). Por defecto el de config.py (224, el de entrenamiento)."""
     from terratorch.registry import BACKBONE_REGISTRY
+    from terratorch.datasets import HLSBands
 
     model = BACKBONE_REGISTRY.build(
         PRITHVI_BACKBONE_NAME,
         pretrained=True,
         img_size=chip_size or PRITHVI_EO2_300M.chip_size,
         num_frames=2,                          # T=2: t1 y t2 en una sola pasada
-        bands=PRITHVI_EO2_300M.bands,
+        bands=[HLSBands[SENTINEL2_TO_HLS[b]] for b in PRITHVI_EO2_300M.bands],
     )
+    _check_patch_embed_is_pretrained(model)
     model.eval()
     model.to(device)
     return model
+
+
+def _check_patch_embed_is_pretrained(model) -> None:
+    """Falla si patch_embed no quedo con los pesos del checkpoint (ver SENTINEL2_TO_HLS)."""
+    from huggingface_hub import hf_hub_download
+
+    path = hf_hub_download("ibm-nasa-geospatial/Prithvi-EO-2.0-300M", "Prithvi_EO_V2_300M.pt")
+    checkpoint = torch.load(path, map_location="cpu", weights_only=False)
+    expected = checkpoint["encoder.patch_embed.proj.weight"]
+    loaded = model.state_dict()["patch_embed.proj.weight"].cpu()
+    if not torch.equal(loaded, expected):
+        raise RuntimeError(
+            "patch_embed de Prithvi no coincide con el checkpoint: las bandas no se "
+            "emparejaron con las de preentrenamiento y la capa quedo con pesos aleatorios."
+        )
 
 
 @torch.no_grad()

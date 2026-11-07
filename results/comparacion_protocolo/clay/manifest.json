@@ -4,6 +4,8 @@
     "clay_v1.5"
   ],
   "window_px_10m": 256,
+  "chip_overlap": 0.0,
+  "stride_px_10m": 256,
   "chip_footprint_m": 2560,
   "token_grid": [
     32,

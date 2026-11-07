@@ -1,0 +1,217 @@
+{
+  "models": [
+    "clay",
+    "satmae",
+    "prithvi"
+  ],
+  "common_valid_pairs": [
+    "abudhabi",
+    "cupertino"
+  ],
+  "notes": {
+    "principal": "Media y std (ddof=1) entre los pares validos para TODOS los modelos.",
+    "complementaria": "Media y std (ddof=1) entre todos los pares validos de cada modelo.",
+    "fisher": "Varianzas poblacionales dentro de cada par; pares con denominador 0 se listan en fisher_zero_denominator y no entran en la media."
+  },
+  "per_model": {
+    "clay": {
+      "token_size_m": 80,
+      "chip_footprint_m": 2560,
+      "token_counts": {
+        "n_tokens": 76800,
+        "n_C": 1601,
+        "n_NC": 72497,
+        "n_mixed_excluded": 2702,
+        "pct_excluded": 3.5182291666666665
+      },
+      "valid_pairs": [
+        "paris",
+        "mumbai",
+        "aguasclaras",
+        "abudhabi",
+        "nantes",
+        "rennes",
+        "bercy",
+        "bordeaux",
+        "hongkong",
+        "pisa",
+        "saclay_e",
+        "beirut",
+        "beihai",
+        "cupertino"
+      ],
+      "invalid_pairs": [],
+      "principal": {
+        "auroc": {
+          "mean": 0.9024109305246462,
+          "std": 0.11957638143871516,
+          "n_pairs": 2
+        },
+        "fisher": {
+          "mean": 0.9806831926107407,
+          "std": 0.8005558063026903,
+          "n_pairs": 2
+        },
+        "fisher_zero_denominator": []
+      },
+      "complementaria": {
+        "auroc": {
+          "mean": 0.8105941693653725,
+          "std": 0.16979722454625154,
+          "n_pairs": 14
+        },
+        "fisher": {
+          "mean": 0.811066916299751,
+          "std": 1.0799265712174348,
+          "n_pairs": 14
+        },
+        "fisher_zero_denominator": []
+      }
+    },
+    "satmae": {
+      "token_size_m": 80,
+      "chip_footprint_m": 960,
+      "token_counts": {
+        "n_tokens": 91296,
+        "n_C": 1718,
+        "n_NC": 86538,
+        "n_mixed_excluded": 3040,
+        "pct_excluded": 3.3298282509638977
+      },
+      "valid_pairs": [
+        "paris",
+        "mumbai",
+        "aguasclaras",
+        "abudhabi",
+        "nantes",
+        "rennes",
+        "bercy",
+        "bordeaux",
+        "hongkong",
+        "pisa",
+        "saclay_e",
+        "beirut",
+        "beihai",
+        "cupertino"
+      ],
+      "invalid_pairs": [],
+      "principal": {
+        "auroc": {
+          "mean": 0.9068310398640146,
+          "std": 0.12445444565258464,
+          "n_pairs": 2
+        },
+        "fisher": {
+          "mean": 3.5911929607391357,
+          "std": 4.044731561979286,
+          "n_pairs": 2
+        },
+        "fisher_zero_denominator": []
+      },
+      "complementaria": {
+        "auroc": {
+          "mean": 0.8427782883289655,
+          "std": 0.15981612899590988,
+          "n_pairs": 14
+        },
+        "fisher": {
+          "mean": 1.7174367595330946,
+          "std": 1.8073159651714126,
+          "n_pairs": 14
+        },
+        "fisher_zero_denominator": []
+      }
+    },
+    "prithvi": {
+      "token_size_m": 480,
+      "chip_footprint_m": 6720,
+      "token_counts": {
+        "n_tokens": 980,
+        "n_C": 6,
+        "n_NC": 858,
+        "n_mixed_excluded": 116,
+        "pct_excluded": 11.83673469387755
+      },
+      "valid_pairs": [
+        "abudhabi",
+        "cupertino"
+      ],
+      "invalid_pairs": [
+        {
+          "region": "pisa",
+          "reason": "sin tokens C"
+        },
+        {
+          "region": "beirut",
+          "reason": "sin tokens C"
+        },
+        {
+          "region": "beihai",
+          "reason": "sin tokens C"
+        },
+        {
+          "region": "paris",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "mumbai",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "aguasclaras",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "nantes",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "rennes",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "bercy",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "bordeaux",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "hongkong",
+          "reason": "escena excluida por tamano (sin chips)"
+        },
+        {
+          "region": "saclay_e",
+          "reason": "escena excluida por tamano (sin chips)"
+        }
+      ],
+      "principal": {
+        "auroc": {
+          "mean": 0.9578235634833386,
+          "std": 0.024223027434526236,
+          "n_pairs": 2
+        },
+        "fisher": {
+          "mean": 1.957070767879486,
+          "std": 0.04030174377678411,
+          "n_pairs": 2
+        },
+        "fisher_zero_denominator": []
+      },
+      "complementaria": {
+        "auroc": {
+          "mean": 0.9578235634833386,
+          "std": 0.024223027434526236,
+          "n_pairs": 2
+        },
+        "fisher": {
+          "mean": 1.957070767879486,
+          "std": 0.04030174377678411,
+          "n_pairs": 2
+        },
+        "fisher_zero_denominator": []
+      }
+    }
+  }
+}

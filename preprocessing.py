@@ -24,6 +24,8 @@ from config import (
     SENTINEL2_20M_BANDS,
     SATMAE_MEAN_13,
     SATMAE_STD_13,
+    CLAY_MEAN,
+    CLAY_STD,
 )
 
 
@@ -283,8 +285,7 @@ def prepare_for_clay(image_10m: np.ndarray, spec: ModelSpec,
     """image_10m: (13, H, W) en band_order = SENTINEL2_ALL_BANDS, ya a 10 m.
     offsets: esquinas de los chips en la grilla de 10 m (ver aligned_chip_offsets)."""
     img = select_and_reorder_bands(image_10m, SENTINEL2_ALL_BANDS, spec.bands)
-    # TODO: normalizar con las estadisticas oficiales de configs/metadata.yaml de Clay
-    # (dependen del sensor: sentinel-2-l2a). No inventar mean/std aqui.
+    img = zscore_normalize(img, CLAY_MEAN, CLAY_STD)  # estadisticas oficiales (config.py)
     return extract_chips_at(img, spec.chip_size, offsets)
 
 

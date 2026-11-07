@@ -20,6 +20,7 @@ run_pipeline.py          Extracción por chip + guardado por escena (.npz); prue
 run_all_{clay,satmae,prithvi}.py   Extracción sobre los 14 pares de OSCD, un modelo por script
 evaluate.py              Sección G del protocolo (G.1, G.3, G.4) a partir de los .npz
 build_report.py          Informe PDF de la comparación a partir de la salida de evaluate.py
+compare_overlap.py       Comparativa sin solape vs. 50 % de solape (métricas y embeddings token a token)
 ```
 
 ## Flujo (sección G del protocolo)
@@ -58,6 +59,9 @@ terreno que la corrida sin solape: el mismo `center_row_10m`/`center_col_10m`
 identifica la misma región en ambas corridas. Un mismo lugar aparece en varios
 chips (con distinto contexto), así que en el AUROC por par cuenta varias veces.
 `build_report.py` describe la corrida sin solape; no usarlo sobre esta carpeta.
+
+Para comparar ambas corridas (sin cargar modelos): `python compare_overlap.py` →
+`results/comparativa_solapamiento/` (tablas CSV, figuras PNG y `LEEME.md`).
 
 ## Qué falta que conectar (marcado como `TODO` en el código)
 

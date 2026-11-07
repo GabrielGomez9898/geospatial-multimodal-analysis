@@ -1,0 +1,136 @@
+{
+  "model": "clay_v1.5",
+  "align_with": [
+    "clay_v1.5"
+  ],
+  "window_px_10m": 256,
+  "chip_overlap": 0.5,
+  "stride_px_10m": 128,
+  "chip_footprint_m": 2560,
+  "token_grid": [
+    32,
+    32
+  ],
+  "token_size_m": 80,
+  "thresholds": {
+    "C": "p > 0.5",
+    "NC": "p < 0.05",
+    "mixed_excluded": "0.05 <= p <= 0.5"
+  },
+  "scenes": {
+    "paris": {
+      "n_chips": 4,
+      "n_tokens": 4096,
+      "n_C": 5,
+      "n_NC": 4045,
+      "n_mixed_excluded": 46,
+      "pct_excluded": 1.123046875
+    },
+    "mumbai": {
+      "n_chips": 15,
+      "n_tokens": 15360,
+      "n_C": 346,
+      "n_NC": 14447,
+      "n_mixed_excluded": 567,
+      "pct_excluded": 3.69140625
+    },
+    "aguasclaras": {
+      "n_chips": 6,
+      "n_tokens": 6144,
+      "n_C": 83,
+      "n_NC": 5631,
+      "n_mixed_excluded": 430,
+      "pct_excluded": 6.998697916666667
+    },
+    "abudhabi": {
+      "n_chips": 25,
+      "n_tokens": 25600,
+      "n_C": 759,
+      "n_NC": 23572,
+      "n_mixed_excluded": 1269,
+      "pct_excluded": 4.95703125
+    },
+    "nantes": {
+      "n_chips": 9,
+      "n_tokens": 9216,
+      "n_C": 62,
+      "n_NC": 8870,
+      "n_mixed_excluded": 284,
+      "pct_excluded": 3.0815972222222223
+    },
+    "rennes": {
+      "n_chips": 3,
+      "n_tokens": 3072,
+      "n_C": 41,
+      "n_NC": 2784,
+      "n_mixed_excluded": 247,
+      "pct_excluded": 8.040364583333334
+    },
+    "bercy": {
+      "n_chips": 2,
+      "n_tokens": 2048,
+      "n_C": 10,
+      "n_NC": 2017,
+      "n_mixed_excluded": 21,
+      "pct_excluded": 1.025390625
+    },
+    "bordeaux": {
+      "n_chips": 6,
+      "n_tokens": 6144,
+      "n_C": 39,
+      "n_NC": 5996,
+      "n_mixed_excluded": 109,
+      "pct_excluded": 1.7740885416666667
+    },
+    "hongkong": {
+      "n_chips": 12,
+      "n_tokens": 12288,
+      "n_C": 412,
+      "n_NC": 11345,
+      "n_mixed_excluded": 531,
+      "pct_excluded": 4.3212890625
+    },
+    "pisa": {
+      "n_chips": 20,
+      "n_tokens": 20480,
+      "n_C": 310,
+      "n_NC": 19702,
+      "n_mixed_excluded": 468,
+      "pct_excluded": 2.28515625
+    },
+    "saclay_e": {
+      "n_chips": 12,
+      "n_tokens": 12288,
+      "n_C": 120,
+      "n_NC": 11978,
+      "n_mixed_excluded": 190,
+      "pct_excluded": 1.5462239583333333
+    },
+    "beirut": {
+      "n_chips": 56,
+      "n_tokens": 57344,
+      "n_C": 1138,
+      "n_NC": 54165,
+      "n_mixed_excluded": 2041,
+      "pct_excluded": 3.5592215401785716
+    },
+    "beihai": {
+      "n_chips": 30,
+      "n_tokens": 30720,
+      "n_C": 552,
+      "n_NC": 29091,
+      "n_mixed_excluded": 1077,
+      "pct_excluded": 3.505859375
+    },
+    "cupertino": {
+      "n_chips": 30,
+      "n_tokens": 30720,
+      "n_C": 746,
+      "n_NC": 29058,
+      "n_mixed_excluded": 916,
+      "pct_excluded": 2.9817708333333335
+    }
+  },
+  "excluded_pairs": [],
+  "failed_pairs": []
+}

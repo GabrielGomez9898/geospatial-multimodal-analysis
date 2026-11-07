@@ -12,3 +12,6 @@ terratorch
 # Solo para build_report.py (informe PDF)
 matplotlib
 reportlab
+
+# Solo para visualize.py (UMAP, seccion G.5)
+umap-learn

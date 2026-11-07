@@ -21,6 +21,7 @@ run_all_{clay,satmae,prithvi}.py   Extracción sobre los 14 pares de OSCD, un mo
 evaluate.py              Sección G del protocolo (G.1, G.3, G.4) a partir de los .npz
 build_report.py          Informe PDF de la comparación a partir de la salida de evaluate.py
 compare_overlap.py       Comparativa sin solape vs. 50 % de solape (métricas y embeddings token a token)
+visualize.py             Sección G.5: histogramas C/NC, mapas de distancias (3 pares) y UMAP de |e1 − e2|
 ```
 
 ## Flujo (sección G del protocolo)
@@ -39,7 +40,10 @@ compare_overlap.py       Comparativa sin solape vs. 50 % de solape (métricas y 
    `results/comparacion_protocolo/<modelo>/<region>.npz` + `manifest.json`.
 2. **Evaluación** (sin cargar modelos): `python evaluate.py` →
    `results/comparacion_protocolo/evaluacion/por_par.csv` y `resumen.json`.
-3. **Informe** (opcional): `python build_report.py` →
+3. **Visualización G.5**: `python visualize.py` →
+   `results/comparacion_protocolo/visualizacion/` (histogramas, mapas de
+   cupertino, beirut y pisa, UMAP; requiere `umap-learn`).
+4. **Informe** (opcional): `python build_report.py` →
    `results/comparacion_protocolo/informe_comparacion_protocolo.pdf`. Las
    tablas y la figura se regeneran desde los resultados; los párrafos de
    configuración, limitaciones y decisiones son texto fijo y hay que

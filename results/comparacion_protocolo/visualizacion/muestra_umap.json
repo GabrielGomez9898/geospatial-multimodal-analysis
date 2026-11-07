@@ -1,0 +1,27 @@
+{
+  "params": {
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "euclidean",
+    "random_state": 42
+  },
+  "seed_muestra": 0,
+  "por_modelo": {
+    "clay": {
+      "n_C": 1584,
+      "n_NC": 1584,
+      "dim": 1024
+    },
+    "satmae": {
+      "n_C": 1584,
+      "n_NC": 1584,
+      "dim": 3072
+    },
+    "prithvi": {
+      "n_C": 6,
+      "n_NC": 200,
+      "dim": 1024
+    }
+  },
+  "nota": "Clay y SatMAE comparten exactamente los mismos lugares del terreno."
+}

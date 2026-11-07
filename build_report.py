@@ -212,9 +212,8 @@ story += bullets([
     "<b>G.2</b> Distancia coseno entre los embeddings de T1 y T2 en cada posición espacial.",
     "<b>G.3</b> AUROC por par de imágenes y modelo (capacidad de discriminación).",
     "<b>G.4</b> Índice de Fisher por par de imágenes y modelo (separabilidad).",
+    "<b>G.5</b> Visualización: histogramas, mapas de distancias y UMAP (sección 6.4).",
 ])
-story.append(P("La visualización (G.5: histogramas, mapas de distancias y UMAP) queda pendiente. Los "
-               "datos necesarios ya están guardados, de modo que no hace falta volver a ejecutar los modelos."))
 
 # ---------------------------------------------------------------- 2
 story += [P("2. Configuración de la ejecución", h1), P("2.1 Modelos y recortes", h2)]
@@ -358,6 +357,45 @@ story.append(table(pp, [2.1 * cm, 1.75 * cm, 1.9 * cm, 1.9 * cm, 1.75 * cm, 1.9 
 story.append(P("«sin chips»: la escena es más pequeña que la huella del chip de Prithvi. "
                "«sin C»: la escena no tiene ningún token con p &gt; 0.50.", small))
 
+# ---------------------------------------------------------------- 6.4 visualizacion (G.5)
+VIS = RES / "visualizacion"
+
+
+def fig_block(path: Path, caption: str, width_cm: float = 17.0):
+    from reportlab.lib.utils import ImageReader
+    iw, ih = ImageReader(str(path)).getSize()
+    return KeepTogether([Image(str(path), width=width_cm * cm, height=width_cm * cm * ih / iw),
+                         P(caption, small), Spacer(1, 6)])
+
+
+if VIS.exists():
+    hist = {(r["grupo"], r["model"]): r for r in csv.DictReader(open(VIS / "histogramas_resumen.csv"))}
+    umap_info = json.loads((VIS / "muestra_umap.json").read_text())
+    maps = sorted(VIS.glob("fig_mapas_*.png"))
+    story += [P("6.4 Visualización (G.5)", h2),
+              P("Las figuras se generan con <font face='Courier'>visualize.py</font> a partir de los mismos .npz, "
+                "y quedan en <font face='Courier'>results/comparacion_protocolo/visualizacion/</font>.")]
+    story.append(fig_block(VIS / "fig_histogramas.png",
+        "Figura 2. Distribución normalizada de la distancia coseno de los tokens C y NC. Fila superior: todos "
+        "los pares válidos de cada modelo; inferior: los pares comunes. Medias C / NC (todos los pares): " +
+        ", ".join(f"{NAMES[m]} {float(hist[('todos', m)]['media_C']):.3f} / {float(hist[('todos', m)]['media_NC']):.3f}"
+                  for m in MODELS) +
+        ". En Clay y SatMAE la distribución de C está desplazada a la derecha de la de NC, pero se superponen "
+        "en una zona amplia, lo que explica AUROC altos pero no perfectos. Prithvi tiene solo 6 tokens C, "
+        "marcados uno a uno."))
+    for i, path in enumerate(maps):
+        region = path.stem.replace("fig_mapas_", "")
+        story.append(fig_block(path,
+            f"Figura {3 + i}. {region}: T1 y T2 en RGB, máscara de OSCD y mapa de distancias de cada modelo "
+            "(escala propia de cada modelo; contorno celeste = cambio anotado; gris = terreno sin chips).",
+            width_cm=17.0))
+    n_fig = 3 + len(maps)
+    story.append(fig_block(VIS / "fig_umap.png",
+        f"Figura {n_fig}. UMAP de |e1 − e2|, una proyección por modelo. Clay y SatMAE usan los mismos "
+        f"{umap_info['por_modelo']['clay']['n_C']} lugares C y {umap_info['por_modelo']['clay']['n_NC']} NC "
+        "(muestra balanceada, semilla fija). Es exploratorio: la separación visual depende de los parámetros, "
+        "no mide desempeño y no se usa para elegir modelo."))
+
 # ---------------------------------------------------------------- 7
 above = {m: sum(float(by[(m, s)]["auroc"]) >= 0.6 for s in SCENES) for m in ("clay", "satmae")}
 comp = {m: PM[m]["complementaria"] for m in ("clay", "satmae")}
@@ -469,8 +507,6 @@ story += bullets([
     "de C distinto para Prithvi, que se aparta de G.1. La opción (a) es la más fiel al protocolo.",
     "<b>Bandas y metadatos.</b> Ajustar el código al protocolo o el protocolo al código en los puntos "
     "de la sección 8. Cualquier cambio de bandas o de checkpoint obliga a repetir la extracción.",
-    "<b>Visualización (G.5).</b> Histogramas, mapas de distancias de tres pares y UMAP, a partir de los "
-    ".npz ya guardados.",
 ])
 
 # ---------------------------------------------------------------- 10

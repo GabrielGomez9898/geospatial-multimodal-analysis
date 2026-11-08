@@ -67,34 +67,6 @@ chips (con distinto contexto), así que en el AUROC por par cuenta varias veces.
 Para comparar ambas corridas (sin cargar modelos): `python compare_overlap.py` →
 `results/comparativa_solapamiento/` (tablas CSV, figuras PNG y `LEEME.md`).
 
-## Qué falta que conectar (marcado como `TODO` en el código)
-
-Este pipeline define correctamente la interfaz, los tamaños esperados y el
-manejo de metadatos/GSD según la documentación oficial de cada modelo, pero
-**no puede instalar ni ejecutar los tres repositorios de terceros desde este
-entorno** (sin acceso de red a GitHub/HuggingFace de terceros). Antes de correr
-`run_pipeline.py` se necesita:
-
-1. **Clay**: `pip install git+https://github.com/Clay-foundation/model.git`,
-   descargar `clay-v1.5.ckpt`, y confirmar en `models/clay_extractor.py` el
-   nombre exacto de la clase (`ClayMAEModule` en la doc actual) y el formato
-   del "datacube" de entrada contra el notebook oficial
-   `docs/tutorials/embeddings.ipynb`.
-2. **SatMAE**: `git clone https://github.com/sustainlab-group/SatMAE`, descargar
-   el checkpoint ViT-Large `group_c` de fMoW-Sentinel, y completar
-   `load_satmae_model()` en `models/satmae_extractor.py` con la clase real del
-   repo (`models_vit_group_channels.py` o equivalente en tu commit).
-3. **Prithvi**: `pip install terratorch`, y confirmar en
-   `models/prithvi_extractor.py` la firma exacta de `forward_features()` y si
-   el backbone incluye o no un token CLS en tu versión instalada.
-4. **Lector de OSCD**: implementar `load_oscd_pair()` en `run_pipeline.py` con
-   `rasterio` o `tifffile`, devolviendo las 13 bandas alineadas a 10 m y la
-   máscara binaria.
-5. **Normalización de Clay/SatMAE**: completar los `TODO` de
-   `preprocessing.py` (`prepare_for_clay`, `prepare_for_satmae`) con las
-   estadísticas oficiales de cada uno (`configs/metadata.yaml` de Clay;
-   estadísticas de fMoW-Sentinel del repo de SatMAE). Los de Prithvi ya están
-   cargados en `config.py` (vienen del `config.json` oficial).
 
 ## Decisiones metodológicas ya incorporadas (de nuestra discusión)
 
